@@ -32,7 +32,7 @@
 
 <link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=0.4.5.1" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
   <meta name="keywords" content="杂," />
@@ -44,7 +44,7 @@
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1" />
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
 
 
 
@@ -134,6 +134,8 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
             首頁
           </a>
         </li>
@@ -142,6 +144,8 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
             歸檔
           </a>
         </li>
@@ -149,6 +153,8 @@
         
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
             
             標籤
           </a>
@@ -342,8 +348,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            本站概覽
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" src="https://img.alicdn.com/imgextra/i4/719068679/TB2WZcUipXXXXXCXXXXXXXXXXXX_!!719068679.jpeg" alt="Grace" itemprop="image"/>
           <p class="site-author-name" itemprop="name">Grace</p>
@@ -399,6 +414,23 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#u5148touch_u4E24_u4E2A_u6587_u4EF6_uFF0C_u5982_u679C_u6CA1_u6709_u4F1A_u5BFC_u81F4_u5B89_u88C5nvm_u5931_u8D25"><span class="nav-number">1.</span> <span class="nav-text">先touch两个文件，如果没有会导致安装nvm失败</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5B89_u88C5_u6216_u66F4_u65B0nvm_uFF08Node_Version_Manager_29"><span class="nav-number">2.</span> <span class="nav-text">安装或更新nvm（Node Version Manager)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u7528nvm_u5B89_u88C5_u5BF9_u5E94_u7248_u672C_u7684node-js"><span class="nav-number">3.</span> <span class="nav-text">用nvm安装对应版本的node.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5B89_u88C5Hexo_u6846_u67B6"><span class="nav-number">4.</span> <span class="nav-text">安装Hexo框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u521B_u5EFA_u535A_u5BA2"><span class="nav-number">5.</span> <span class="nav-text">创建博客</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u65B0_u5EFA_u535A_u6587"><span class="nav-number">6.</span> <span class="nav-text">新建博文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u751F_u6210html"><span class="nav-number">7.</span> <span class="nav-text">生成html</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u672C_u5730_u9884_u89C8"><span class="nav-number">8.</span> <span class="nav-text">本地预览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u8BBE_u7F6E_u4E3B_u9898"><span class="nav-number">9.</span> <span class="nav-text">设置主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5EFA_u7ACB_u8FDC_u7A0B_u4ED3_u5E93"><span class="nav-number">10.</span> <span class="nav-text">建立远程仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u90E8_u7F72"><span class="nav-number">11.</span> <span class="nav-text">部署</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
       
 
     </div>
@@ -472,14 +504,14 @@
 
   
   <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
 
 
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
   <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
 <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
 
-<script type="text/javascript" src="/js/motion.js?v=0.4.5.1" id="motion.global"></script>
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
 
 
   <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
@@ -487,7 +519,7 @@
 
   
   
-<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
 
 
 <script type="text/javascript" id="sidebar.toc.highlight">
@@ -655,10 +687,6 @@
 
   
   
-
-<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"3","bdPos":"left","bdTop":"250"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
-
-
 
 </body>
 </html>
