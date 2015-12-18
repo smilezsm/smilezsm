@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo,next" />
+  <meta name="keywords" content="杂," />
 
 
 
@@ -51,19 +51,22 @@
 
 
 
-<meta name="description" content="本周腾出一些时间翻译了CNContact相关的文档，整理如下：
-##IntroductionCNContact 是iOS9提供的全新的获取手机通讯录类，提供通讯录中姓名、电话号码等等，并且是线程安全的。CNContact类似于一个复杂的foundation集合，同样的有一个可变类型的子类CNMutableContact。每一份通讯录（其实指每一个联系人）都有唯一的ID，通过identifier属性">
+<meta name="description" content="最近花了点时间搭了自己的博客，所以就顺便把搭博客的步骤记录一下。已经安装了node.js的同学，可以直接从&amp;lt;安装Hexo框架&amp;gt;步骤开始。
+先touch两个文件，如果没有会导致安装nvm失败12$ touch ~/.bash_profile$ touch ~/.profile
+安装或更新nvm（Node Version Manager)1$ curl -o- https://raw.gi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOS9-CNContactAPI翻译">
-<meta property="og:url" content="http://yoursite.com/2015/12/18/iOS9-CNContactAPI翻译/index.html">
+<meta property="og:title" content="Hexo博客搭建教程">
+<meta property="og:url" content="http://yoursite.com/2015/12/10/hexo晨晨/index.html">
 <meta property="og:site_name" content="Grace’s Blog">
-<meta property="og:description" content="本周腾出一些时间翻译了CNContact相关的文档，整理如下：
-##IntroductionCNContact 是iOS9提供的全新的获取手机通讯录类，提供通讯录中姓名、电话号码等等，并且是线程安全的。CNContact类似于一个复杂的foundation集合，同样的有一个可变类型的子类CNMutableContact。每一份通讯录（其实指每一个联系人）都有唯一的ID，通过identifier属性">
-<meta property="og:updated_time" content="2015-12-18T03:35:20.000Z">
+<meta property="og:description" content="最近花了点时间搭了自己的博客，所以就顺便把搭博客的步骤记录一下。已经安装了node.js的同学，可以直接从&amp;lt;安装Hexo框架&amp;gt;步骤开始。
+先touch两个文件，如果没有会导致安装nvm失败12$ touch ~/.bash_profile$ touch ~/.profile
+安装或更新nvm（Node Version Manager)1$ curl -o- https://raw.gi">
+<meta property="og:updated_time" content="2015-12-18T03:34:12.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS9-CNContactAPI翻译">
-<meta name="twitter:description" content="本周腾出一些时间翻译了CNContact相关的文档，整理如下：
-##IntroductionCNContact 是iOS9提供的全新的获取手机通讯录类，提供通讯录中姓名、电话号码等等，并且是线程安全的。CNContact类似于一个复杂的foundation集合，同样的有一个可变类型的子类CNMutableContact。每一份通讯录（其实指每一个联系人）都有唯一的ID，通过identifier属性">
+<meta name="twitter:title" content="Hexo博客搭建教程">
+<meta name="twitter:description" content="最近花了点时间搭了自己的博客，所以就顺便把搭博客的步骤记录一下。已经安装了node.js的同学，可以直接从&amp;lt;安装Hexo框架&amp;gt;步骤开始。
+先touch两个文件，如果没有会导致安装nvm失败12$ touch ~/.bash_profile$ touch ~/.profile
+安装或更新nvm（Node Version Manager)1$ curl -o- https://raw.gi">
 
 
 
@@ -75,7 +78,7 @@
   };
 </script>
 
-  <title> iOS9-CNContactAPI翻译 | Grace’s Blog </title>
+  <title> Hexo博客搭建教程 | Grace’s Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-hans">
@@ -189,7 +192,7 @@
             
             
               
-                iOS9-CNContactAPI翻译
+                Hexo博客搭建教程
               
             
           </h1>
@@ -198,34 +201,19 @@
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2015-12-18T11:24:49+08:00" content="2015-12-18">
-              2015-12-18
+            <time itemprop="dateCreated" datetime="2015-12-10T21:54:10+08:00" content="2015-12-10">
+              2015-12-10
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS技术分享/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS技术分享</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/12/18/iOS9-CNContactAPI翻译/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/18/iOS9-CNContactAPI翻译/" itemprop="commentsCount"></span>
+                <a href="/2015/12/10/hexo晨晨/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/10/hexo晨晨/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -244,28 +232,45 @@
       
 
       
-        <span itemprop="articleBody"><p>本周腾出一些时间翻译了CNContact相关的文档，整理如下：</p>
-<p>##Introduction<br>CNContact 是iOS9提供的全新的获取手机通讯录类，提供通讯录中姓名、电话号码等等，并且是线程安全的。CNContact类似于一个复杂的foundation集合，同样的有一个可变类型的子类CNMutableContact。每一份通讯录（其实指每一个联系人）都有唯一的ID，通过identifier属性便可获取到。</p>
-<p>##Properties</p>
-<p>###1.标示相关属性<br>1） <strong><em> identifier </em></strong></p>
+        <span itemprop="articleBody"><p>最近花了点时间搭了自己的博客，所以就顺便把搭博客的步骤记录一下。<br>已经安装了node.js的同学，可以直接从&lt;安装Hexo框架&gt;步骤开始。</p>
+<h3 id="u5148touch_u4E24_u4E2A_u6587_u4EF6_uFF0C_u5982_u679C_u6CA1_u6709_u4F1A_u5BFC_u81F4_u5B89_u88C5nvm_u5931_u8D25"><a href="#u5148touch_u4E24_u4E2A_u6587_u4EF6_uFF0C_u5982_u679C_u6CA1_u6709_u4F1A_u5BFC_u81F4_u5B89_u88C5nvm_u5931_u8D25" class="headerlink" title="先touch两个文件，如果没有会导致安装nvm失败"></a>先touch两个文件，如果没有会导致安装nvm失败</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ touch ~/.bash_profile</span><br><span class="line">$ touch ~/.profile</span><br></pre></td></tr></table></figure>
+<h3 id="u5B89_u88C5_u6216_u66F4_u65B0nvm_uFF08Node_Version_Manager_29"><a href="#u5B89_u88C5_u6216_u66F4_u65B0nvm_uFF08Node_Version_Manager_29" class="headerlink" title="安装或更新nvm（Node Version Manager)"></a>安装或更新nvm（Node Version Manager)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.<span class="number">29.0</span>/install.sh | bash</span><br></pre></td></tr></table></figure>
+<p>nvm的项目地址: <a href="https://github.com/creationix/nvm#node-version-manager" target="_blank" rel="external">https://github.com/creationix/nvm#node-version-manager</a></p>
+<h3 id="u7528nvm_u5B89_u88C5_u5BF9_u5E94_u7248_u672C_u7684node-js"><a href="#u7528nvm_u5B89_u88C5_u5BF9_u5E94_u7248_u672C_u7684node-js" class="headerlink" title="用nvm安装对应版本的node.js"></a>用nvm安装对应版本的node.js</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvm install <span class="number">5.0</span></span><br></pre></td></tr></table></figure>
+<h3 id="u5B89_u88C5Hexo_u6846_u67B6"><a href="#u5B89_u88C5Hexo_u6846_u67B6" class="headerlink" title="安装Hexo框架"></a>安装Hexo框架</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<h3 id="u521B_u5EFA_u535A_u5BA2"><a href="#u521B_u5EFA_u535A_u5BA2" class="headerlink" title="创建博客"></a>创建博客</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">先<span class="built_in">cd</span>至某个目录下</span><br><span class="line">$ hexo init blog</span><br><span class="line">$ <span class="built_in">cd</span> blog</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<h3 id="u65B0_u5EFA_u535A_u6587"><a href="#u65B0_u5EFA_u535A_u6587" class="headerlink" title="新建博文"></a>新建博文</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo n <span class="string">"新博文"</span></span><br></pre></td></tr></table></figure>
+<h3 id="u751F_u6210html"><a href="#u751F_u6210html" class="headerlink" title="生成html"></a>生成html</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+<h3 id="u672C_u5730_u9884_u89C8"><a href="#u672C_u5730_u9884_u89C8" class="headerlink" title="本地预览"></a>本地预览</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+<h3 id="u8BBE_u7F6E_u4E3B_u9898"><a href="#u8BBE_u7F6E_u4E3B_u9898" class="headerlink" title="设置主题"></a>设置主题</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">把下载下来的主题放进themes目录下</span><br><span class="line">修改_config.yml文件，如：</span><br><span class="line">theme: hexo-theme-next</span><br></pre></td></tr></table></figure>
+<p>知乎上的主题推荐: <a href="http://www.zhihu.com/question/24422335" target="_blank" rel="external">http://www.zhihu.com/question/24422335</a></p>
+<h3 id="u5EFA_u7ACB_u8FDC_u7A0B_u4ED3_u5E93"><a href="#u5EFA_u7ACB_u8FDC_u7A0B_u4ED3_u5E93" class="headerlink" title="建立远程仓库"></a>建立远程仓库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">在github上建一个与你用户名对应的仓库，仓库名必须&lt;你的github用户名.github.io&gt;</span><br><span class="line">修改_config.yml文件，如：</span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repository: https://github.com/你的github用户名/你的github用户名.github.io</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<h3 id="u90E8_u7F72"><a href="#u90E8_u7F72" class="headerlink" title="部署"></a>部署</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+<p>大功告成，访问你的&lt;你的github用户名.github.io&gt;就可以看到自己的个人博客了</p>
 </span>
       
     </div>
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/杂/" rel="tag">#杂</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/18/Good-Old-Days/" rel="next" title="Good Old Days">
-                <i class="fa fa-chevron-left"></i> Good Old Days
-              </a>
-            
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/12/18/hello-world/" rel="prev" title="Hello World">
+                Hello World <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -280,10 +285,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/12/18/iOS9-CNContactAPI翻译/"
-     data-title="iOS9-CNContactAPI翻译"
+        <div class="ds-share flat" data-thread-key="2015/12/10/hexo晨晨/"
+     data-title="Hexo博客搭建教程"
      data-content=""
-     data-url="http://yoursite.com/2015/12/18/iOS9-CNContactAPI翻译/">
+     data-url="http://yoursite.com/2015/12/10/hexo晨晨/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -311,8 +316,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/12/18/iOS9-CNContactAPI翻译/"
-           data-title="iOS9-CNContactAPI翻译" data-url="http://yoursite.com/2015/12/18/iOS9-CNContactAPI翻译/">
+      <div class="ds-thread" data-thread-key="2015/12/10/hexo晨晨/"
+           data-title="Hexo博客搭建教程" data-url="http://yoursite.com/2015/12/10/hexo晨晨/">
       </div>
     
   </div>
