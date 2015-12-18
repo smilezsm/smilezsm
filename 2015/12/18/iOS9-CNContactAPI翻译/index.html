@@ -59,7 +59,7 @@ IntroductionCNContact 是iOS9提供的全新的获取手机通讯录类，提供
 <meta property="og:site_name" content="Grace’s Blog">
 <meta property="og:description" content="本周腾出一些时间翻译了CNContact相关的文档，整理如下：
 IntroductionCNContact 是iOS9提供的全新的获取手机通讯录类，提供通讯录中姓名、电话号码等等，并且是线程安全的。CNContact类似于一个复杂的foundation集合，同样的有一个可变类型的子类CNMutableContact。每一份通讯录（其实指每一个联系人）都有唯一的ID，通过identifier属性便可">
-<meta property="og:updated_time" content="2015-12-18T12:22:50.000Z">
+<meta property="og:updated_time" content="2015-12-18T12:25:48.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS9-CNContactAPI翻译">
 <meta name="twitter:description" content="本周腾出一些时间翻译了CNContact相关的文档，整理如下：
@@ -290,17 +290,45 @@ IntroductionCNContact 是iOS9提供的全新的获取手机通讯录类，提供
 <h3 id="1_uFF09+_predicateForContactsMatchingName_3A"><a href="#1_uFF09+_predicateForContactsMatchingName_3A" class="headerlink" title="1）+ predicateForContactsMatchingName:"></a>1）+ predicateForContactsMatchingName:</h3><p>返回一个能根据联系人名字找到匹配的通讯的谓词</p>
 <h4 id="u53C2_u6570-1"><a href="#u53C2_u6570-1" class="headerlink" title="参数"></a>参数</h4><ul>
 <li>name</li>
-<li>要去匹配的通讯录名称<h4 id="u8FD4_u56DE_u503C-2"><a href="#u8FD4_u56DE_u503C-2" class="headerlink" title="返回值"></a>返回值</h4>返回一个用来从<strong>CNContactStore</strong>获取通讯录的谓词<h4 id="Discussion-12"><a href="#Discussion-12" class="headerlink" title="Discussion"></a>Discussion</h4>名字的文字数量不限<h3 id="2_uFF09+_predicateForContactsWithIdentifiers_3A"><a href="#2_uFF09+_predicateForContactsWithIdentifiers_3A" class="headerlink" title="2）+ predicateForContactsWithIdentifiers:"></a>2）+ predicateForContactsWithIdentifiers:</h3>返回一个能根据特定ID找到匹配的通讯的谓词<h4 id="u53C2_u6570-2"><a href="#u53C2_u6570-2" class="headerlink" title="参数"></a>参数</h4></li>
+<li>要去匹配的通讯录名称</li>
+</ul>
+<h4 id="u8FD4_u56DE_u503C-2"><a href="#u8FD4_u56DE_u503C-2" class="headerlink" title="返回值"></a>返回值</h4><p>返回一个用来从<strong>CNContactStore</strong>获取通讯录的谓词</p>
+<h4 id="Discussion-12"><a href="#Discussion-12" class="headerlink" title="Discussion"></a>Discussion</h4><p>名字的文字数量不限</p>
+<h3 id="2_uFF09+_predicateForContactsWithIdentifiers_3A"><a href="#2_uFF09+_predicateForContactsWithIdentifiers_3A" class="headerlink" title="2）+ predicateForContactsWithIdentifiers:"></a>2）+ predicateForContactsWithIdentifiers:</h3><p>返回一个能根据特定ID找到匹配的通讯的谓词</p>
+<h4 id="u53C2_u6570-2"><a href="#u53C2_u6570-2" class="headerlink" title="参数"></a>参数</h4><ul>
 <li>identifiers</li>
-<li>通讯录ID<h4 id="u8FD4_u56DE_u503C-3"><a href="#u8FD4_u56DE_u503C-3" class="headerlink" title="返回值"></a>返回值</h4>返回一个用来从<strong>CNContactStore</strong>获取通讯录的谓词<h3 id="3_uFF09+_predicateForContactsInGroupWithIdentifier_3A"><a href="#3_uFF09+_predicateForContactsInGroupWithIdentifier_3A" class="headerlink" title="3）+ predicateForContactsInGroupWithIdentifier:"></a>3）+ predicateForContactsInGroupWithIdentifier:</h3>返回根据ID获取特殊群的通讯录成员的谓词。<h4 id="u53C2_u6570-3"><a href="#u53C2_u6570-3" class="headerlink" title="参数"></a>参数</h4></li>
+<li>通讯录ID</li>
+</ul>
+<h4 id="u8FD4_u56DE_u503C-3"><a href="#u8FD4_u56DE_u503C-3" class="headerlink" title="返回值"></a>返回值</h4><p>返回一个用来从<strong>CNContactStore</strong>获取通讯录的谓词</p>
+<h3 id="3_uFF09+_predicateForContactsInGroupWithIdentifier_3A"><a href="#3_uFF09+_predicateForContactsInGroupWithIdentifier_3A" class="headerlink" title="3）+ predicateForContactsInGroupWithIdentifier:"></a>3）+ predicateForContactsInGroupWithIdentifier:</h3><p>返回根据ID获取特殊群的通讯录成员的谓词。</p>
+<h4 id="u53C2_u6570-3"><a href="#u53C2_u6570-3" class="headerlink" title="参数"></a>参数</h4><ul>
 <li>groupIdentifier</li>
-<li>通讯录群组ID<h4 id="u8FD4_u56DE_u503C-4"><a href="#u8FD4_u56DE_u503C-4" class="headerlink" title="返回值"></a>返回值</h4>返回一个用来从CNContactStore获取通讯录的断言。<h3 id="4_uFF09+_predicateForContactsInContainerWithIdentifier_3A"><a href="#4_uFF09+_predicateForContactsInContainerWithIdentifier_3A" class="headerlink" title="4）+ predicateForContactsInContainerWithIdentifier:"></a>4）+ predicateForContactsInContainerWithIdentifier:</h3>返回一个能根据特定容器ID找到匹配的通讯的断言。<h4 id="u53C2_u6570-4"><a href="#u53C2_u6570-4" class="headerlink" title="参数"></a>参数</h4></li>
+<li>通讯录群组ID</li>
+</ul>
+<h4 id="u8FD4_u56DE_u503C-4"><a href="#u8FD4_u56DE_u503C-4" class="headerlink" title="返回值"></a>返回值</h4><p>返回一个用来从CNContactStore获取通讯录的断言。</p>
+<h3 id="4_uFF09+_predicateForContactsInContainerWithIdentifier_3A"><a href="#4_uFF09+_predicateForContactsInContainerWithIdentifier_3A" class="headerlink" title="4）+ predicateForContactsInContainerWithIdentifier:"></a>4）+ predicateForContactsInContainerWithIdentifier:</h3><p>返回一个能根据特定容器ID找到匹配的通讯的断言。</p>
+<h4 id="u53C2_u6570-4"><a href="#u53C2_u6570-4" class="headerlink" title="参数"></a>参数</h4><ul>
 <li>containerIdentifier</li>
-<li>容器ID.<h4 id="u8FD4_u56DE_u503C-5"><a href="#u8FD4_u56DE_u503C-5" class="headerlink" title="返回值"></a>返回值</h4>返回一个用来从CNContactStore获取通讯录的断言。<h2 id="10-_u53EF_u83B7_u53D6_u5C40_u90E8_u901A_u8BAF_u5F55_u4FE1_u606F"><a href="#10-_u53EF_u83B7_u53D6_u5C40_u90E8_u901A_u8BAF_u5F55_u4FE1_u606F" class="headerlink" title="10.可获取局部通讯录信息"></a>10.可获取局部通讯录信息</h2><h3 id="1_uFF09-_isKeyAvailable_3A"><a href="#1_uFF09-_isKeyAvailable_3A" class="headerlink" title="1）- isKeyAvailable:"></a>1）- isKeyAvailable:</h3>决定是否能够获取特殊关键key的通讯录属性值<h4 id="u8FD4_u56DE_u503C-6"><a href="#u8FD4_u56DE_u503C-6" class="headerlink" title="返回值"></a>返回值</h4>如果可以获取则返回yes，否则返回no。<h4 id="Discussion-13"><a href="#Discussion-13" class="headerlink" title="Discussion"></a>Discussion</h4>isKeyAvailable: 或者 areKeysAvailable:这两个方法都可以在你不确定是否能够根据key获取到对应的值的时候使用。如果这个方法返回NO，可以通过通讯录ID和其他的key来重新获取。可以通过CNContactPropertyNotFetchedExceptionName来得到没有获取过的属性<h3 id="2_uFF09-_areKeysAvailable_3A"><a href="#2_uFF09-_areKeysAvailable_3A" class="headerlink" title="2）- areKeysAvailable:"></a>2）- areKeysAvailable:</h3>同上<h2 id="11-Constants_u76F8_u5173_u5E38_u91CF"><a href="#11-Constants_u76F8_u5173_u5E38_u91CF" class="headerlink" title="11.Constants相关常量"></a>11.Constants相关常量</h2><h3 id="1_uFF09CNContactSortOrder__u901A_u8BAF_u5F55_u987A_u5E8F"><a href="#1_uFF09CNContactSortOrder__u901A_u8BAF_u5F55_u987A_u5E8F" class="headerlink" title="1）CNContactSortOrder 通讯录顺序"></a>1）CNContactSortOrder 通讯录顺序</h3>typedef enum: NSInteger {<br><em>CNContactSortOrderNone,无序
+<li>容器ID</li>
+</ul>
+<h4 id="u8FD4_u56DE_u503C-5"><a href="#u8FD4_u56DE_u503C-5" class="headerlink" title="返回值"></a>返回值</h4><p>返回一个用来从CNContactStore获取通讯录的断言。</p>
+<h2 id="10-_u53EF_u83B7_u53D6_u5C40_u90E8_u901A_u8BAF_u5F55_u4FE1_u606F"><a href="#10-_u53EF_u83B7_u53D6_u5C40_u90E8_u901A_u8BAF_u5F55_u4FE1_u606F" class="headerlink" title="10.可获取局部通讯录信息"></a>10.可获取局部通讯录信息</h2><h3 id="1_uFF09-_isKeyAvailable_3A"><a href="#1_uFF09-_isKeyAvailable_3A" class="headerlink" title="1）- isKeyAvailable:"></a>1）- isKeyAvailable:</h3><p>决定是否能够获取特殊关键key的通讯录属性值</p>
+<h4 id="u8FD4_u56DE_u503C-6"><a href="#u8FD4_u56DE_u503C-6" class="headerlink" title="返回值"></a>返回值</h4><p>如果可以获取则返回yes，否则返回no。</p>
+<h4 id="Discussion-13"><a href="#Discussion-13" class="headerlink" title="Discussion"></a>Discussion</h4><p>isKeyAvailable: 或者 areKeysAvailable:这两个方法都可以在你不确定是否能够根据key获取到对应的值的时候使用。如果这个方法返回NO，可以通过通讯录ID和其他的key来重新获取。可以通过CNContactPropertyNotFetchedExceptionName来得到没有获取过的属性</p>
+<h3 id="2_uFF09-_areKeysAvailable_3A"><a href="#2_uFF09-_areKeysAvailable_3A" class="headerlink" title="2）- areKeysAvailable:"></a>2）- areKeysAvailable:</h3><p>同上</p>
+<h2 id="11-Constants_u76F8_u5173_u5E38_u91CF"><a href="#11-Constants_u76F8_u5173_u5E38_u91CF" class="headerlink" title="11.Constants相关常量"></a>11.Constants相关常量</h2><h3 id="1_uFF09CNContactSortOrder__u901A_u8BAF_u5F55_u987A_u5E8F"><a href="#1_uFF09CNContactSortOrder__u901A_u8BAF_u5F55_u987A_u5E8F" class="headerlink" title="1）CNContactSortOrder 通讯录顺序"></a>1）CNContactSortOrder 通讯录顺序</h3><p>typedef enum: NSInteger {<br><em>CNContactSortOrderNone,无序
 </em>CNContactSortOrderUserDefault,用户偏好排序<br><em>CNContactSortOrderGivenName,名字排序
-</em>CNContactSortOrderFamilyName,姓氏排序<br>}CNContactSortOrder;<h3 id="2_uFF09Exception_Handling__u5F02_u5E38_u5904_u7406"><a href="#2_uFF09Exception_Handling__u5F02_u5E38_u5904_u7406" class="headerlink" title="2）Exception Handling 异常处理"></a>2）Exception Handling 异常处理</h3>获取属性值没有获取到的时候抛出异常</li>
-<li>NSString * const CNContactPropertyNotFetchedExceptionName <h3 id="3_uFF09Identifier"><a href="#3_uFF09Identifier" class="headerlink" title="3）Identifier"></a>3）Identifier</h3>即时获取到的属性ID</li>
-<li>NSString * const CNContactIdentifierKey 字符串，通讯录唯一的ID<h3 id="4_uFF09Metadata_Keys__u5143_u6570_u636Ekey"><a href="#4_uFF09Metadata_Keys__u5143_u6570_u636Ekey" class="headerlink" title="4）Metadata Keys 元数据key"></a>4）Metadata Keys 元数据key</h3>预先定义好的一系列代表通讯录各个属性的key，可以用来对CNContact 对象的键值编码。</li>
+</em>CNContactSortOrderFamilyName,姓氏排序<br>}CNContactSortOrder;</p>
+<h3 id="2_uFF09Exception_Handling__u5F02_u5E38_u5904_u7406"><a href="#2_uFF09Exception_Handling__u5F02_u5E38_u5904_u7406" class="headerlink" title="2）Exception Handling 异常处理"></a>2）Exception Handling 异常处理</h3><p>获取属性值没有获取到的时候抛出异常</p>
+<ul>
+<li>NSString * const CNContactPropertyNotFetchedExceptionName </li>
+</ul>
+<h3 id="3_uFF09Identifier"><a href="#3_uFF09Identifier" class="headerlink" title="3）Identifier"></a>3）Identifier</h3><p>即时获取到的属性ID</p>
+<ul>
+<li>NSString * const CNContactIdentifierKey 字符串，通讯录唯一的ID</li>
+</ul>
+<h3 id="4_uFF09Metadata_Keys__u5143_u6570_u636Ekey"><a href="#4_uFF09Metadata_Keys__u5143_u6570_u636Ekey" class="headerlink" title="4）Metadata Keys 元数据key"></a>4）Metadata Keys 元数据key</h3><p>预先定义好的一系列代表通讯录各个属性的key，可以用来对CNContact 对象的键值编码。</p>
+<ul>
 <li>NSString * const CNContactNamePrefixKey 姓名前缀</li>
 <li>NSString * const CNContactGivenNameKey 名字</li>
 <li>NSString * const CNContactMiddleNameKey 中间名字</li>
