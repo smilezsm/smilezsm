@@ -59,7 +59,7 @@ IntroductionCNContact 是iOS9提供的全新的获取手机通讯录类，提供
 <meta property="og:site_name" content="Grace’s Blog">
 <meta property="og:description" content="本周腾出一些时间翻译了CNContact相关的文档，整理如下：
 IntroductionCNContact 是iOS9提供的全新的获取手机通讯录类，提供通讯录中姓名、电话号码等等，并且是线程安全的。CNContact类似于一个复杂的foundation集合，同样的有一个可变类型的子类CNMutableContact。每一份通讯录（其实指每一个联系人）都有唯一的ID，通过identifier属性便可">
-<meta property="og:updated_time" content="2015-12-18T04:27:24.000Z">
+<meta property="og:updated_time" content="2015-12-18T06:35:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS9-CNContactAPI翻译">
 <meta name="twitter:description" content="本周腾出一些时间翻译了CNContact相关的文档，整理如下：
@@ -253,10 +253,9 @@ IntroductionCNContact 是iOS9提供的全新的获取手机通讯录类，提供
         <span itemprop="articleBody"><p>本周腾出一些时间翻译了CNContact相关的文档，整理如下：</p>
 <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>CNContact 是iOS9提供的全新的获取手机通讯录类，提供通讯录中姓名、电话号码等等，并且是线程安全的。CNContact类似于一个复杂的foundation集合，同样的有一个可变类型的子类CNMutableContact。每一份通讯录（其实指每一个联系人）都有唯一的ID，通过identifier属性便可获取到。</p>
 <h2 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h2><p>###1.标示相关属性</p>
-<pre><code>*** identifier ***
-</code></pre><p>该设备上通讯录唯一的ID（只读）</p>
-<pre><code>*** Discussion ***
-</code></pre><p>你可以通过identifier来重新获取通讯录。APP launch过程中就可保存identifier。注意这个identifier在当前设备上是独一无二的。</p>
+<p>####identifier</p>
+<p>该设备上通讯录唯一的ID（只读）</p>
+<h4 id="Discussion"><a href="#Discussion" class="headerlink" title="Discussion"></a>Discussion</h4><p>你可以通过identifier来重新获取通讯录。APP launch过程中就可保存identifier。注意这个identifier在当前设备上是独一无二的。</p>
 </span>
       
     </div>
@@ -422,7 +421,7 @@ IntroductionCNContact 是iOS9提供的全新的获取手机通讯录类，提供
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Properties"><span class="nav-number">2.</span> <span class="nav-text">Properties</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Properties"><span class="nav-number">2.</span> <span class="nav-text">Properties</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Discussion"><span class="nav-number">2.0.1.</span> <span class="nav-text">Discussion</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
