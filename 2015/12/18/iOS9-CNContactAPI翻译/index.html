@@ -51,20 +51,19 @@
 
 
 
-<meta name="description" content="昨天在朋友的帮助下搭建了自己的博客，这个过程虽然出了很多小插曲，几度想要放弃，但是功夫不负有心人总算是搭建成功了，很是开心☺️。北京近两日阳光很好，微风，无霾。这周工作不忙，睡觉时间终于提前到凌晨之前，也有了一些空闲时间研究东西，心情甚好。
-后续会持续更新一些 iOS技术相关博文，初涉iOS，还有很多不懂的地方，不足之处还望各位读者不吝赐教，在此先谢过了😊。当然也会有一些自己的碎碎念，不打发，很">
+<meta name="description" content="本周腾出一些时间翻译了CNContact相关的文档，整理如下：
+IntroductionCNContact 是iOS9提供的全新的获取手机通讯录类，提供通讯录中姓名、电话号码等等，并且是线程安全的。CNContact类似于一个复杂的foundation集合，同样的有一个可变类型的子类CNMutableContact。每一份通讯录（其实指每一个联系人）都有唯一的ID，通过identifier属性便可">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Good Old Days">
-<meta property="og:url" content="http://yoursite.com/2015/12/18/Good-Old-Days/index.html">
+<meta property="og:title" content="iOS9-CNContactAPI翻译">
+<meta property="og:url" content="http://yoursite.com/2015/12/18/iOS9-CNContactAPI翻译/index.html">
 <meta property="og:site_name" content="Grace’s Blog">
-<meta property="og:description" content="昨天在朋友的帮助下搭建了自己的博客，这个过程虽然出了很多小插曲，几度想要放弃，但是功夫不负有心人总算是搭建成功了，很是开心☺️。北京近两日阳光很好，微风，无霾。这周工作不忙，睡觉时间终于提前到凌晨之前，也有了一些空闲时间研究东西，心情甚好。
-后续会持续更新一些 iOS技术相关博文，初涉iOS，还有很多不懂的地方，不足之处还望各位读者不吝赐教，在此先谢过了😊。当然也会有一些自己的碎碎念，不打发，很">
-<meta property="og:image" content="https://img.alicdn.com/imgextra/i3/719068679/TB2svogipXXXXbTXpXXXXXXXXXX_!!719068679.jpg">
-<meta property="og:updated_time" content="2015-12-17T09:43:09.000Z">
+<meta property="og:description" content="本周腾出一些时间翻译了CNContact相关的文档，整理如下：
+IntroductionCNContact 是iOS9提供的全新的获取手机通讯录类，提供通讯录中姓名、电话号码等等，并且是线程安全的。CNContact类似于一个复杂的foundation集合，同样的有一个可变类型的子类CNMutableContact。每一份通讯录（其实指每一个联系人）都有唯一的ID，通过identifier属性便可">
+<meta property="og:updated_time" content="2015-12-18T10:28:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Good Old Days">
-<meta name="twitter:description" content="昨天在朋友的帮助下搭建了自己的博客，这个过程虽然出了很多小插曲，几度想要放弃，但是功夫不负有心人总算是搭建成功了，很是开心☺️。北京近两日阳光很好，微风，无霾。这周工作不忙，睡觉时间终于提前到凌晨之前，也有了一些空闲时间研究东西，心情甚好。
-后续会持续更新一些 iOS技术相关博文，初涉iOS，还有很多不懂的地方，不足之处还望各位读者不吝赐教，在此先谢过了😊。当然也会有一些自己的碎碎念，不打发，很">
+<meta name="twitter:title" content="iOS9-CNContactAPI翻译">
+<meta name="twitter:description" content="本周腾出一些时间翻译了CNContact相关的文档，整理如下：
+IntroductionCNContact 是iOS9提供的全新的获取手机通讯录类，提供通讯录中姓名、电话号码等等，并且是线程安全的。CNContact类似于一个复杂的foundation集合，同样的有一个可变类型的子类CNMutableContact。每一份通讯录（其实指每一个联系人）都有唯一的ID，通过identifier属性便可">
 
 
 
@@ -76,7 +75,7 @@
   };
 </script>
 
-  <title> Good Old Days | Grace’s Blog </title>
+  <title> iOS9-CNContactAPI翻译 | Grace’s Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-hans">
@@ -196,7 +195,7 @@
             
             
               
-                Good Old Days
+                iOS9-CNContactAPI翻译
               
             
           </h1>
@@ -205,7 +204,7 @@
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2015-12-18T11:06:51+08:00" content="2015-12-18">
+            <time itemprop="dateCreated" datetime="2015-12-18T18:26:15+08:00" content="2015-12-18">
               2015-12-18
             </time>
           </span>
@@ -215,8 +214,8 @@
               &nbsp; | &nbsp; 分類於
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/杂记两三/" itemprop="url" rel="index">
-                    <span itemprop="name">杂记两三</span>
+                  <a href="/categories/iOS技术/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS技术</span>
                   </a>
                 </span>
 
@@ -231,8 +230,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/12/18/Good-Old-Days/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/18/Good-Old-Days/" itemprop="commentsCount"></span>
+                <a href="/2015/12/18/iOS9-CNContactAPI翻译/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/18/iOS9-CNContactAPI翻译/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -251,10 +250,10 @@
       
 
       
-        <span itemprop="articleBody"><p>昨天在朋友的帮助下搭建了自己的博客，这个过程虽然出了很多小插曲，几度想要放弃，但是功夫不负有心人总算是搭建成功了，很是开心☺️。北京近两日阳光很好，微风，无霾。这周工作不忙，睡觉时间终于提前到凌晨之前，也有了一些空闲时间研究东西，心情甚好。</p>
-<p>后续会持续更新一些 iOS技术相关博文，初涉iOS，还有很多不懂的地方，不足之处还望各位读者不吝赐教，在此先谢过了😊。当然也会有一些自己的碎碎念，不打发，很认真的那种。</p>
-<p>哦对了，本人酷爱小丸子。对就是那个樱桃子。</p>
-<p>   <img src="https://img.alicdn.com/imgextra/i3/719068679/TB2svogipXXXXbTXpXXXXXXXXXX_!!719068679.jpg" alt="Mou icon"></p>
+        <span itemprop="articleBody"><p>本周腾出一些时间翻译了CNContact相关的文档，整理如下：</p>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>CNContact 是iOS9提供的全新的获取手机通讯录类，提供通讯录中姓名、电话号码等等，并且是线程安全的。CNContact类似于一个复杂的foundation集合，同样的有一个可变类型的子类CNMutableContact。每一份通讯录（其实指每一个联系人）都有唯一的ID，通过identifier属性便可获取到。</p>
+<h1 id="Properties"><a href="#Properties" class="headerlink" title="Properties"></a>Properties</h1><h2 id="1-_u6807_u793A_u76F8_u5173_u5C5E_u6027"><a href="#1-_u6807_u793A_u76F8_u5173_u5C5E_u6027" class="headerlink" title="1.标示相关属性"></a>1.标示相关属性</h2><h3 id="1-identifier"><a href="#1-identifier" class="headerlink" title="1.identifier"></a>1.identifier</h3><p>该设备上通讯录唯一的ID（只读）</p>
+<h4 id="Discussion"><a href="#Discussion" class="headerlink" title="Discussion"></a>Discussion</h4><p>你可以通过identifier来重新获取通讯录。APP launch过程中就可保存identifier。注意这个identifier在当前设备上是独一无二的。</p>
 </span>
       
     </div>
@@ -266,13 +265,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2015/12/18/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/12/18/hello-world/" rel="prev" title="Hello World">
-                Hello World <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -287,10 +286,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/12/18/Good-Old-Days/"
-     data-title="Good Old Days"
+        <div class="ds-share flat" data-thread-key="2015/12/18/iOS9-CNContactAPI翻译/"
+     data-title="iOS9-CNContactAPI翻译"
      data-content=""
-     data-url="http://yoursite.com/2015/12/18/Good-Old-Days/">
+     data-url="http://yoursite.com/2015/12/18/iOS9-CNContactAPI翻译/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -318,8 +317,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/12/18/Good-Old-Days/"
-           data-title="Good Old Days" data-url="http://yoursite.com/2015/12/18/Good-Old-Days/">
+      <div class="ds-thread" data-thread-key="2015/12/18/iOS9-CNContactAPI翻译/"
+           data-title="iOS9-CNContactAPI翻译" data-url="http://yoursite.com/2015/12/18/iOS9-CNContactAPI翻译/">
       </div>
     
   </div>
@@ -420,7 +419,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目錄</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Properties"><span class="nav-number">2.</span> <span class="nav-text">Properties</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_u6807_u793A_u76F8_u5173_u5C5E_u6027"><span class="nav-number">2.1.</span> <span class="nav-text">1.标示相关属性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-identifier"><span class="nav-number">2.1.1.</span> <span class="nav-text">1.identifier</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Discussion"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">Discussion</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
