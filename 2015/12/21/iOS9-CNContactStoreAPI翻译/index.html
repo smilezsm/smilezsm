@@ -65,7 +65,7 @@
 只获取将会被用到的通讯录属性。
 当获取所有的通讯录和缓存结果的时候，首先要获取所有的通讯录ID，然后根据对应的ID来获取一批详细的通讯录。
 要想统计几个通讯录的获取结果，首先要从获取结果中收集的唯一ID，然后根据那些唯一ID获取详">
-<meta property="og:updated_time" content="2015-12-21T04:04:36.000Z">
+<meta property="og:updated_time" content="2015-12-21T04:05:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS9-CNContactStoreAPI翻译">
 <meta name="twitter:description" content="IntroductionCNContactStore是线程安全的类。CNContactStore 执行各种查找和保存通讯录的请求。官方对使用该类加载通讯录的建议如下：
@@ -284,6 +284,15 @@
 </li>
 </ul>
 <p>由于统一化，返回的通讯录可能和你想要的的通讯录的ID不一致。要想获取所有的通讯录，可以使用<strong>enumerateContactsWithFetchRequest:error:usingBlock:</strong>这个方法</p>
+<h1 id="u83B7_u53D6_u9690_u79C1"><a href="#u83B7_u53D6_u9690_u79C1" class="headerlink" title="获取隐私"></a>获取隐私</h1><h3 id="1_uFF09+_authorizationStatusForEntityType_3A"><a href="#1_uFF09+_authorizationStatusForEntityType_3A" class="headerlink" title="1）+ authorizationStatusForEntityType:"></a>1）+ authorizationStatusForEntityType:</h3><p>获取当前通讯录的授权状态<br>返回结果是枚举类型：<br>{</p>
+<ul>
+<li>CNAuthorizationStatusNotDetermined,还未决定，即还未弹出过授权框</li>
+<li>CNAuthorizationStatusRestricted,被拒绝</li>
+<li>CNAuthorizationStatusDenied,被拒绝</li>
+<li>CNAuthorizationStatusAuthorized，允许访问<br>}CNAuthorizationStatus;<h4 id="u53C2_u6570-2"><a href="#u53C2_u6570-2" class="headerlink" title="参数"></a>参数</h4></li>
+<li>entityType</li>
+<li>实体类型（枚举），目前只有一个选项CNEntityTypeContacts<h4 id="Discussion-2"><a href="#Discussion-2" class="headerlink" title="Discussion"></a>Discussion</h4>你的应用可以根据授权状态展示或者隐藏获取通讯录的UI。这个方法是线程安全的，不会阻断线程。</li>
+</ul>
 </span>
       
     </div>
@@ -449,7 +458,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1_uFF09-unifiedContactWithIdentifier_3AkeysToFetch_3Aerror_3A"><span class="nav-number">1.0.1.</span> <span class="nav-text">1）-unifiedContactWithIdentifier:keysToFetch:error:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u53C2_u6570"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u8FD4_u56DE_u503C"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">返回值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Discussion"><span class="nav-number">1.0.1.3.</span> <span class="nav-text">Discussion</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2_uFF09-_unifiedContactsMatchingPredicate_3AkeysToFetch_3Aerror_3A"><span class="nav-number">1.0.2.</span> <span class="nav-text">2）- unifiedContactsMatchingPredicate:keysToFetch:error:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u53C2_u6570-1"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u8FD4_u56DE_u503C-1"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">返回值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Discussion-1"><span class="nav-number">1.0.2.3.</span> <span class="nav-text">Discussion</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1_uFF09-unifiedContactWithIdentifier_3AkeysToFetch_3Aerror_3A"><span class="nav-number">1.0.1.</span> <span class="nav-text">1）-unifiedContactWithIdentifier:keysToFetch:error:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u53C2_u6570"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u8FD4_u56DE_u503C"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">返回值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Discussion"><span class="nav-number">1.0.1.3.</span> <span class="nav-text">Discussion</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2_uFF09-_unifiedContactsMatchingPredicate_3AkeysToFetch_3Aerror_3A"><span class="nav-number">1.0.2.</span> <span class="nav-text">2）- unifiedContactsMatchingPredicate:keysToFetch:error:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u53C2_u6570-1"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u8FD4_u56DE_u503C-1"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">返回值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Discussion-1"><span class="nav-number">1.0.2.3.</span> <span class="nav-text">Discussion</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#u83B7_u53D6_u9690_u79C1"><span class="nav-number">2.</span> <span class="nav-text">获取隐私</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1_uFF09+_authorizationStatusForEntityType_3A"><span class="nav-number">2.0.1.</span> <span class="nav-text">1）+ authorizationStatusForEntityType:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u53C2_u6570-2"><span class="nav-number">2.0.1.1.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Discussion-2"><span class="nav-number">2.0.1.2.</span> <span class="nav-text">Discussion</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
