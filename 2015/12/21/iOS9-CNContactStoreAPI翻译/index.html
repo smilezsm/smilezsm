@@ -65,7 +65,7 @@
 只获取将会被用到的通讯录属性。
 当获取所有的通讯录和缓存结果的时候，首先要获取所有的通讯录ID，然后根据对应的ID来获取一批详细的通讯录。
 要想统计几个通讯录的获取结果，首先要从获取结果中收集的唯一ID，然后根据那些唯一ID获取详">
-<meta property="og:updated_time" content="2015-12-21T04:04:03.000Z">
+<meta property="og:updated_time" content="2015-12-21T04:04:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS9-CNContactStoreAPI翻译">
 <meta name="twitter:description" content="IntroductionCNContactStore是线程安全的类。CNContactStore 执行各种查找和保存通讯录的请求。官方对使用该类加载通讯录的建议如下：
@@ -259,8 +259,31 @@
 <li>keys</li>
 <li>要获取的CNContact对象的属性</li>
 <li>error</li>
-<li>错误<h4 id="u8FD4_u56DE_u503C"><a href="#u8FD4_u56DE_u503C" class="headerlink" title="返回值"></a>返回值</h4>返回一份匹配的或者对应ID的统一的通讯录<h4 id="Discussion"><a href="#Discussion" class="headerlink" title="Discussion"></a>Discussion</h4>由于统一化，返回的通讯录可能和你想要的的通讯录的ID不一致。要想根据ID获取一批通讯录，可以通<strong>predicateForContactsWithIdentifiers:</strong>和<strong>unifiedContactsMatchingPredicate:keysToFetch:error:</strong>这两个方法。建议只获取你需要用到的通讯录属性，同时你可以把通讯录key和通讯录key的描述符连接在一起。</li>
+<li>错误<h4 id="u8FD4_u56DE_u503C"><a href="#u8FD4_u56DE_u503C" class="headerlink" title="返回值"></a>返回值</h4>返回一份匹配的或者对应ID的统一的通讯录<h4 id="Discussion"><a href="#Discussion" class="headerlink" title="Discussion"></a>Discussion</h4>由于统一化，返回的通讯录可能和你想要的的通讯录的ID不一致。要想根据ID获取一批通讯录，可以通<strong>predicateForContactsWithIdentifiers:</strong>和<strong>unifiedContactsMatchingPredicate:keysToFetch:error:</strong>这两个方法。建议只获取你需要用到的通讯录属性，同时你可以把通讯录key和通讯录key的描述符连接在一起。<h3 id="2_uFF09-_unifiedContactsMatchingPredicate_3AkeysToFetch_3Aerror_3A"><a href="#2_uFF09-_unifiedContactsMatchingPredicate_3AkeysToFetch_3Aerror_3A" class="headerlink" title="2）- unifiedContactsMatchingPredicate:keysToFetch:error:"></a>2）- unifiedContactsMatchingPredicate:keysToFetch:error:</h3>根据对应的谓词获取一份统一的通讯录<h4 id="u53C2_u6570-1"><a href="#u53C2_u6570-1" class="headerlink" title="参数"></a>参数</h4></li>
+<li>predicate</li>
+<li>要匹配的断言</li>
+<li>keys</li>
+<li>CNContact对象的属性，注意你可以把通讯录key和通讯录key的描述符连接在一起。即CNContact类里面的常量key</li>
+<li>error</li>
+<li>错误</li>
 </ul>
+<h4 id="u8FD4_u56DE_u503C-1"><a href="#u8FD4_u56DE_u503C-1" class="headerlink" title="返回值"></a>返回值</h4><p>返回一份匹配谓词的通讯录</p>
+<h4 id="Discussion-1"><a href="#Discussion-1" class="headerlink" title="Discussion"></a>Discussion</h4><p>如果没有找到匹配的通讯录，这个方法将返回一个空的数组，防止报错。注意：<strong>只能使用CNContact类里面的谓词。这个方法支持不支持合成的谓词。</strong><br><strong>CNContact提供了三个返回predicate的类方法：</strong></p>
+<ul>
+<li><ul>
+<li>predicateForContactsMatchingName:传入通讯录人名</li>
+</ul>
+</li>
+<li><ul>
+<li>predicateForContactsWithIdentifiers:通讯录ID</li>
+</ul>
+</li>
+<li><ul>
+<li>predicateForContactsInGroupWithIdentifier:群组ID</li>
+</ul>
+</li>
+</ul>
+<p>由于统一化，返回的通讯录可能和你想要的的通讯录的ID不一致。要想获取所有的通讯录，可以使用<strong>enumerateContactsWithFetchRequest:error:usingBlock:</strong>这个方法</p>
 </span>
       
     </div>
@@ -426,7 +449,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1_uFF09-unifiedContactWithIdentifier_3AkeysToFetch_3Aerror_3A"><span class="nav-number">1.0.1.</span> <span class="nav-text">1）-unifiedContactWithIdentifier:keysToFetch:error:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u53C2_u6570"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u8FD4_u56DE_u503C"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">返回值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Discussion"><span class="nav-number">1.0.1.3.</span> <span class="nav-text">Discussion</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1_uFF09-unifiedContactWithIdentifier_3AkeysToFetch_3Aerror_3A"><span class="nav-number">1.0.1.</span> <span class="nav-text">1）-unifiedContactWithIdentifier:keysToFetch:error:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u53C2_u6570"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u8FD4_u56DE_u503C"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">返回值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Discussion"><span class="nav-number">1.0.1.3.</span> <span class="nav-text">Discussion</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2_uFF09-_unifiedContactsMatchingPredicate_3AkeysToFetch_3Aerror_3A"><span class="nav-number">1.0.2.</span> <span class="nav-text">2）- unifiedContactsMatchingPredicate:keysToFetch:error:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u53C2_u6570-1"><span class="nav-number">1.0.2.1.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u8FD4_u56DE_u503C-1"><span class="nav-number">1.0.2.2.</span> <span class="nav-text">返回值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Discussion-1"><span class="nav-number">1.0.2.3.</span> <span class="nav-text">Discussion</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
