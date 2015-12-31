@@ -51,24 +51,19 @@
 
 
 
-<meta name="description" content="Mou
-说起来使用markdown编写博文，我真是一肚子的辛酸血泪想说。刚开始写的时候，每次hexo g -d 命令提交git博文几乎都会报错，请教了几个朋友也都是小马过河，各抒己见。只有自己真正实践，去尝试，才能真正掌握要领啊。先贴上自己的报错： 第一次见到这个报错：Something’s wrong.也不告诉你到底哪里错了。我还以为是自己hexo坏了，折腾半天把hexo卸了又装，后来发现是自己">
+<meta name="description" content="Introduction:这个类为获取通讯录定义了一些选项。必须通过通讯录属性的key来获取通讯录的各个属性。使用enumerateContactsWithFetchRequest:error:usingBlock: 这个方法来执行获取通讯录的请求。
+Contact Fetching Options获取通讯录的选项1）mutableObjectsbool值表示是否返回一个可变的通讯录@proper">
 <meta property="og:type" content="article">
-<meta property="og:title" content="说说使用Mou编写markdown博文的踩过的坑">
-<meta property="og:url" content="http://yoursite.com/2015/12/18/说说使用Mou编写markdown博文的踩过的坑/index.html">
+<meta property="og:title" content="iOS9-CNContactFetchRequestAPI翻译">
+<meta property="og:url" content="http://yoursite.com/2015/12/31/iOS9-CNContactFetchRequestAPI翻译/index.html">
 <meta property="og:site_name" content="Grace’s Blog">
-<meta property="og:description" content="Mou
-说起来使用markdown编写博文，我真是一肚子的辛酸血泪想说。刚开始写的时候，每次hexo g -d 命令提交git博文几乎都会报错，请教了几个朋友也都是小马过河，各抒己见。只有自己真正实践，去尝试，才能真正掌握要领啊。先贴上自己的报错： 第一次见到这个报错：Something’s wrong.也不告诉你到底哪里错了。我还以为是自己hexo坏了，折腾半天把hexo卸了又装，后来发现是自己">
-<meta property="og:image" content="http://25.io/mou/Mou_128.png">
-<meta property="og:image" content="http://7xpbd5.com1.z0.glb.clouddn.com/报错.jpg">
-<meta property="og:image" content="http://7xpbd5.com1.z0.glb.clouddn.com/换行错误.jpg">
-<meta property="og:image" content="http://7xpbd5.com1.z0.glb.clouddn.com/nvm%20error.jpg">
-<meta property="og:image" content="http://7xpbd5.com1.z0.glb.clouddn.com/nvm%20right.jpg">
-<meta property="og:updated_time" content="2015-12-18T13:13:20.000Z">
+<meta property="og:description" content="Introduction:这个类为获取通讯录定义了一些选项。必须通过通讯录属性的key来获取通讯录的各个属性。使用enumerateContactsWithFetchRequest:error:usingBlock: 这个方法来执行获取通讯录的请求。
+Contact Fetching Options获取通讯录的选项1）mutableObjectsbool值表示是否返回一个可变的通讯录@proper">
+<meta property="og:updated_time" content="2015-12-31T03:46:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="说说使用Mou编写markdown博文的踩过的坑">
-<meta name="twitter:description" content="Mou
-说起来使用markdown编写博文，我真是一肚子的辛酸血泪想说。刚开始写的时候，每次hexo g -d 命令提交git博文几乎都会报错，请教了几个朋友也都是小马过河，各抒己见。只有自己真正实践，去尝试，才能真正掌握要领啊。先贴上自己的报错： 第一次见到这个报错：Something’s wrong.也不告诉你到底哪里错了。我还以为是自己hexo坏了，折腾半天把hexo卸了又装，后来发现是自己">
+<meta name="twitter:title" content="iOS9-CNContactFetchRequestAPI翻译">
+<meta name="twitter:description" content="Introduction:这个类为获取通讯录定义了一些选项。必须通过通讯录属性的key来获取通讯录的各个属性。使用enumerateContactsWithFetchRequest:error:usingBlock: 这个方法来执行获取通讯录的请求。
+Contact Fetching Options获取通讯录的选项1）mutableObjectsbool值表示是否返回一个可变的通讯录@proper">
 
 
 
@@ -80,7 +75,7 @@
   };
 </script>
 
-  <title> 说说使用Mou编写markdown博文的踩过的坑 | Grace’s Blog </title>
+  <title> iOS9-CNContactFetchRequestAPI翻译 | Grace’s Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-hans">
@@ -200,7 +195,7 @@
             
             
               
-                说说使用Mou编写markdown博文的踩过的坑
+                iOS9-CNContactFetchRequestAPI翻译
               
             
           </h1>
@@ -209,34 +204,19 @@
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2015-12-18T20:27:59+08:00" content="2015-12-18">
-              2015-12-18
+            <time itemprop="dateCreated" datetime="2015-12-31T11:33:47+08:00" content="2015-12-31">
+              2015-12-31
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/杂记两三/" itemprop="url" rel="index">
-                    <span itemprop="name">杂记两三</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/12/18/说说使用Mou编写markdown博文的踩过的坑/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/18/说说使用Mou编写markdown博文的踩过的坑/" itemprop="commentsCount"></span>
+                <a href="/2015/12/31/iOS9-CNContactFetchRequestAPI翻译/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/31/iOS9-CNContactFetchRequestAPI翻译/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -255,12 +235,24 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="Mou"><a href="#Mou" class="headerlink" title="Mou"></a>Mou</h1><p><img src="http://25.io/mou/Mou_128.png" alt="Mou icon"></p>
-<p>说起来使用markdown编写博文，我真是一肚子的辛酸血泪想说。刚开始写的时候，每次hexo g -d 命令提交git博文几乎都会报错，请教了几个朋友也都是小马过河，各抒己见。只有自己真正实践，去尝试，才能真正掌握要领啊。<br>先贴上自己的报错：<br> <img src="http://7xpbd5.com1.z0.glb.clouddn.com/报错.jpg" alt="Mou icon"><br>第一次见到这个报错：Something’s wrong.也不告诉你到底哪里错了。我还以为是自己hexo坏了，折腾半天把hexo卸了又装，后来发现是自己博客的语法有错误。下面列举一下需要注意的语法：</p>
-<h2 id="1-_u4EFB_u4F55_u4E00_u4E2A_u60F3_u8981_u751F_u6548_u7684_u8BED_u6CD5_u548C_u5185_u5BB9_u4E4B_u95F4_u90FD_u8981_u7A7A_u683C_uFF0C_u5426_u5219_u5C31_u7B97Mou_u4E0A_u9762_u751F_u6548_uFF0C_u771F_u6B63_u7F51_u9875_u4E0A_u4E5F_u4E0D_u751F_u6548_u3002"><a href="#1-_u4EFB_u4F55_u4E00_u4E2A_u60F3_u8981_u751F_u6548_u7684_u8BED_u6CD5_u548C_u5185_u5BB9_u4E4B_u95F4_u90FD_u8981_u7A7A_u683C_uFF0C_u5426_u5219_u5C31_u7B97Mou_u4E0A_u9762_u751F_u6548_uFF0C_u771F_u6B63_u7F51_u9875_u4E0A_u4E5F_u4E0D_u751F_u6548_u3002" class="headerlink" title="1.任何一个想要生效的语法和内容之间都要空格，否则就算Mou上面生效，真正网页上也不生效。"></a>1.任何一个想要生效的语法和内容之间都要空格，否则就算Mou上面生效，真正网页上也不生效。</h2><h2 id="2-_u661F_u53F7_u8BED_u6CD5*_u4F7F_u7528_u7ED3_u675F_uFF0C_u5982_u679C_u4E0B_u4E00_u884C_u6587_u5B57_u4E0D_u9700_u8981_u4F7F_u7528_u5B83_u9700_u8981_u56DE_u8F66_u4E24_u6B21_uFF0C_u5426_u5219_u4E0B_u9762_u7684_u5185_u5BB9_u90FD_u4F1A_u53D7_u5B83_u7684_u5F71_u54CD_u7F29_u8FDB_u4E24_u4E2A_u5B57_u3002_u9519_u8BEF_u793A_u8303_uFF1A"><a href="#2-_u661F_u53F7_u8BED_u6CD5*_u4F7F_u7528_u7ED3_u675F_uFF0C_u5982_u679C_u4E0B_u4E00_u884C_u6587_u5B57_u4E0D_u9700_u8981_u4F7F_u7528_u5B83_u9700_u8981_u56DE_u8F66_u4E24_u6B21_uFF0C_u5426_u5219_u4E0B_u9762_u7684_u5185_u5BB9_u90FD_u4F1A_u53D7_u5B83_u7684_u5F71_u54CD_u7F29_u8FDB_u4E24_u4E2A_u5B57_u3002_u9519_u8BEF_u793A_u8303_uFF1A" class="headerlink" title="2.星号语法*使用结束，如果下一行文字不需要使用它需要回车两次，否则下面的内容都会受它的影响缩进两个字。错误示范："></a>2.星号语法*使用结束，如果下一行文字不需要使用它需要回车两次，否则下面的内容都会受它的影响缩进两个字。错误示范：</h2><p> <img src="http://7xpbd5.com1.z0.glb.clouddn.com/换行错误.jpg" alt="Mou icon"></p>
-<h2 id="3-_u6700_u91CD_u8981_u7684_u4E00_u70B9_uFF0C_u535A_u6587_u7ED3_u5C3E_u5904_u4E0D_u53EF_u4EE5_u6709_u518D_u56DE_u8F66_u6362_u884C_u3002_u535A_u6587_u5230_u54EA_u884C_uFF0C_u6574_u4E2A_u535A_u6587_u5C31_u5728_u54EA_u884C_u7ED3_u675F_u3002"><a href="#3-_u6700_u91CD_u8981_u7684_u4E00_u70B9_uFF0C_u535A_u6587_u7ED3_u5C3E_u5904_u4E0D_u53EF_u4EE5_u6709_u518D_u56DE_u8F66_u6362_u884C_u3002_u535A_u6587_u5230_u54EA_u884C_uFF0C_u6574_u4E2A_u535A_u6587_u5C31_u5728_u54EA_u884C_u7ED3_u675F_u3002" class="headerlink" title="3.最重要的一点，博文结尾处不可以有再回车换行。博文到哪行，整个博文就在哪行结束。"></a>3.最重要的一点，博文结尾处不可以有再回车换行。博文到哪行，整个博文就在哪行结束。</h2><p>目前貌似就遇到这些坑，后续再遇到会再更新。</p>
-<hr>
-<p>另外，我的nvm貌似是有一些问题，每次重新打开终端是时候，nvm都不会默认启用当前的版本，使用 <strong>nvm ls</strong> 查看结果：<br> <img src="http://7xpbd5.com1.z0.glb.clouddn.com/nvm%20error.jpg" alt="Mou icon"><br>这个时候如果使用hexo 的任何命令都会：Command not found.<br>所以我每次都需要 <strong>nvm user 4.1.2</strong> 后才能继续正常使用hexo。<br>正常的<strong>nvm ls</strong> 是：<br> <img src="http://7xpbd5.com1.z0.glb.clouddn.com/nvm%20right.jpg" alt="Mou icon"><br> 如果有解决的办法，还请各位大神告知~~~</p>
+        <span itemprop="articleBody"><h2 id="Introduction_3A"><a href="#Introduction_3A" class="headerlink" title="Introduction:"></a>Introduction:</h2><p>这个类为获取通讯录定义了一些选项。必须通过通讯录属性的key来获取通讯录的各个属性。使用<strong>enumerateContactsWithFetchRequest:error:usingBlock:</strong> 这个方法来执行获取通讯录的请求。</p>
+<h2 id="Contact_Fetching_Options_u83B7_u53D6_u901A_u8BAF_u5F55_u7684_u9009_u9879"><a href="#Contact_Fetching_Options_u83B7_u53D6_u901A_u8BAF_u5F55_u7684_u9009_u9879" class="headerlink" title="Contact Fetching Options获取通讯录的选项"></a>Contact Fetching Options获取通讯录的选项</h2><h3 id="1_uFF09mutableObjects"><a href="#1_uFF09mutableObjects" class="headerlink" title="1）mutableObjects"></a>1）mutableObjects</h3><p>bool值表示是否返回一个可变的通讯录<br>@property(nonatomic) BOOL mutableObjects</p>
+<h4 id="Discussion"><a href="#Discussion" class="headerlink" title="Discussion"></a>Discussion</h4><p>当返回yes，则返回CNMutableContact对象，否则返回CNContact 对象。默认返回NO。</p>
+<h3 id="2_uFF09unifyResults"><a href="#2_uFF09unifyResults" class="headerlink" title="2）unifyResults"></a>2）unifyResults</h3><p>bool值表示将返回一个统一标准的通讯录<br>@property(nonatomic) BOOL unifyResults</p>
+<h4 id="Discussion-1"><a href="#Discussion-1" class="headerlink" title="Discussion"></a>Discussion</h4><p>统一标准的通讯录的意思是：来自个人通讯录的属性的集合。如果返回yes,将返回一个统一标准的通讯录，否则的话将返回个人的通讯录。默认返回YES.</p>
+<h3 id="3_uFF09sortOrder"><a href="#3_uFF09sortOrder" class="headerlink" title="3）sortOrder"></a>3）sortOrder</h3><p>通讯录的排序方式<br>@property(nonatomic) CNContactSortOrder sortOrder</p>
+<h4 id="Discussion-2"><a href="#Discussion-2" class="headerlink" title="Discussion"></a>Discussion</h4><p>默认排序方式CNContactSortOrderNone.</p>
+<h2 id="Keys_Used_in_Fetching_Contacts_u7528_u6765_u83B7_u53D6_u901A_u8BAF_u5F55_u7684key"><a href="#Keys_Used_in_Fetching_Contacts_u7528_u6765_u83B7_u53D6_u901A_u8BAF_u5F55_u7684key" class="headerlink" title="Keys Used in Fetching Contacts用来获取通讯录的key"></a>Keys Used in Fetching Contacts用来获取通讯录的key</h2><h3 id="1_uFF09-_initWithKeysToFetch_3A"><a href="#1_uFF09-_initWithKeysToFetch_3A" class="headerlink" title="1）- initWithKeysToFetch:"></a>1）- initWithKeysToFetch:</h3><p>Designated Initializer<br>指定的通过特定的key来初始化的方法</p>
+<h4 id="u53C2_u6570"><a href="#u53C2_u6570" class="headerlink" title="参数"></a>参数</h4><ul>
+<li>keysToFetch</li>
+<li>用来查找通讯录的属于通讯录属性的key或者key descriptors</li>
+</ul>
+<h4 id="u8FD4_u56DE_u503C"><a href="#u8FD4_u56DE_u503C" class="headerlink" title="返回值"></a>返回值</h4><p>返回CNContactFetchRequest 初始化好的实例</p>
+<h4 id="Discussion-3"><a href="#Discussion-3" class="headerlink" title="Discussion"></a>Discussion</h4><p><strong>是CNContactFetchRequest这个类的初始化方法，使用init初始化将会报错。</strong></p>
+<h3 id="2_uFF09keysToFetch"><a href="#2_uFF09keysToFetch" class="headerlink" title="2）keysToFetch"></a>2）keysToFetch</h3><p>要想查找的通讯录的属性<br>@property(copy, nonatomic) NSArray <id<cnkeydescriptor>&gt; ahiysToFetch</id<cnkeydescriptor></p>
+<h4 id="Discussion-4"><a href="#Discussion-4" class="headerlink" title="Discussion"></a>Discussion</h4><p>用来查找的通讯录属性里面的属性key或者key descriptors的数组。例如，CNContactEmailAddressesKey, CNContactPhoneNumbersKey, CNContactFormatterStyleFullName 就是查找通讯录的电子邮件，电话号码，全名。</p>
+<h3 id="3_uFF09predicate"><a href="#3_uFF09predicate" class="headerlink" title="3）predicate"></a>3）predicate</h3><p>用来匹配通讯录的谓词<br>@property(copy, nonatomic) NSPredicate *predicate</p>
+<h4 id="Discussion-5"><a href="#Discussion-5" class="headerlink" title="Discussion"></a>Discussion</h4><p><strong>设置这个属性为nil将匹配所有的通讯录或者使用 CNContact 类中的谓词，不支持合成的谓词。</strong></p>
 </span>
       
     </div>
@@ -272,17 +264,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/18/iOS9-CNContactAPI翻译/" rel="next" title="iOS9-CNContactAPI翻译">
-                <i class="fa fa-chevron-left"></i> iOS9-CNContactAPI翻译
+              <a href="/2015/12/21/iOS9-CNContactStoreAPI翻译/" rel="next" title="iOS9-CNContactStoreAPI翻译">
+                <i class="fa fa-chevron-left"></i> iOS9-CNContactStoreAPI翻译
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/12/21/iOS9-CNContactStoreAPI翻译/" rel="prev" title="iOS9-CNContactStoreAPI翻译">
-                iOS9-CNContactStoreAPI翻译 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -297,10 +285,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/12/18/说说使用Mou编写markdown博文的踩过的坑/"
-     data-title="说说使用Mou编写markdown博文的踩过的坑"
+        <div class="ds-share flat" data-thread-key="2015/12/31/iOS9-CNContactFetchRequestAPI翻译/"
+     data-title="iOS9-CNContactFetchRequestAPI翻译"
      data-content=""
-     data-url="http://yoursite.com/2015/12/18/说说使用Mou编写markdown博文的踩过的坑/">
+     data-url="http://yoursite.com/2015/12/31/iOS9-CNContactFetchRequestAPI翻译/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -328,8 +316,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/12/18/说说使用Mou编写markdown博文的踩过的坑/"
-           data-title="说说使用Mou编写markdown博文的踩过的坑" data-url="http://yoursite.com/2015/12/18/说说使用Mou编写markdown博文的踩过的坑/">
+      <div class="ds-thread" data-thread-key="2015/12/31/iOS9-CNContactFetchRequestAPI翻译/"
+           data-title="iOS9-CNContactFetchRequestAPI翻译" data-url="http://yoursite.com/2015/12/31/iOS9-CNContactFetchRequestAPI翻译/">
       </div>
     
   </div>
@@ -430,7 +418,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Mou"><span class="nav-number">1.</span> <span class="nav-text">Mou</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_u4EFB_u4F55_u4E00_u4E2A_u60F3_u8981_u751F_u6548_u7684_u8BED_u6CD5_u548C_u5185_u5BB9_u4E4B_u95F4_u90FD_u8981_u7A7A_u683C_uFF0C_u5426_u5219_u5C31_u7B97Mou_u4E0A_u9762_u751F_u6548_uFF0C_u771F_u6B63_u7F51_u9875_u4E0A_u4E5F_u4E0D_u751F_u6548_u3002"><span class="nav-number">1.1.</span> <span class="nav-text">1.任何一个想要生效的语法和内容之间都要空格，否则就算Mou上面生效，真正网页上也不生效。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_u661F_u53F7_u8BED_u6CD5*_u4F7F_u7528_u7ED3_u675F_uFF0C_u5982_u679C_u4E0B_u4E00_u884C_u6587_u5B57_u4E0D_u9700_u8981_u4F7F_u7528_u5B83_u9700_u8981_u56DE_u8F66_u4E24_u6B21_uFF0C_u5426_u5219_u4E0B_u9762_u7684_u5185_u5BB9_u90FD_u4F1A_u53D7_u5B83_u7684_u5F71_u54CD_u7F29_u8FDB_u4E24_u4E2A_u5B57_u3002_u9519_u8BEF_u793A_u8303_uFF1A"><span class="nav-number">1.2.</span> <span class="nav-text">2.星号语法*使用结束，如果下一行文字不需要使用它需要回车两次，否则下面的内容都会受它的影响缩进两个字。错误示范：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-_u6700_u91CD_u8981_u7684_u4E00_u70B9_uFF0C_u535A_u6587_u7ED3_u5C3E_u5904_u4E0D_u53EF_u4EE5_u6709_u518D_u56DE_u8F66_u6362_u884C_u3002_u535A_u6587_u5230_u54EA_u884C_uFF0C_u6574_u4E2A_u535A_u6587_u5C31_u5728_u54EA_u884C_u7ED3_u675F_u3002"><span class="nav-number">1.3.</span> <span class="nav-text">3.最重要的一点，博文结尾处不可以有再回车换行。博文到哪行，整个博文就在哪行结束。</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction_3A"><span class="nav-number">1.</span> <span class="nav-text">Introduction:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Contact_Fetching_Options_u83B7_u53D6_u901A_u8BAF_u5F55_u7684_u9009_u9879"><span class="nav-number">2.</span> <span class="nav-text">Contact Fetching Options获取通讯录的选项</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1_uFF09mutableObjects"><span class="nav-number">2.1.</span> <span class="nav-text">1）mutableObjects</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Discussion"><span class="nav-number">2.1.1.</span> <span class="nav-text">Discussion</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2_uFF09unifyResults"><span class="nav-number">2.2.</span> <span class="nav-text">2）unifyResults</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Discussion-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">Discussion</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3_uFF09sortOrder"><span class="nav-number">2.3.</span> <span class="nav-text">3）sortOrder</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Discussion-2"><span class="nav-number">2.3.1.</span> <span class="nav-text">Discussion</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Keys_Used_in_Fetching_Contacts_u7528_u6765_u83B7_u53D6_u901A_u8BAF_u5F55_u7684key"><span class="nav-number">3.</span> <span class="nav-text">Keys Used in Fetching Contacts用来获取通讯录的key</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1_uFF09-_initWithKeysToFetch_3A"><span class="nav-number">3.1.</span> <span class="nav-text">1）- initWithKeysToFetch:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u53C2_u6570"><span class="nav-number">3.1.1.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u8FD4_u56DE_u503C"><span class="nav-number">3.1.2.</span> <span class="nav-text">返回值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Discussion-3"><span class="nav-number">3.1.3.</span> <span class="nav-text">Discussion</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2_uFF09keysToFetch"><span class="nav-number">3.2.</span> <span class="nav-text">2）keysToFetch</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Discussion-4"><span class="nav-number">3.2.1.</span> <span class="nav-text">Discussion</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3_uFF09predicate"><span class="nav-number">3.3.</span> <span class="nav-text">3）predicate</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Discussion-5"><span class="nav-number">3.3.1.</span> <span class="nav-text">Discussion</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
