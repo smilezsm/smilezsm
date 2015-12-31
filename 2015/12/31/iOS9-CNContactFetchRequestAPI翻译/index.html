@@ -59,7 +59,7 @@ Contact Fetching Options获取通讯录的选项1）mutableObjectsbool值表示�
 <meta property="og:site_name" content="Grace’s Blog">
 <meta property="og:description" content="Introduction:这个类为获取通讯录定义了一些选项。必须通过通讯录属性的key来获取通讯录的各个属性。使用enumerateContactsWithFetchRequest:error:usingBlock: 这个方法来执行获取通讯录的请求。
 Contact Fetching Options获取通讯录的选项1）mutableObjectsbool值表示是否返回一个可变的通讯录@proper">
-<meta property="og:updated_time" content="2015-12-31T04:04:00.000Z">
+<meta property="og:updated_time" content="2015-12-31T04:07:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS9-CNContactFetchRequestAPI翻译">
 <meta name="twitter:description" content="Introduction:这个类为获取通讯录定义了一些选项。必须通过通讯录属性的key来获取通讯录的各个属性。使用enumerateContactsWithFetchRequest:error:usingBlock: 这个方法来执行获取通讯录的请求。
@@ -268,24 +268,7 @@ Contact Fetching Options获取通讯录的选项1）mutableObjectsbool值表示�
 <h4 id="Discussion-4"><a href="#Discussion-4" class="headerlink" title="Discussion"></a>Discussion</h4><p>用来查找的通讯录属性里面的属性key或者key descriptors的数组。例如，CNContactEmailAddressesKey, CNContactPhoneNumbersKey, CNContactFormatterStyleFullName 就是查找通讯录的电子邮件，电话号码，全名。</p>
 <h3 id="3_uFF09predicate"><a href="#3_uFF09predicate" class="headerlink" title="3）predicate"></a>3）predicate</h3><p>用来匹配通讯录的谓词<br>@property(copy, nonatomic) NSPredicate *predicate</p>
 <h4 id="Discussion-5"><a href="#Discussion-5" class="headerlink" title="Discussion"></a>Discussion</h4><p><strong>设置这个属性为nil将匹配所有的通讯录或者使用 CNContact 类中的谓词，不支持合成的谓词。</strong></p>
-<h2 id="u4E0B_u9762_u4E0A_u4EE3_u7801"><a href="#u4E0B_u9762_u4E0A_u4EE3_u7801" class="headerlink" title="下面上代码"></a>下面上代码</h2><p><code>CNContactStore *store = [[CNContactStore alloc] init];
-//获取访问通讯录权限
-[store requestAccessForEntityType:CNEntityTypeContacts completionHandler:^(BOOL granted, NSError * _Nullable error) {
-        if (granted) {//同意访问
-        //创建获取通讯录的请求，根据通讯录提供的key
-            CNContactFetchRequest *fetchRequest  = [[CNContactFetchRequest alloc] initWithKeysToFetch:@[CNContactPhoneNumbersKey,CNContactFamilyNameKey,CNContactGivenNameKey]];
-            //设置断言为nil表示获取到所有的通讯录
-            fetchRequest.predicate = nil;
-            //执行请求
-            [store enumerateContactsWithFetchRequest:fetchRequest error:nil usingBlock:^(CNContact * _Nonnull contact, BOOL * _Nonnull stop) {
-                CNPhoneNumber *phoneNum = [contact.phoneNumbers firstObject].value;
-                NSLog(@&quot;电话号码 %@&quot;,phoneNum.stringValue);
-                NSLog(@&quot;名字 %@%@&quot;,contact.familyName,contact.givenName);
-            }];
-        }else{
-        }
-    }];</code></p>
-</span>
+<h2 id="u4E0B_u9762_u4E0A_u4EE3_u7801"><a href="#u4E0B_u9762_u4E0A_u4EE3_u7801" class="headerlink" title="下面上代码"></a>下面上代码</h2><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">CNContactStore *store = [[CNContactStore alloc] init];</span><br><span class="line"><span class="comment">//获取访问通讯录权限</span></span><br><span class="line">[store requestAccessForEntityType:CNEntityTypeContacts completionHandler:^(<span class="built_in">BOOL</span> granted, <span class="built_in">NSError</span> * _Nullable error) &#123;</span><br><span class="line">        <span class="keyword">if</span> (granted) &#123;<span class="comment">//同意访问</span></span><br><span class="line">        <span class="comment">//创建获取通讯录的请求，根据通讯录提供的key</span></span><br><span class="line">            CNContactFetchRequest *fetchRequest  = [[CNContactFetchRequest alloc] initWithKeysToFetch:@[CNContactPhoneNumbersKey,CNContactFamilyNameKey,CNContactGivenNameKey]];</span><br><span class="line">            <span class="comment">//设置断言为nil表示获取到所有的通讯录</span></span><br><span class="line">            fetchRequest<span class="variable">.predicate</span> = <span class="literal">nil</span>;</span><br><span class="line">            <span class="comment">//执行请求</span></span><br><span class="line">            [store enumerateContactsWithFetchRequest:fetchRequest error:<span class="literal">nil</span> usingBlock:^(CNContact * _Nonnull contact, <span class="built_in">BOOL</span> * _Nonnull stop) &#123;</span><br><span class="line">                CNPhoneNumber *phoneNum = [contact<span class="variable">.phoneNumbers</span> firstObject]<span class="variable">.value</span>;</span><br><span class="line">                <span class="built_in">NSLog</span>(<span class="string">@"电话号码 %@"</span>,phoneNum<span class="variable">.stringValue</span>);</span><br><span class="line">                <span class="built_in">NSLog</span>(<span class="string">@"名字 %@%@"</span>,contact<span class="variable">.familyName</span>,contact<span class="variable">.givenName</span>);</span><br><span class="line">            &#125;];</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;];</span><br></pre></td></tr></table></figure></span>
       
     </div>
 
