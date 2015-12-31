@@ -61,7 +61,7 @@ IntroductionCATransaction（事物）是 CoreAnimation用来将多图层树的�
 <meta property="og:description" content="只是生硬的翻译而已。请-翻-用-。
 IntroductionCATransaction（事物）是 CoreAnimation用来将多图层树的操作批量转换成自动更新的渲染树。对图层树的每次修饰都需要事物的参与。CoreAnimation支持两种事物：显性事物和隐性事物。
 显性事物是：工程师在修饰图层树之前要先调用[CATransaction begin]’方法，完成修饰后调用[CATransacti">
-<meta property="og:updated_time" content="2015-12-31T04:29:46.000Z">
+<meta property="og:updated_time" content="2015-12-31T04:31:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CATransaction-API翻译">
 <meta name="twitter:description" content="只是生硬的翻译而已。请-翻-用-。
@@ -253,12 +253,11 @@ IntroductionCATransaction（事物）是 CoreAnimation用来将多图层树的�
 <h3 id="+__28nullable_id_29valueForKey_3A_28NSString_*_29key_3B"><a href="#+__28nullable_id_29valueForKey_3A_28NSString_*_29key_3B" class="headerlink" title="+ (nullable id)valueForKey:(NSString *)key;"></a>+ (nullable id)valueForKey:(NSString *)key;</h3><h3 id="+__28void_29setValue_3A_28nullable_id_29anObject_forKey_3A_28NSString_*_29key_3B"><a href="#+__28void_29setValue_3A_28nullable_id_29anObject_forKey_3A_28NSString_*_29key_3B" class="headerlink" title="+ (void)setValue:(nullable id)anObject forKey:(NSString *)key;"></a>+ (void)setValue:(nullable id)anObject forKey:(NSString *)key;</h3><p>当前线程下事物的任意key-data。<br>嵌套事物有嵌套的数据范围，读取一个查询最深范围的key，也就是设置一个key处于最深的范围。（并没有看懂原文啥意思，大概还是K-V那套）<br>目前事物中目前支持设置的属性有：”animationDuration”, “animationTimingFunction”, “completionBlock”,<br>  “disableActions”.<br>请尝试给属性设置一个类型不同于属性的文件类型有一个未知的结果。<br>@end</p>
 <hr>
 <h3 id="u4E8B_u7269_u7684_u5C5E_u6027_ids"><a href="#u4E8B_u7269_u7684_u5C5E_u6027_ids" class="headerlink" title="事物的属性 ids"></a>事物的属性 ids</h3><ul>
-<li>CA_EXTERN NSString * const <code>kCATransactionAnimationDuration</code><br>  <strong>OSX_AVAILABLE_STARTING (</strong>MAC_10_5, __IPHONE_2_0);</li>
-<li>CA_EXTERN NSString * const <code>kCATransactionDisableActions</code><br>  <strong>OSX_AVAILABLE_STARTING (</strong>MAC_10_5, __IPHONE_2_0);   </li>
-<li>CA_EXTERN NSString * const <code>kCATransactionAnimationTimingFunction</code><br>  <strong>OSX_AVAILABLE_STARTING (</strong>MAC_10_6, __IPHONE_3_0);</li>
-<li>CA_EXTERN NSString * const <code>kCATransactionCompletionBlock</code><br>  <strong>OSX_AVAILABLE_STARTING (</strong>MAC_10_6, __IPHONE_4_0);</li>
+<li>CA_EXTERN NSString * const <code>kCATransactionAnimationDuration</code></li>
+<li>CA_EXTERN NSString * const <code>kCATransactionDisableActions</code></li>
+<li>CA_EXTERN NSString * const <code>kCATransactionAnimationTimingFunction</code></li>
+<li>CA_EXTERN NSString * const <code>kCATransactionCompletionBlock</code></li>
 </ul>
-<p>NS_ASSUME_NONNULL_END</p>
 </span>
       
     </div>
