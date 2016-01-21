@@ -51,19 +51,19 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="description" content="introductionNSRunLoop 类定义了在程序界面用来管理输入源的对象。一个runloop对象处理从屏幕系统中产生的事件：例如鼠标点击和键盘输入事件，NSPort线程通讯对象和NSConnection 网络链接对象等产生的事件。还有NSTimer定时器产生的事件。
+注意1：你的应用是不能创建或者明确的管理NSRunLoop 对象的。每条线程对象，包含主线程都会在需要的时候自动创建一个r">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2015/12/18/hello-world/index.html">
+<meta property="og:title" content="RunLoop-API翻译">
+<meta property="og:url" content="http://yoursite.com/2016/01/21/RunLoop-API翻译/index.html">
 <meta property="og:site_name" content="Grace’s Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2015-12-18T06:46:12.000Z">
+<meta property="og:description" content="introductionNSRunLoop 类定义了在程序界面用来管理输入源的对象。一个runloop对象处理从屏幕系统中产生的事件：例如鼠标点击和键盘输入事件，NSPort线程通讯对象和NSConnection 网络链接对象等产生的事件。还有NSTimer定时器产生的事件。
+注意1：你的应用是不能创建或者明确的管理NSRunLoop 对象的。每条线程对象，包含主线程都会在需要的时候自动创建一个r">
+<meta property="og:updated_time" content="2016-01-21T07:54:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="RunLoop-API翻译">
+<meta name="twitter:description" content="introductionNSRunLoop 类定义了在程序界面用来管理输入源的对象。一个runloop对象处理从屏幕系统中产生的事件：例如鼠标点击和键盘输入事件，NSPort线程通讯对象和NSConnection 网络链接对象等产生的事件。还有NSTimer定时器产生的事件。
+注意1：你的应用是不能创建或者明确的管理NSRunLoop 对象的。每条线程对象，包含主线程都会在需要的时候自动创建一个r">
 
 
 
@@ -75,7 +75,7 @@ Quick">
   };
 </script>
 
-  <title> Hello World | Grace’s Blog </title>
+  <title> RunLoop-API翻译 | Grace’s Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-hans">
@@ -195,7 +195,7 @@ Quick">
             
             
               
-                Hello World
+                RunLoop-API翻译
               
             
           </h1>
@@ -204,19 +204,34 @@ Quick">
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2015-12-18T14:46:12+08:00" content="2015-12-18">
-              2015-12-18
+            <time itemprop="dateCreated" datetime="2016-01-21T15:45:17+08:00" content="2016-01-21">
+              2016-01-21
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分類於
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/iOS技术/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS技术</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/12/18/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/18/hello-world/" itemprop="commentsCount"></span>
+                <a href="/2016/01/21/RunLoop-API翻译/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/21/RunLoop-API翻译/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -235,15 +250,9 @@ Quick">
       
 
       
-        <span itemprop="articleBody"><p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start"><a href="#Quick_Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create_a_new_post"><a href="#Create_a_new_post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server"><a href="#Run_server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files"><a href="#Generate_static_files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites"><a href="#Deploy_to_remote_sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <span itemprop="articleBody"><h2 id="introduction"><a href="#introduction" class="headerlink" title="introduction"></a>introduction</h2><p>NSRunLoop 类定义了在程序界面用来管理输入源的对象。一个runloop对象处理从屏幕系统中产生的事件：例如鼠标点击和键盘输入事件，NSPort线程通讯对象和NSConnection 网络链接对象等产生的事件。还有NSTimer定时器产生的事件。</p>
+<h3 id="u6CE8_u610F1_uFF1A"><a href="#u6CE8_u610F1_uFF1A" class="headerlink" title="注意1："></a>注意1：</h3><p><strong>你的应用是不能创建或者明确的管理NSRunLoop 对象的。</strong><br>每条线程对象，包含主线程都<strong>会在需要的时候自动创建</strong>一个runloop进行对应。如果你需要获取到当前线程的运行循环，你需要使用NSRunLoop的类方法：<strong> currentRunLoop</strong>.</p>
+<h3 id="u6CE8_u610F2_uFF1A"><a href="#u6CE8_u610F2_uFF1A" class="headerlink" title="注意2："></a>注意2：</h3><p>1）从运行循环的角度看，定时器NSTimer 对象比较特殊，不属于输入事件，所以这就意味着当开启定时器的时候不会激活运行循环（需要将定时器手动添加到runloop中）。<br>2）运行循环不是线程安全的类，它的方法也只能在当前的线程内调用。你不能在其他线程调用另外线程的runloop方法，否则将会出错。</p>
 </span>
       
     </div>
@@ -255,17 +264,13 @@ Quick">
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/18/Good-Old-Days/" rel="next" title="Good Old Days">
-                <i class="fa fa-chevron-left"></i> Good Old Days
+              <a href="/2015/12/31/CATransaction-API翻译/" rel="next" title="CATransaction-API翻译">
+                <i class="fa fa-chevron-left"></i> CATransaction-API翻译
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/12/18/iOS9-CNContactAPI翻译/" rel="prev" title="iOS9-CNContactAPI翻译">
-                iOS9-CNContactAPI翻译 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -280,10 +285,10 @@ Quick">
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/12/18/hello-world/"
-     data-title="Hello World"
+        <div class="ds-share flat" data-thread-key="2016/01/21/RunLoop-API翻译/"
+     data-title="RunLoop-API翻译"
      data-content=""
-     data-url="http://yoursite.com/2015/12/18/hello-world/">
+     data-url="http://yoursite.com/2016/01/21/RunLoop-API翻译/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -311,8 +316,8 @@ Quick">
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/12/18/hello-world/"
-           data-title="Hello World" data-url="http://yoursite.com/2015/12/18/hello-world/">
+      <div class="ds-thread" data-thread-key="2016/01/21/RunLoop-API翻译/"
+           data-title="RunLoop-API翻译" data-url="http://yoursite.com/2016/01/21/RunLoop-API翻译/">
       </div>
     
   </div>
@@ -413,7 +418,7 @@ Quick">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick_Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create_a_new_post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run_server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate_static_files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy_to_remote_sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#introduction"><span class="nav-number">1.</span> <span class="nav-text">introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u6CE8_u610F1_uFF1A"><span class="nav-number">1.1.</span> <span class="nav-text">注意1：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6CE8_u610F2_uFF1A"><span class="nav-number">1.2.</span> <span class="nav-text">注意2：</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
