@@ -64,7 +64,7 @@ touchesBegan:with">
 
 touchesBegan:with">
 <meta property="og:image" content="https://img.alicdn.com/imgextra/i2/719068679/TB2ISA1mpXXXXbUXpXXXXXXXXXX_!!719068679.jpg">
-<meta property="og:updated_time" content="2016-04-06T13:43:07.000Z">
+<meta property="og:updated_time" content="2016-04-06T13:45:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UIKit-UIResponder">
 <meta name="twitter:description" content="UIResponderIntroductionUIResponder这个类用于处理事件的响应。UIApplication UIView以及UIView子类（包括UIWindow）等都继承自UIResponder。这些类的实例作为一个响应对象有时候会涉及到响应者事件。最常见的事件有：触摸事件和运动事件。
@@ -272,8 +272,8 @@ touchesBegan:with">
 <li>motionEnded:withEvent:, </li>
 <li>motionCancelled:withEvent:等。</li>
 </ol>
-<p>另外，canPerformAction:withSender:方法可以允许响应者在当undoManager属性返回响应链中最近的NSUndoManager对象的时候从用户界面使命令生效。</p>
-<h3 id="u8FDC_u7AEF_u63A7_u5236_u4E8B_u4EF6_uFF08Remote-Control_Event_uFF09"><a href="#u8FDC_u7AEF_u63A7_u5236_u4E8B_u4EF6_uFF08Remote-Control_Event_uFF09" class="headerlink" title="远端控制事件（Remote-Control Event）"></a>远端控制事件（Remote-Control Event）</h3><p>在iOS4，UIResponder新加了remoteControlReceivedWithEvent:这个方法来处理远程控制事件。</p>
+<p>另外，<strong>canPerformAction:withSender:</strong>方法可以允许响应者在当undoManager属性返回响应链中最近的NSUndoManager对象的时候从用户界面使命令生效。</p>
+<h3 id="u8FDC_u7AEF_u63A7_u5236_u4E8B_u4EF6_uFF08Remote-Control_Event_uFF09"><a href="#u8FDC_u7AEF_u63A7_u5236_u4E8B_u4EF6_uFF08Remote-Control_Event_uFF09" class="headerlink" title="远端控制事件（Remote-Control Event）"></a>远端控制事件（Remote-Control Event）</h3><p>在iOS4，UIResponder新加了<strong>remoteControlReceivedWithEvent:</strong>这个方法来处理远程控制事件。</p>
 <h2 id="u5904_u7406_u54CD_u5E94_u94FE_uFF08Responder_Chain_uFF09"><a href="#u5904_u7406_u54CD_u5E94_u94FE_uFF08Responder_Chain_uFF09" class="headerlink" title="处理响应链（Responder Chain）"></a>处理响应链（Responder Chain）</h2><h3 id="First_Responder"><a href="#First_Responder" class="headerlink" title="First Responder"></a>First Responder</h3><p>维基百科上对它的一般定义为：第一响应者是在当发生车祸，自然灾害或者恐怖袭击等紧急情况下作为第一人到达现场处理的人。一般包含，警察，消防员，急救医务人员等等。<br>因此，在APP中，第一个接收到事件的对象称为第一响应者。它能接收到关键事件，摇晃运动事件，还能接收（鼠标，多手指触摸）等等事件。<strong>一般，第一响应者是一个window中APP认为最适合处理事件的view</strong>。</p>
 <h3 id="u4E8B_u4EF6_u54CD_u5E94"><a href="#u4E8B_u4EF6_u54CD_u5E94" class="headerlink" title="事件响应"></a>事件响应</h3><h4 id="u4E8B_u4EF6_u4F20_u9012_u8DEF_u5F84_uFF1A"><a href="#u4E8B_u4EF6_u4F20_u9012_u8DEF_u5F84_uFF1A" class="headerlink" title="事件传递路径："></a>事件传递路径：</h4><p><img src="https://img.alicdn.com/imgextra/i2/719068679/TB2ISA1mpXXXXbUXpXXXXXXXXXX_!!719068679.jpg" alt="Mou icon"><br>如上图所示：</p>
 <ol>
