@@ -51,20 +51,26 @@
 
 
 
-<meta name="description" content="title: UIKit-UIResponderdate: 2016-04-06 18:03:14categories: iOS技术
-UIResponderIntroductionUIResponder这个类用于处理事件的响应。UIApplication UIView以及UIView子类（包括UIWindow）等都继承自UIResponder。这些类的实例作为一个响应对象有时候会涉及到响应者事件。">
+<meta name="description" content="UIResponderIntroductionUIResponder这个类用于处理事件的响应。UIApplication UIView以及UIView子类（包括UIWindow）等都继承自UIResponder。这些类的实例作为一个响应对象有时候会涉及到响应者事件。最常见的事件有：触摸事件和运动事件。
+触摸事件（Touch Event）主要的事件处理方法有： 
+
+touchesBegan:with">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Grace’s Blog">
+<meta property="og:title" content="UIKit-UIResponder">
 <meta property="og:url" content="http://yoursite.com/2016/04/06/UIKit-UIResponder/index.html">
 <meta property="og:site_name" content="Grace’s Blog">
-<meta property="og:description" content="title: UIKit-UIResponderdate: 2016-04-06 18:03:14categories: iOS技术
-UIResponderIntroductionUIResponder这个类用于处理事件的响应。UIApplication UIView以及UIView子类（包括UIWindow）等都继承自UIResponder。这些类的实例作为一个响应对象有时候会涉及到响应者事件。">
+<meta property="og:description" content="UIResponderIntroductionUIResponder这个类用于处理事件的响应。UIApplication UIView以及UIView子类（包括UIWindow）等都继承自UIResponder。这些类的实例作为一个响应对象有时候会涉及到响应者事件。最常见的事件有：触摸事件和运动事件。
+触摸事件（Touch Event）主要的事件处理方法有： 
+
+touchesBegan:with">
 <meta property="og:image" content="https://img.alicdn.com/imgextra/i2/719068679/TB2ISA1mpXXXXbUXpXXXXXXXXXX_!!719068679.jpg">
-<meta property="og:updated_time" content="2016-04-06T10:46:26.000Z">
+<meta property="og:updated_time" content="2016-04-06T13:43:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Grace’s Blog">
-<meta name="twitter:description" content="title: UIKit-UIResponderdate: 2016-04-06 18:03:14categories: iOS技术
-UIResponderIntroductionUIResponder这个类用于处理事件的响应。UIApplication UIView以及UIView子类（包括UIWindow）等都继承自UIResponder。这些类的实例作为一个响应对象有时候会涉及到响应者事件。">
+<meta name="twitter:title" content="UIKit-UIResponder">
+<meta name="twitter:description" content="UIResponderIntroductionUIResponder这个类用于处理事件的响应。UIApplication UIView以及UIView子类（包括UIWindow）等都继承自UIResponder。这些类的实例作为一个响应对象有时候会涉及到响应者事件。最常见的事件有：触摸事件和运动事件。
+触摸事件（Touch Event）主要的事件处理方法有： 
+
+touchesBegan:with">
 
 
 
@@ -76,7 +82,7 @@ UIResponderIntroductionUIResponder这个类用于处理事件的响应。UIAppli
   };
 </script>
 
-  <title>  | Grace’s Blog </title>
+  <title> UIKit-UIResponder | Grace’s Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-hans">
@@ -196,7 +202,7 @@ UIResponderIntroductionUIResponder这个类用于处理事件的响应。UIAppli
             
             
               
-                
+                UIKit-UIResponder
               
             
           </h1>
@@ -205,11 +211,26 @@ UIResponderIntroductionUIResponder这个类用于处理事件的响应。UIAppli
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2016-04-06T18:46:26+08:00" content="2016-04-06">
+            <time itemprop="dateCreated" datetime="2016-04-06T18:03:14+08:00" content="2016-04-06">
               2016-04-06
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分類於
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/iOS技术/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS技术</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -236,8 +257,7 @@ UIResponderIntroductionUIResponder这个类用于处理事件的响应。UIAppli
       
 
       
-        <span itemprop="articleBody"><p>title: UIKit-UIResponder<br>date: 2016-04-06 18:03:14<br>categories: iOS技术</p>
-<h1 id="UIResponder"><a href="#UIResponder" class="headerlink" title="UIResponder"></a>UIResponder</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p><strong>UIResponder</strong>这个类用于处理事件的响应。<br><strong>UIApplication</strong> <strong>UIView</strong>以及<strong>UIView子类</strong>（包括<strong>UIWindow</strong>）等都继承自<strong>UIResponder</strong>。<br>这些类的实例作为一个响应对象有时候会涉及到响应者事件。最常见的事件有：<strong>触摸事件</strong>和<strong>运动事件</strong>。</p>
+        <span itemprop="articleBody"><h1 id="UIResponder"><a href="#UIResponder" class="headerlink" title="UIResponder"></a>UIResponder</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p><strong>UIResponder</strong>这个类用于处理事件的响应。<br><strong>UIApplication</strong> <strong>UIView</strong>以及<strong>UIView子类</strong>（包括<strong>UIWindow</strong>）等都继承自<strong>UIResponder</strong>。<br>这些类的实例作为一个响应对象有时候会涉及到响应者事件。最常见的事件有：<strong>触摸事件</strong>和<strong>运动事件</strong>。</p>
 <h3 id="u89E6_u6478_u4E8B_u4EF6_uFF08Touch_Event_uFF09"><a href="#u89E6_u6478_u4E8B_u4EF6_uFF08Touch_Event_uFF09" class="headerlink" title="触摸事件（Touch Event）"></a>触摸事件（Touch Event）</h3><p>主要的事件处理方法有： </p>
 <ol>
 <li>touchesBegan:withEvent:, </li>
@@ -298,7 +318,7 @@ UIResponderIntroductionUIResponder这个类用于处理事件的响应。UIAppli
     <div class="post-spread">
       
         <div class="ds-share flat" data-thread-key="2016/04/06/UIKit-UIResponder/"
-     data-title=""
+     data-title="UIKit-UIResponder"
      data-content=""
      data-url="http://yoursite.com/2016/04/06/UIKit-UIResponder/">
   <div class="ds-share-inline">
@@ -329,7 +349,7 @@ UIResponderIntroductionUIResponder这个类用于处理事件的响应。UIAppli
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/04/06/UIKit-UIResponder/"
-           data-title="" data-url="http://yoursite.com/2016/04/06/UIKit-UIResponder/">
+           data-title="UIKit-UIResponder" data-url="http://yoursite.com/2016/04/06/UIKit-UIResponder/">
       </div>
     
   </div>
