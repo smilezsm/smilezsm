@@ -51,19 +51,16 @@
 
 
 
-<meta name="description" content="Introduction:这个类为获取通讯录定义了一些选项。必须通过通讯录属性的key来获取通讯录的各个属性。使用enumerateContactsWithFetchRequest:error:usingBlock: 这个方法来执行获取通讯录的请求。
-Contact Fetching Options获取通讯录的选项1）mutableObjectsbool值表示是否返回一个可变的通讯录@proper">
+<meta name="description" content="雨脆弱的淋下，痛却不说话">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iOS9-CNContactFetchRequestAPI翻译">
-<meta property="og:url" content="http://yoursite.com/2015/12/31/iOS9-CNContactFetchRequestAPI翻译/index.html">
+<meta property="og:title" content="UIKit-UIResponder">
+<meta property="og:url" content="http://yoursite.com/2016/04/06/UIKit-UIResponder/index.html">
 <meta property="og:site_name" content="Grace’s Blog">
-<meta property="og:description" content="Introduction:这个类为获取通讯录定义了一些选项。必须通过通讯录属性的key来获取通讯录的各个属性。使用enumerateContactsWithFetchRequest:error:usingBlock: 这个方法来执行获取通讯录的请求。
-Contact Fetching Options获取通讯录的选项1）mutableObjectsbool值表示是否返回一个可变的通讯录@proper">
-<meta property="og:updated_time" content="2015-12-31T04:07:52.000Z">
+<meta property="og:description" content="雨脆弱的淋下，痛却不说话">
+<meta property="og:updated_time" content="2016-04-06T10:03:14.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS9-CNContactFetchRequestAPI翻译">
-<meta name="twitter:description" content="Introduction:这个类为获取通讯录定义了一些选项。必须通过通讯录属性的key来获取通讯录的各个属性。使用enumerateContactsWithFetchRequest:error:usingBlock: 这个方法来执行获取通讯录的请求。
-Contact Fetching Options获取通讯录的选项1）mutableObjectsbool值表示是否返回一个可变的通讯录@proper">
+<meta name="twitter:title" content="UIKit-UIResponder">
+<meta name="twitter:description" content="雨脆弱的淋下，痛却不说话">
 
 
 
@@ -75,7 +72,7 @@ Contact Fetching Options获取通讯录的选项1）mutableObjectsbool值表示�
   };
 </script>
 
-  <title> iOS9-CNContactFetchRequestAPI翻译 | Grace’s Blog </title>
+  <title> UIKit-UIResponder | Grace’s Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-hans">
@@ -195,7 +192,7 @@ Contact Fetching Options获取通讯录的选项1）mutableObjectsbool值表示�
             
             
               
-                iOS9-CNContactFetchRequestAPI翻译
+                UIKit-UIResponder
               
             
           </h1>
@@ -204,34 +201,19 @@ Contact Fetching Options获取通讯录的选项1）mutableObjectsbool值表示�
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2015-12-31T11:33:47+08:00" content="2015-12-31">
-              2015-12-31
+            <time itemprop="dateCreated" datetime="2016-04-06T18:03:14+08:00" content="2016-04-06">
+              2016-04-06
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS技术/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS技术</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/12/31/iOS9-CNContactFetchRequestAPI翻译/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/31/iOS9-CNContactFetchRequestAPI翻译/" itemprop="commentsCount"></span>
+                <a href="/2016/04/06/UIKit-UIResponder/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/06/UIKit-UIResponder/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -250,25 +232,7 @@ Contact Fetching Options获取通讯录的选项1）mutableObjectsbool值表示�
       
 
       
-        <span itemprop="articleBody"><h2 id="Introduction_3A"><a href="#Introduction_3A" class="headerlink" title="Introduction:"></a>Introduction:</h2><p>这个类为获取通讯录定义了一些选项。必须通过通讯录属性的key来获取通讯录的各个属性。使用<strong>enumerateContactsWithFetchRequest:error:usingBlock:</strong> 这个方法来执行获取通讯录的请求。</p>
-<h2 id="Contact_Fetching_Options_u83B7_u53D6_u901A_u8BAF_u5F55_u7684_u9009_u9879"><a href="#Contact_Fetching_Options_u83B7_u53D6_u901A_u8BAF_u5F55_u7684_u9009_u9879" class="headerlink" title="Contact Fetching Options获取通讯录的选项"></a>Contact Fetching Options获取通讯录的选项</h2><h3 id="1_uFF09mutableObjects"><a href="#1_uFF09mutableObjects" class="headerlink" title="1）mutableObjects"></a>1）mutableObjects</h3><p>bool值表示是否返回一个可变的通讯录<br>@property(nonatomic) BOOL mutableObjects</p>
-<h4 id="Discussion"><a href="#Discussion" class="headerlink" title="Discussion"></a>Discussion</h4><p>当返回yes，则返回CNMutableContact对象，否则返回CNContact 对象。默认返回NO。</p>
-<h3 id="2_uFF09unifyResults"><a href="#2_uFF09unifyResults" class="headerlink" title="2）unifyResults"></a>2）unifyResults</h3><p>bool值表示将返回一个统一标准的通讯录<br>@property(nonatomic) BOOL unifyResults</p>
-<h4 id="Discussion-1"><a href="#Discussion-1" class="headerlink" title="Discussion"></a>Discussion</h4><p>统一标准的通讯录的意思是：来自个人通讯录的属性的集合。如果返回yes,将返回一个统一标准的通讯录，否则的话将返回个人的通讯录。默认返回YES.</p>
-<h3 id="3_uFF09sortOrder"><a href="#3_uFF09sortOrder" class="headerlink" title="3）sortOrder"></a>3）sortOrder</h3><p>通讯录的排序方式<br>@property(nonatomic) CNContactSortOrder sortOrder</p>
-<h4 id="Discussion-2"><a href="#Discussion-2" class="headerlink" title="Discussion"></a>Discussion</h4><p>默认排序方式CNContactSortOrderNone.</p>
-<h2 id="Keys_Used_in_Fetching_Contacts_u7528_u6765_u83B7_u53D6_u901A_u8BAF_u5F55_u7684key"><a href="#Keys_Used_in_Fetching_Contacts_u7528_u6765_u83B7_u53D6_u901A_u8BAF_u5F55_u7684key" class="headerlink" title="Keys Used in Fetching Contacts用来获取通讯录的key"></a>Keys Used in Fetching Contacts用来获取通讯录的key</h2><h3 id="1_uFF09-_initWithKeysToFetch_3A"><a href="#1_uFF09-_initWithKeysToFetch_3A" class="headerlink" title="1）- initWithKeysToFetch:"></a>1）- initWithKeysToFetch:</h3><p>Designated Initializer<br>指定的通过特定的key来初始化的方法</p>
-<h4 id="u53C2_u6570"><a href="#u53C2_u6570" class="headerlink" title="参数"></a>参数</h4><ul>
-<li>keysToFetch</li>
-<li>用来查找通讯录的属于通讯录属性的key或者key descriptors</li>
-</ul>
-<h4 id="u8FD4_u56DE_u503C"><a href="#u8FD4_u56DE_u503C" class="headerlink" title="返回值"></a>返回值</h4><p>返回CNContactFetchRequest 初始化好的实例</p>
-<h4 id="Discussion-3"><a href="#Discussion-3" class="headerlink" title="Discussion"></a>Discussion</h4><p><strong>是CNContactFetchRequest这个类的初始化方法，使用init初始化将会报错。</strong></p>
-<h3 id="2_uFF09keysToFetch"><a href="#2_uFF09keysToFetch" class="headerlink" title="2）keysToFetch"></a>2）keysToFetch</h3><p>要想查找的通讯录的属性<br>@property(copy, nonatomic) NSArray <id<cnkeydescriptor>&gt; ahiysToFetch</id<cnkeydescriptor></p>
-<h4 id="Discussion-4"><a href="#Discussion-4" class="headerlink" title="Discussion"></a>Discussion</h4><p>用来查找的通讯录属性里面的属性key或者key descriptors的数组。例如，CNContactEmailAddressesKey, CNContactPhoneNumbersKey, CNContactFormatterStyleFullName 就是查找通讯录的电子邮件，电话号码，全名。</p>
-<h3 id="3_uFF09predicate"><a href="#3_uFF09predicate" class="headerlink" title="3）predicate"></a>3）predicate</h3><p>用来匹配通讯录的谓词<br>@property(copy, nonatomic) NSPredicate *predicate</p>
-<h4 id="Discussion-5"><a href="#Discussion-5" class="headerlink" title="Discussion"></a>Discussion</h4><p><strong>设置这个属性为nil将匹配所有的通讯录或者使用 CNContact 类中的谓词，不支持合成的谓词。</strong></p>
-<h2 id="u4E0B_u9762_u4E0A_u4EE3_u7801"><a href="#u4E0B_u9762_u4E0A_u4EE3_u7801" class="headerlink" title="下面上代码"></a>下面上代码</h2><figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">CNContactStore *store = [[CNContactStore alloc] init];</span><br><span class="line"><span class="comment">//获取访问通讯录权限</span></span><br><span class="line">[store requestAccessForEntityType:CNEntityTypeContacts completionHandler:^(<span class="built_in">BOOL</span> granted, <span class="built_in">NSError</span> * _Nullable error) &#123;</span><br><span class="line">        <span class="keyword">if</span> (granted) &#123;<span class="comment">//同意访问</span></span><br><span class="line">        <span class="comment">//创建获取通讯录的请求，根据通讯录提供的key</span></span><br><span class="line">            CNContactFetchRequest *fetchRequest  = [[CNContactFetchRequest alloc] initWithKeysToFetch:@[CNContactPhoneNumbersKey,CNContactFamilyNameKey,CNContactGivenNameKey]];</span><br><span class="line">            <span class="comment">//设置断言为nil表示获取到所有的通讯录</span></span><br><span class="line">            fetchRequest<span class="variable">.predicate</span> = <span class="literal">nil</span>;</span><br><span class="line">            <span class="comment">//执行请求</span></span><br><span class="line">            [store enumerateContactsWithFetchRequest:fetchRequest error:<span class="literal">nil</span> usingBlock:^(CNContact * _Nonnull contact, <span class="built_in">BOOL</span> * _Nonnull stop) &#123;</span><br><span class="line">                CNPhoneNumber *phoneNum = [contact<span class="variable">.phoneNumbers</span> firstObject]<span class="variable">.value</span>;</span><br><span class="line">                <span class="built_in">NSLog</span>(<span class="string">@"电话号码 %@"</span>,phoneNum<span class="variable">.stringValue</span>);</span><br><span class="line">                <span class="built_in">NSLog</span>(<span class="string">@"名字 %@%@"</span>,contact<span class="variable">.familyName</span>,contact<span class="variable">.givenName</span>);</span><br><span class="line">            &#125;];</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;];</span><br></pre></td></tr></table></figure></span>
+        <span itemprop="articleBody"></span>
       
     </div>
 
@@ -279,17 +243,13 @@ Contact Fetching Options获取通讯录的选项1）mutableObjectsbool值表示�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/21/iOS9-CNContactStoreAPI翻译/" rel="next" title="iOS9-CNContactStoreAPI翻译">
-                <i class="fa fa-chevron-left"></i> iOS9-CNContactStoreAPI翻译
+              <a href="/2016/02/18/iOS的那些坑/" rel="next" title="iOS的那些坑">
+                <i class="fa fa-chevron-left"></i> iOS的那些坑
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/12/31/CATransaction-API翻译/" rel="prev" title="CATransaction-API翻译">
-                CATransaction-API翻译 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -304,10 +264,10 @@ Contact Fetching Options获取通讯录的选项1）mutableObjectsbool值表示�
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/12/31/iOS9-CNContactFetchRequestAPI翻译/"
-     data-title="iOS9-CNContactFetchRequestAPI翻译"
+        <div class="ds-share flat" data-thread-key="2016/04/06/UIKit-UIResponder/"
+     data-title="UIKit-UIResponder"
      data-content=""
-     data-url="http://yoursite.com/2015/12/31/iOS9-CNContactFetchRequestAPI翻译/">
+     data-url="http://yoursite.com/2016/04/06/UIKit-UIResponder/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -335,8 +295,8 @@ Contact Fetching Options获取通讯录的选项1）mutableObjectsbool值表示�
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/12/31/iOS9-CNContactFetchRequestAPI翻译/"
-           data-title="iOS9-CNContactFetchRequestAPI翻译" data-url="http://yoursite.com/2015/12/31/iOS9-CNContactFetchRequestAPI翻译/">
+      <div class="ds-thread" data-thread-key="2016/04/06/UIKit-UIResponder/"
+           data-title="UIKit-UIResponder" data-url="http://yoursite.com/2016/04/06/UIKit-UIResponder/">
       </div>
     
   </div>
@@ -437,7 +397,7 @@ Contact Fetching Options获取通讯录的选项1）mutableObjectsbool值表示�
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction_3A"><span class="nav-number">1.</span> <span class="nav-text">Introduction:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Contact_Fetching_Options_u83B7_u53D6_u901A_u8BAF_u5F55_u7684_u9009_u9879"><span class="nav-number">2.</span> <span class="nav-text">Contact Fetching Options获取通讯录的选项</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1_uFF09mutableObjects"><span class="nav-number">2.1.</span> <span class="nav-text">1）mutableObjects</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Discussion"><span class="nav-number">2.1.1.</span> <span class="nav-text">Discussion</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2_uFF09unifyResults"><span class="nav-number">2.2.</span> <span class="nav-text">2）unifyResults</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Discussion-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">Discussion</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3_uFF09sortOrder"><span class="nav-number">2.3.</span> <span class="nav-text">3）sortOrder</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Discussion-2"><span class="nav-number">2.3.1.</span> <span class="nav-text">Discussion</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Keys_Used_in_Fetching_Contacts_u7528_u6765_u83B7_u53D6_u901A_u8BAF_u5F55_u7684key"><span class="nav-number">3.</span> <span class="nav-text">Keys Used in Fetching Contacts用来获取通讯录的key</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1_uFF09-_initWithKeysToFetch_3A"><span class="nav-number">3.1.</span> <span class="nav-text">1）- initWithKeysToFetch:</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u53C2_u6570"><span class="nav-number">3.1.1.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u8FD4_u56DE_u503C"><span class="nav-number">3.1.2.</span> <span class="nav-text">返回值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Discussion-3"><span class="nav-number">3.1.3.</span> <span class="nav-text">Discussion</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2_uFF09keysToFetch"><span class="nav-number">3.2.</span> <span class="nav-text">2）keysToFetch</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Discussion-4"><span class="nav-number">3.2.1.</span> <span class="nav-text">Discussion</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3_uFF09predicate"><span class="nav-number">3.3.</span> <span class="nav-text">3）predicate</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Discussion-5"><span class="nav-number">3.3.1.</span> <span class="nav-text">Discussion</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u4E0B_u9762_u4E0A_u4EE3_u7801"><span class="nav-number">4.</span> <span class="nav-text">下面上代码</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目錄</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
