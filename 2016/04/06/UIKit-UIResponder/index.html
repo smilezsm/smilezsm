@@ -51,16 +51,19 @@
 
 
 
-<meta name="description" content="雨脆弱的淋下，痛却不说话">
+<meta name="description" content="title: UIKit-UIResponderdate: 2016-04-06 18:03:14categories: iOS技术
+UIResponderIntroductionUIResponder这个类用于处理事件的响应。UIApplication UIView以及UIView子类（包括UIWindow）等都继承自UIResponder。这些类的实例作为一个响应对象有时候会涉及到响应者事件。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="UIKit-UIResponder">
+<meta property="og:title" content="Grace’s Blog">
 <meta property="og:url" content="http://yoursite.com/2016/04/06/UIKit-UIResponder/index.html">
 <meta property="og:site_name" content="Grace’s Blog">
-<meta property="og:description" content="雨脆弱的淋下，痛却不说话">
-<meta property="og:updated_time" content="2016-04-06T10:03:14.000Z">
+<meta property="og:description" content="title: UIKit-UIResponderdate: 2016-04-06 18:03:14categories: iOS技术
+UIResponderIntroductionUIResponder这个类用于处理事件的响应。UIApplication UIView以及UIView子类（包括UIWindow）等都继承自UIResponder。这些类的实例作为一个响应对象有时候会涉及到响应者事件。">
+<meta property="og:updated_time" content="2016-04-06T10:17:41.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="UIKit-UIResponder">
-<meta name="twitter:description" content="雨脆弱的淋下，痛却不说话">
+<meta name="twitter:title" content="Grace’s Blog">
+<meta name="twitter:description" content="title: UIKit-UIResponderdate: 2016-04-06 18:03:14categories: iOS技术
+UIResponderIntroductionUIResponder这个类用于处理事件的响应。UIApplication UIView以及UIView子类（包括UIWindow）等都继承自UIResponder。这些类的实例作为一个响应对象有时候会涉及到响应者事件。">
 
 
 
@@ -72,7 +75,7 @@
   };
 </script>
 
-  <title> UIKit-UIResponder | Grace’s Blog </title>
+  <title>  | Grace’s Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-hans">
@@ -192,7 +195,7 @@
             
             
               
-                UIKit-UIResponder
+                
               
             
           </h1>
@@ -201,7 +204,7 @@
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2016-04-06T18:03:14+08:00" content="2016-04-06">
+            <time itemprop="dateCreated" datetime="2016-04-06T18:17:41+08:00" content="2016-04-06">
               2016-04-06
             </time>
           </span>
@@ -232,7 +235,19 @@
       
 
       
-        <span itemprop="articleBody"></span>
+        <span itemprop="articleBody"><p>title: UIKit-UIResponder<br>date: 2016-04-06 18:03:14<br>categories: iOS技术</p>
+<h1 id="UIResponder"><a href="#UIResponder" class="headerlink" title="UIResponder"></a>UIResponder</h1><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p><strong>UIResponder</strong>这个类用于处理事件的响应。<br><strong>UIApplication</strong> <strong>UIView</strong>以及<strong>UIView子类</strong>（包括<strong>UIWindow</strong>）等都继承自<strong>UIResponder</strong>。<br>这些类的实例作为一个响应对象有时候会涉及到响应者事件。最常见的事件有：<strong>触摸事件</strong>和<strong>运动事件</strong>。</p>
+<h3 id="u89E6_u6478_u4E8B_u4EF6"><a href="#u89E6_u6478_u4E8B_u4EF6" class="headerlink" title="触摸事件"></a>触摸事件</h3><p>主要的事件处理方法有： </p>
+<ol>
+<li>touchesBegan:withEvent:, </li>
+<li>touchesMoved:withEvent:, </li>
+<li>touchesEnded:withEvent:, </li>
+<li>touchesCancelled:withEvent:等等。<br>响应者通过这些方法，根据关联参数进行触摸事件追踪和处理。<br>每当手指在屏幕上触摸，拖拽或者抬起，都会生成一个UIEvent对象，这个对象包含所有的手指在屏幕上产生的UITouch对象。<h3 id="u8FD0_u52A8_u4E8B_u4EF6"><a href="#u8FD0_u52A8_u4E8B_u4EF6" class="headerlink" title="运动事件"></a>运动事件</h3>iOS3.0开始系统能够生成运动事件，尤其是摇晃设备的运动。处理这类事件的方法有：</li>
+<li>motionBegan:withEvent:, </li>
+<li>motionEnded:withEvent:, </li>
+<li>motionCancelled:withEvent:等。<br>另外，canPerformAction:withSender:方法可以允许响应者在当undoManager属性返回响应链中最近的NSUndoManager对象的时候从用户界面使命令生效。<br>在iOS4，UIResponder新加了remoteControlReceivedWithEvent:这个方法来处理远程控制事件。</li>
+</ol>
+</span>
       
     </div>
 
@@ -265,7 +280,7 @@
     <div class="post-spread">
       
         <div class="ds-share flat" data-thread-key="2016/04/06/UIKit-UIResponder/"
-     data-title="UIKit-UIResponder"
+     data-title=""
      data-content=""
      data-url="http://yoursite.com/2016/04/06/UIKit-UIResponder/">
   <div class="ds-share-inline">
@@ -296,7 +311,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/04/06/UIKit-UIResponder/"
-           data-title="UIKit-UIResponder" data-url="http://yoursite.com/2016/04/06/UIKit-UIResponder/">
+           data-title="" data-url="http://yoursite.com/2016/04/06/UIKit-UIResponder/">
       </div>
     
   </div>
@@ -397,7 +412,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目錄</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#UIResponder"><span class="nav-number">1.</span> <span class="nav-text">UIResponder</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">1.1.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u89E6_u6478_u4E8B_u4EF6"><span class="nav-number">1.1.1.</span> <span class="nav-text">触摸事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u8FD0_u52A8_u4E8B_u4EF6"><span class="nav-number">1.1.2.</span> <span class="nav-text">运动事件</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
