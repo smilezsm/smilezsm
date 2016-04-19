@@ -51,28 +51,30 @@
 
 
 
-<meta name="description" content="倒叉树视图层次结构定义了一个window中所有视图之间的关系。你可以把它想象成倒叉树，window作为树的最高节点，接着按照父控件-子控件的关系连接起来。从视觉的角度看，视图层级结构的本质是密围式的：一个视图包含一个或者多个子视图，最终window包含所有的视图。
+<meta name="description" content="倒叉树视图层次结构定义了一个window中所有视图之间的关系。你可以把它想象成倒叉树，window作为树的最高节点，接着按照父控件-子控件的关系连接起来。从视觉的角度看，视图层级结构的本质是密围式的：一个视图包含一个或者多个子视图，最终window包含所有的视图。如下图所示：
 作用
 视图层次结构是响应者链条的主要组成部分。
 用来决定，应用的框架在绘制过程中渲染窗口内容时如何排列视图顺序。
-视图层级结构控制着视">
+视图层级">
 <meta property="og:type" content="article">
 <meta property="og:title" content="View Hierachy">
 <meta property="og:url" content="http://yoursite.com/2016/04/19/View-Hierachy/index.html">
 <meta property="og:site_name" content="Grace’s Blog">
-<meta property="og:description" content="倒叉树视图层次结构定义了一个window中所有视图之间的关系。你可以把它想象成倒叉树，window作为树的最高节点，接着按照父控件-子控件的关系连接起来。从视觉的角度看，视图层级结构的本质是密围式的：一个视图包含一个或者多个子视图，最终window包含所有的视图。
+<meta property="og:description" content="倒叉树视图层次结构定义了一个window中所有视图之间的关系。你可以把它想象成倒叉树，window作为树的最高节点，接着按照父控件-子控件的关系连接起来。从视觉的角度看，视图层级结构的本质是密围式的：一个视图包含一个或者多个子视图，最终window包含所有的视图。如下图所示：
 作用
 视图层次结构是响应者链条的主要组成部分。
 用来决定，应用的框架在绘制过程中渲染窗口内容时如何排列视图顺序。
-视图层级结构控制着视">
-<meta property="og:updated_time" content="2016-04-19T03:52:08.000Z">
+视图层级">
+<meta property="og:image" content="https://img.alicdn.com/imgextra/i2/719068679/TB2rTvvnpXXXXbEXXXXXXXXXXXX_!!719068679.jpg">
+<meta property="og:image" content="https://img.alicdn.com/imgextra/i4/719068679/TB2LhG4npXXXXc.XpXXXXXXXXXX_!!719068679.jpg">
+<meta property="og:updated_time" content="2016-04-19T04:00:37.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="View Hierachy">
-<meta name="twitter:description" content="倒叉树视图层次结构定义了一个window中所有视图之间的关系。你可以把它想象成倒叉树，window作为树的最高节点，接着按照父控件-子控件的关系连接起来。从视觉的角度看，视图层级结构的本质是密围式的：一个视图包含一个或者多个子视图，最终window包含所有的视图。
+<meta name="twitter:description" content="倒叉树视图层次结构定义了一个window中所有视图之间的关系。你可以把它想象成倒叉树，window作为树的最高节点，接着按照父控件-子控件的关系连接起来。从视觉的角度看，视图层级结构的本质是密围式的：一个视图包含一个或者多个子视图，最终window包含所有的视图。如下图所示：
 作用
 视图层次结构是响应者链条的主要组成部分。
 用来决定，应用的框架在绘制过程中渲染窗口内容时如何排列视图顺序。
-视图层级结构控制着视">
+视图层级">
 
 
 
@@ -259,7 +261,7 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="u5012_u53C9_u6811"><a href="#u5012_u53C9_u6811" class="headerlink" title="倒叉树"></a>倒叉树</h2><p>视图层次结构定义了一个window中所有视图之间的关系。你可以把它想象成倒叉树，window作为树的最高节点，接着按照父控件-子控件的关系连接起来。从视觉的角度看，视图层级结构的本质是密围式的：一个视图包含一个或者多个子视图，最终window包含所有的视图。</p>
+        <span itemprop="articleBody"><h2 id="u5012_u53C9_u6811"><a href="#u5012_u53C9_u6811" class="headerlink" title="倒叉树"></a>倒叉树</h2><p>视图层次结构定义了一个window中所有视图之间的关系。你可以把它想象成倒叉树，window作为树的最高节点，接着按照父控件-子控件的关系连接起来。从视觉的角度看，视图层级结构的本质是密围式的：一个视图包含一个或者多个子视图，最终window包含所有的视图。如下图所示：<br><img src="https://img.alicdn.com/imgextra/i2/719068679/TB2rTvvnpXXXXbEXXXXXXXXXXXX_!!719068679.jpg" alt="Mou icon"></p>
 <h2 id="u4F5C_u7528"><a href="#u4F5C_u7528" class="headerlink" title="作用"></a>作用</h2><ol>
 <li>视图层次结构是响应者链条的主要组成部分。</li>
 <li>用来决定，应用的框架在绘制过程中渲染窗口内容时如何排列视图顺序。</li>
@@ -268,9 +270,11 @@
 </ol>
 <h2 id="u5C5E_u6027"><a href="#u5C5E_u6027" class="headerlink" title="属性"></a>属性</h2><p>3个层级结构中视图的属性来决定视图之间的关系：</p>
 <ol>
-<li>superview父控件 — 比当前view的层要高的控件；父控件包围着这个view。除了最高节点的view，所有的view都会有自己父控件</li>
-<li>subviews子控件 — 比当前view的层要低的控件; 当前控件包含着的所有控件。</li>
+<li>superview父控件 — 比当前view的层要高的控件；父控件包围着这个view。除了最高节点的view，所有的view都会有自己父控件;</li>
+<li>subviews子控件 — 比当前view的层要低的控件; 当前控件包含着的所有控件。一个view可能有多个子控件，也可能没有。</li>
+<li>一个view有一个标识他们的window的属性。</li>
 </ol>
+<p>如图：<br><img src="https://img.alicdn.com/imgextra/i4/719068679/TB2LhG4npXXXXc.XpXXXXXXXXXX_!!719068679.jpg" alt="Mou icon"></p>
 <h2 id="u6CE8"><a href="#u6CE8" class="headerlink" title="注"></a>注</h2><p>在OS X 中，窗口也有一个独立的“content view”，所有的其他控件都起源于这个背景控件。然而，在iOS应用中，一个窗口就是一个view，所以它是它自己的“content view”。</p>
 </span>
       
