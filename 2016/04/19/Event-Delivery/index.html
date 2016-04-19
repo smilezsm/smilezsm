@@ -51,17 +51,20 @@
 
 
 
-<meta name="description" content="Introduction我们在设计APP的时候，想要让APP可以动态的响应事件。比方说，手指触摸到屏幕上的内容的时候，可以动态的判断出哪个对象来响应这个触摸事件，以及这个对象如何接收到这个事件。在上一篇[Event(iOS)]（http://smilezsm.github.io/2016/04/19/Events-iOS/）中讲解了iOS APP中产生的各种事件，接下来我们来讲这些事件是如何传递到">
+<meta name="description" content="Introduction我们在设计APP的时候，想要让APP可以动态的响应事件。比方说，手指触摸到屏幕上的内容的时候，可以动态的判断出哪个对象来响应这个触摸事件，以及这个对象如何接收到这个事件。在上一篇Event(iOS)中讲解了iOS APP中产生的各种事件，接下来我们来讲这些事件是如何传递到对应的事件接收者的。
+事件传递路径概述当用户生成一个事件时，UIkit会生成一个包含处理事件必要信息的事">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Event Delivery">
 <meta property="og:url" content="http://yoursite.com/2016/04/19/Event-Delivery/index.html">
 <meta property="og:site_name" content="Grace’s Blog">
-<meta property="og:description" content="Introduction我们在设计APP的时候，想要让APP可以动态的响应事件。比方说，手指触摸到屏幕上的内容的时候，可以动态的判断出哪个对象来响应这个触摸事件，以及这个对象如何接收到这个事件。在上一篇[Event(iOS)]（http://smilezsm.github.io/2016/04/19/Events-iOS/）中讲解了iOS APP中产生的各种事件，接下来我们来讲这些事件是如何传递到">
+<meta property="og:description" content="Introduction我们在设计APP的时候，想要让APP可以动态的响应事件。比方说，手指触摸到屏幕上的内容的时候，可以动态的判断出哪个对象来响应这个触摸事件，以及这个对象如何接收到这个事件。在上一篇Event(iOS)中讲解了iOS APP中产生的各种事件，接下来我们来讲这些事件是如何传递到对应的事件接收者的。
+事件传递路径概述当用户生成一个事件时，UIkit会生成一个包含处理事件必要信息的事">
 <meta property="og:image" content="https://img.alicdn.com/imgextra/i2/719068679/TB2pV6NnpXXXXbSXXXXXXXXXXXX_!!719068679.jpg">
-<meta property="og:updated_time" content="2016-04-19T08:44:15.000Z">
+<meta property="og:updated_time" content="2016-04-19T08:57:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Event Delivery">
-<meta name="twitter:description" content="Introduction我们在设计APP的时候，想要让APP可以动态的响应事件。比方说，手指触摸到屏幕上的内容的时候，可以动态的判断出哪个对象来响应这个触摸事件，以及这个对象如何接收到这个事件。在上一篇[Event(iOS)]（http://smilezsm.github.io/2016/04/19/Events-iOS/）中讲解了iOS APP中产生的各种事件，接下来我们来讲这些事件是如何传递到">
+<meta name="twitter:description" content="Introduction我们在设计APP的时候，想要让APP可以动态的响应事件。比方说，手指触摸到屏幕上的内容的时候，可以动态的判断出哪个对象来响应这个触摸事件，以及这个对象如何接收到这个事件。在上一篇Event(iOS)中讲解了iOS APP中产生的各种事件，接下来我们来讲这些事件是如何传递到对应的事件接收者的。
+事件传递路径概述当用户生成一个事件时，UIkit会生成一个包含处理事件必要信息的事">
 
 
 
@@ -248,7 +251,7 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>我们在设计APP的时候，想要让APP可以动态的响应事件。比方说，手指触摸到屏幕上的内容的时候，可以动态的判断出哪个对象来响应这个触摸事件，以及这个对象如何接收到这个事件。<br>在上一篇[Event(iOS)]（<a href="http://smilezsm.github.io/2016/04/19/Events-iOS/）中讲解了iOS" target="_blank" rel="external">http://smilezsm.github.io/2016/04/19/Events-iOS/）中讲解了iOS</a> APP中产生的各种事件，接下来我们来讲这些事件是如何传递到对应的事件接收者的。</p>
+        <span itemprop="articleBody"><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>我们在设计APP的时候，想要让APP可以动态的响应事件。比方说，手指触摸到屏幕上的内容的时候，可以动态的判断出哪个对象来响应这个触摸事件，以及这个对象如何接收到这个事件。<br>在上一篇<a href="http://smilezsm.github.io/2016/04/19/Events-iOS/" target="_blank" rel="external">Event(iOS)</a>中讲解了iOS APP中产生的各种事件，接下来我们来讲这些事件是如何传递到对应的事件接收者的。</p>
 <h2 id="u4E8B_u4EF6_u4F20_u9012_u8DEF_u5F84_u6982_u8FF0"><a href="#u4E8B_u4EF6_u4F20_u9012_u8DEF_u5F84_u6982_u8FF0" class="headerlink" title="事件传递路径概述"></a>事件传递路径概述</h2><p>当用户生成一个事件时，UIkit会生成一个包含处理事件必要信息的事件对象。然后把这个事件对象加入到处于活跃状态的APP事件队列中。在触摸事件中，这个对象是一系列触摸打包好的UIEvent 对象，在运动事件中，这个对象取决于你使用的框架和你感兴趣的运动类型。<br>事件会沿着固定的路径进行，直到它被分配给能处理它的对象。</p>
 <ol>
 <li>首先，UIApplication 对象会从事件队列中取出事件，将它分发出去；</li>
@@ -275,13 +278,15 @@
 2    接收 becomeFirstResponder 这个消息，如果有必要，可以自己给自己发送这个消息。
 </code></pre><p><strong>注意：</strong>在让一个对象成为第一响应者之前，要确保你的APP已经建立了它的对象图表。例如，一般你可以在viewDidAppear: 这个方法中调用becomeFirstResponder 这个方法。如果你在viewWillAppear: 这个方法里面设定第一响应者，你的对象图还没有建立，becomeFirstResponder 这个方法会返回NO。</p>
 <h3 id="u54CD_u5E94_u8005_u94FE_u6761_u5E94_u7528"><a href="#u54CD_u5E94_u8005_u94FE_u6761_u5E94_u7528" class="headerlink" title="响应者链条应用"></a>响应者链条应用</h3><p>依赖于响应者链条的不仅仅有事件对象，响应者链条还应用于下面的情况：</p>
-<pre><code>•    Touch events触摸事件. 如果hit-test view不能处理触摸事件，这个事件将会被沿着响应者链条传递下去。
-•    Motion events运动事件. 要想使用UIkit处理摇晃运动事件，第一响应者必须实现motionBegan:withEvent: 或者 motionEnded:withEvent: 这两个 UIResponder 类声明的方法。
-•    Remote control events远程控制事件. 第一响应者必须实现remoteControlReceivedWithEvent: 这个UIResponder 类声明的方法。
-•    Action messages操作消息. 如果用户操作一个按钮或者开关的时候，这个操作方法的target对象为空，那么这个操作消息将通过以这个操作对象作为第一响应者的响应者链条来发送。
-•    Editing-menu messages编辑菜单消息. 当用户点击了编辑菜单中的命令（剪切，复制，粘贴等），iOS通过响应者链条找到实现了必要方法的响应者
-•    Text editing文字编辑. 当用户点击文字编辑框或者一个文字编辑页面，这个页面会自动成为第一响应者。默认情况下会弹出键盘，然后text field 或者 text view成为文字编辑的焦点。你也可是自定义键盘来代替系统键盘。你也可以添加一个自定义input view到任何响应者上面。[更多详细信息](http://www.baidu.com)UIkit 会在用户点击text field 或者 text view的时候，自动把它们设置为第一响应者。APP必须明确通过becomeFirstResponder 这个方法才能设置其他响应者为第一响应者。
-</code></pre><p><strong>重点:</strong> 如果你使用自定义view使用UIkit处理远程控制事件，行为消息，摇晃事件或者编辑菜单消息，不要直接把这个事件或者消息转发给响应者链条里的nextResponder ，而是要调用父类的当前事件处理方法实现，让UIkit来处理响应者链条的遍历。</p>
+<ol>
+<li>Touch events触摸事件. 如果hit-test view不能处理触摸事件，这个事件将会被沿着响应者链条传递下去。</li>
+<li>Motion events运动事件. 要想使用UIkit处理摇晃运动事件，第一响应者必须实现motionBegan:withEvent: 或者 motionEnded:withEvent: 这两个 UIResponder 类声明的方法。</li>
+<li>Remote control events远程控制事件. 第一响应者必须实现remoteControlReceivedWithEvent: 这个UIResponder 类声明的方法。</li>
+<li>Action messages操作消息. 如果用户操作一个按钮或者开关的时候，这个操作方法的target对象为空，那么这个操作消息将通过以这个操作对象作为第一响应者的响应者链条来发送。</li>
+<li>Editing-menu messages编辑菜单消息. 当用户点击了编辑菜单中的命令（剪切，复制，粘贴等），iOS通过响应者链条找到实现了必要方法的响应者</li>
+<li>Text editing文字编辑. 当用户点击文字编辑框或者一个文字编辑页面，这个页面会自动成为第一响应者。默认情况下会弹出键盘，然后text field 或者 text view成为文字编辑的焦点。你也可是自定义键盘来代替系统键盘。你也可以添加一个自定义input view到任何响应者上面。<a href="http://www.baidu.com" target="_blank" rel="external">更多详细信息</a>UIkit 会在用户点击text field 或者 text view的时候，自动把它们设置为第一响应者。APP必须明确通过becomeFirstResponder 这个方法才能设置其他响应者为第一响应者。</li>
+</ol>
+<p><strong>重点:</strong> 如果你使用自定义view使用UIkit处理远程控制事件，行为消息，摇晃事件或者编辑菜单消息，不要直接把这个事件或者消息转发给响应者链条里的nextResponder ，而是要调用父类的当前事件处理方法实现，让UIkit来处理响应者链条的遍历。</p>
 </span>
       
     </div>
