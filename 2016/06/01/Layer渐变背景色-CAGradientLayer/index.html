@@ -51,22 +51,25 @@
 
 
 
-<meta name="description" content="只是生硬的翻译而已。请-翻-用-。
-IntroductionCATransaction（事物）是 CoreAnimation用来将多图层树的操作批量转换成自动更新的渲染树。对图层树的每次修饰都需要事物的参与。CoreAnimation支持两种事物：显性事物和隐性事物。
-显性事物是：工程师在修饰图层树之前要先调用[CATransaction begin]’方法，完成修饰后调用[CATransacti">
+<meta name="description" content="IntroductionCAGradientLayer 类可以绘制背景的渐变色，填充整个layer。
+相关属性介绍@property(copy) NSArray *colors设置每个渐变色的颜色的数组，默认为nil
+@property(copy) NSArray  *locations渐变色的区间分布，范围从0到1，必须是递增设置，如果设置为nil，会平均分布
+@property CGPoint">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CATransaction-API翻译">
-<meta property="og:url" content="http://yoursite.com/2015/12/31/CATransaction-API翻译/index.html">
+<meta property="og:title" content="Layer渐变背景色-CAGradientLayer">
+<meta property="og:url" content="http://yoursite.com/2016/06/01/Layer渐变背景色-CAGradientLayer/index.html">
 <meta property="og:site_name" content="Grace’s Blog">
-<meta property="og:description" content="只是生硬的翻译而已。请-翻-用-。
-IntroductionCATransaction（事物）是 CoreAnimation用来将多图层树的操作批量转换成自动更新的渲染树。对图层树的每次修饰都需要事物的参与。CoreAnimation支持两种事物：显性事物和隐性事物。
-显性事物是：工程师在修饰图层树之前要先调用[CATransaction begin]’方法，完成修饰后调用[CATransacti">
-<meta property="og:updated_time" content="2016-01-21T07:54:58.000Z">
+<meta property="og:description" content="IntroductionCAGradientLayer 类可以绘制背景的渐变色，填充整个layer。
+相关属性介绍@property(copy) NSArray *colors设置每个渐变色的颜色的数组，默认为nil
+@property(copy) NSArray  *locations渐变色的区间分布，范围从0到1，必须是递增设置，如果设置为nil，会平均分布
+@property CGPoint">
+<meta property="og:updated_time" content="2016-06-01T06:26:24.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CATransaction-API翻译">
-<meta name="twitter:description" content="只是生硬的翻译而已。请-翻-用-。
-IntroductionCATransaction（事物）是 CoreAnimation用来将多图层树的操作批量转换成自动更新的渲染树。对图层树的每次修饰都需要事物的参与。CoreAnimation支持两种事物：显性事物和隐性事物。
-显性事物是：工程师在修饰图层树之前要先调用[CATransaction begin]’方法，完成修饰后调用[CATransacti">
+<meta name="twitter:title" content="Layer渐变背景色-CAGradientLayer">
+<meta name="twitter:description" content="IntroductionCAGradientLayer 类可以绘制背景的渐变色，填充整个layer。
+相关属性介绍@property(copy) NSArray *colors设置每个渐变色的颜色的数组，默认为nil
+@property(copy) NSArray  *locations渐变色的区间分布，范围从0到1，必须是递增设置，如果设置为nil，会平均分布
+@property CGPoint">
 
 
 
@@ -78,7 +81,7 @@ IntroductionCATransaction（事物）是 CoreAnimation用来将多图层树的�
   };
 </script>
 
-  <title> CATransaction-API翻译 | Grace’s Blog </title>
+  <title> Layer渐变背景色-CAGradientLayer | Grace’s Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-hans">
@@ -198,7 +201,7 @@ IntroductionCATransaction（事物）是 CoreAnimation用来将多图层树的�
             
             
               
-                CATransaction-API翻译
+                Layer渐变背景色-CAGradientLayer
               
             
           </h1>
@@ -207,8 +210,8 @@ IntroductionCATransaction（事物）是 CoreAnimation用来将多图层树的�
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2015-12-31T12:11:22+08:00" content="2015-12-31">
-              2015-12-31
+            <time itemprop="dateCreated" datetime="2016-06-01T14:23:10+08:00" content="2016-06-01">
+              2016-06-01
             </time>
           </span>
 
@@ -233,8 +236,8 @@ IntroductionCATransaction（事物）是 CoreAnimation用来将多图层树的�
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2015/12/31/CATransaction-API翻译/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/31/CATransaction-API翻译/" itemprop="commentsCount"></span>
+                <a href="/2016/06/01/Layer渐变背景色-CAGradientLayer/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/01/Layer渐变背景色-CAGradientLayer/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -253,27 +256,12 @@ IntroductionCATransaction（事物）是 CoreAnimation用来将多图层树的�
       
 
       
-        <span itemprop="articleBody"><p>只是生硬的翻译而已。请-翻-用-。</p>
-<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>CATransaction（事物）是 CoreAnimation用来将多图层树的操作批量转换成自动更新的渲染树。对图层树的每次修饰都需要事物的参与。CoreAnimation支持两种事物：<strong>显性事物和隐性事物</strong>。</p>
-<p><strong>显性事物是</strong>：工程师在修饰图层树之前要先调用[CATransaction begin]’方法，完成修饰后调用[CATransaction commit]方法。</p>
-<p><strong>隐性事物是</strong>：当通过一个线程而不是一个transaction对象对layer树进行修改的时候，CATransaction会自动生成一个隐性事物。当这个线程的进行下一个runloop的时候，隐性事物会被自动提交（commit）上去。<br>有些特殊情况：（比方说没有runloop，或者runloop被阻塞），你需要使用显性事物来达到即时更新layer的效果。</p>
-<h2 id="u5C5E_u6027_u548C_u65B9_u6CD5_u4ECB_u7ECD"><a href="#u5C5E_u6027_u548C_u65B9_u6CD5_u4ECB_u7ECD" class="headerlink" title="属性和方法介绍"></a>属性和方法介绍</h2><p>@interface CATransaction : NSObject</p>
-<h3 id="+__28void_29begin_3B"><a href="#+__28void_29begin_3B" class="headerlink" title="+ (void)begin;"></a>+ (void)begin;</h3><p>在当前线程开启一个新事物</p>
-<h3 id="+__28void_29commit_3B"><a href="#+__28void_29commit_3B" class="headerlink" title="+ (void)commit;"></a>+ (void)commit;</h3><p>提交所有的当前事物做的改变。如果当前没有事物存在，将导致异常crash。</p>
-<h3 id="+__28void_29flush_3B"><a href="#+__28void_29flush_3B" class="headerlink" title="+ (void)flush;"></a>+ (void)flush;</h3><p>提交任何现存的隐性事物。 但是如果有嵌套的显性事物正在提交，这个提交会被延迟直到显性事物提交完毕。</p>
-<h3 id="+__28void_29lock_3B"><a href="#+__28void_29lock_3B" class="headerlink" title="+ (void)lock;"></a>+ (void)lock;</h3><h3 id="+__28void_29unlock_3B"><a href="#+__28void_29unlock_3B" class="headerlink" title="+ (void)unlock;"></a>+ (void)unlock;</h3><p>上面两个方法用来锁住或者解锁全局锁的方法。layer的方法在修改共享状态的时候都会自动调用这两个方法。但是有时候为了保证安全一致，你需要锁住其他操作。锁是递归的自循环锁（不能在延长期保存）</p>
-<h3 id="+__28CFTimeInterval_29animationDuration_3B"><a href="#+__28CFTimeInterval_29animationDuration_3B" class="headerlink" title="+ (CFTimeInterval)animationDuration;"></a>+ (CFTimeInterval)animationDuration;</h3><h3 id="+__28void_29setAnimationDuration_3A_28CFTimeInterval_29dur_3B"><a href="#+__28void_29setAnimationDuration_3A_28CFTimeInterval_29dur_3B" class="headerlink" title="+ (void)setAnimationDuration:(CFTimeInterval)dur;"></a>+ (void)setAnimationDuration:(CFTimeInterval)dur;</h3><p>上面两个方法为每条线程事物存取动画时间的属性。定义layer默认的动画时间。默认为1/4秒。</p>
-<h3 id="+__28nullable_CAMediaTimingFunction_*_29animationTimingFunction_3B"><a href="#+__28nullable_CAMediaTimingFunction_*_29animationTimingFunction_3B" class="headerlink" title="+ (nullable CAMediaTimingFunction *)animationTimingFunction;"></a>+ (nullable CAMediaTimingFunction *)animationTimingFunction;</h3><h3 id="+_28void_29setAnimationTimingFunction_3A_28nullable_CAMediaTimingFunction_*_29function_3B"><a href="#+_28void_29setAnimationTimingFunction_3A_28nullable_CAMediaTimingFunction_*_29function_3B" class="headerlink" title="+(void)setAnimationTimingFunction:(nullable CAMediaTimingFunction *)function;"></a>+(void)setAnimationTimingFunction:(nullable CAMediaTimingFunction *)function;</h3><p>存取每条线程的事物的动画样式的属性。一般有linear’, <code>easeIn&#39;,</code>easeOut’ <code>easeInEaseOut&#39; and</code>default’等。默认值为nil。</p>
-<h3 id="+__28BOOL_29disableActions_3B"><a href="#+__28BOOL_29disableActions_3B" class="headerlink" title="+ (BOOL)disableActions;"></a>+ (BOOL)disableActions;</h3><h3 id="+__28void_29setDisableActions_3A_28BOOL_29flag_3B"><a href="#+__28void_29setDisableActions_3A_28BOOL_29flag_3B" class="headerlink" title="+ (void)setDisableActions:(BOOL)flag;"></a>+ (void)setDisableActions:(BOOL)flag;</h3><p>设置对“让动画失效”事物属性。<br>定义是否图层的方法actionForKey: 是用来为每个图层的属性改变找到一个动画（即：隐性动画）</p>
-<h3 id="+__28nullable_void__28_5E_29_28void_29_29completionBlock_3B"><a href="#+__28nullable_void__28_5E_29_28void_29_29completionBlock_3B" class="headerlink" title="+ (nullable void (^)(void))completionBlock;"></a>+ (nullable void (^)(void))completionBlock;</h3><h3 id="+__28void_29setCompletionBlock_3A_28nullable_void__28_5E_29_28void_29_29block_3B"><a href="#+__28void_29setCompletionBlock_3A_28nullable_void__28_5E_29_28void_29_29block_3B" class="headerlink" title="+ (void)setCompletionBlock:(nullable void (^)(void))block;"></a>+ (void)setCompletionBlock:(nullable void (^)(void))block;</h3><p>设置事物的”completionBlock”属性。<br>只要给block赋值，当所有的通过此次事物组添加的动画完成（或者被移除后）就会立即调用该block。<br>如果在当前事务组commit之前没有添加任何动画，或者该block被赋值了一个不同的值，这个block将会被立即调用。</p>
-<h3 id="+__28nullable_id_29valueForKey_3A_28NSString_*_29key_3B"><a href="#+__28nullable_id_29valueForKey_3A_28NSString_*_29key_3B" class="headerlink" title="+ (nullable id)valueForKey:(NSString *)key;"></a>+ (nullable id)valueForKey:(NSString *)key;</h3><h3 id="+__28void_29setValue_3A_28nullable_id_29anObject_forKey_3A_28NSString_*_29key_3B"><a href="#+__28void_29setValue_3A_28nullable_id_29anObject_forKey_3A_28NSString_*_29key_3B" class="headerlink" title="+ (void)setValue:(nullable id)anObject forKey:(NSString *)key;"></a>+ (void)setValue:(nullable id)anObject forKey:(NSString *)key;</h3><p>当前线程下事物的任意key-data。<br>嵌套事物有嵌套的数据范围，读取一个查询最深范围的key，也就是设置一个key处于最深的范围。（并没有看懂原文啥意思，大概还是K-V那套）<br>目前事物中目前支持设置的属性有：”animationDuration”, “animationTimingFunction”, “completionBlock”,<br>  “disableActions”.<br>请尝试给属性设置一个类型不同于属性的文件类型有一个未知的结果。<br>@end</p>
-<hr>
-<h3 id="u4E8B_u7269_u7684_u5C5E_u6027_ids"><a href="#u4E8B_u7269_u7684_u5C5E_u6027_ids" class="headerlink" title="事物的属性 ids"></a>事物的属性 ids</h3><ul>
-<li>CA_EXTERN NSString * const <code>kCATransactionAnimationDuration</code></li>
-<li>CA_EXTERN NSString * const <code>kCATransactionDisableActions</code></li>
-<li>CA_EXTERN NSString * const <code>kCATransactionAnimationTimingFunction</code></li>
-<li>CA_EXTERN NSString * const <code>kCATransactionCompletionBlock</code></li>
-</ul>
+        <span itemprop="articleBody"><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>CAGradientLayer 类可以绘制背景的渐变色，填充整个layer。</p>
+<h2 id="u76F8_u5173_u5C5E_u6027_u4ECB_u7ECD"><a href="#u76F8_u5173_u5C5E_u6027_u4ECB_u7ECD" class="headerlink" title="相关属性介绍"></a>相关属性介绍</h2><h3 id="@property_28copy_29_NSArray_*colors"><a href="#@property_28copy_29_NSArray_*colors" class="headerlink" title="@property(copy) NSArray *colors"></a>@property(copy) NSArray *colors</h3><p>设置每个渐变色的颜色的数组，默认为nil</p>
+<h3 id="@property_28copy_29_NSArray_*locations"><a href="#@property_28copy_29_NSArray_*locations" class="headerlink" title="@property(copy) NSArray  *locations"></a>@property(copy) NSArray <nsnumber *=""> *locations</nsnumber></h3><p>渐变色的区间分布，范围从0到1，必须是递增设置，如果设置为nil，会平均分布</p>
+<h3 id="@property_CGPoint_endPoint"><a href="#@property_CGPoint_endPoint" class="headerlink" title="@property CGPoint endPoint"></a>@property CGPoint endPoint</h3><p>渐变色绘制的最后一个点，映射locations的最后一个位置。默认值是（0.5，1.0），（0，0）表示矩形的左下角，（1，1）表示矩形的右上角</p>
+<h3 id="@property_CGPoint_startPoint"><a href="#@property_CGPoint_startPoint" class="headerlink" title="@property CGPoint startPoint"></a>@property CGPoint startPoint</h3><p>渐变色绘制的第一个点，映射locations的第一个位置，默认值是（0.5，0.0）</p>
+<h3 id="@property_28copy_29_NSString_*type"><a href="#@property_28copy_29_NSString_*type" class="headerlink" title="@property(copy) NSString *type"></a>@property(copy) NSString *type</h3><p>layer绘制渐变色的样式，默认值是kCAGradientLayerAxial，表示按像素均匀变化。除了默认值也无其它选项。</p>
 </span>
       
     </div>
@@ -285,17 +273,13 @@ IntroductionCATransaction（事物）是 CoreAnimation用来将多图层树的�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/31/iOS9-CNContactFetchRequestAPI翻译/" rel="next" title="iOS9-CNContactFetchRequestAPI翻译">
-                <i class="fa fa-chevron-left"></i> iOS9-CNContactFetchRequestAPI翻译
+              <a href="/2016/05/12/成长的路上/" rel="next" title="成长的路上">
+                <i class="fa fa-chevron-left"></i> 成长的路上
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/01/21/RunLoop-API翻译/" rel="prev" title="RunLoop-API翻译">
-                RunLoop-API翻译 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -310,10 +294,10 @@ IntroductionCATransaction（事物）是 CoreAnimation用来将多图层树的�
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2015/12/31/CATransaction-API翻译/"
-     data-title="CATransaction-API翻译"
+        <div class="ds-share flat" data-thread-key="2016/06/01/Layer渐变背景色-CAGradientLayer/"
+     data-title="Layer渐变背景色-CAGradientLayer"
      data-content=""
-     data-url="http://yoursite.com/2015/12/31/CATransaction-API翻译/">
+     data-url="http://yoursite.com/2016/06/01/Layer渐变背景色-CAGradientLayer/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -341,8 +325,8 @@ IntroductionCATransaction（事物）是 CoreAnimation用来将多图层树的�
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2015/12/31/CATransaction-API翻译/"
-           data-title="CATransaction-API翻译" data-url="http://yoursite.com/2015/12/31/CATransaction-API翻译/">
+      <div class="ds-thread" data-thread-key="2016/06/01/Layer渐变背景色-CAGradientLayer/"
+           data-title="Layer渐变背景色-CAGradientLayer" data-url="http://yoursite.com/2016/06/01/Layer渐变背景色-CAGradientLayer/">
       </div>
     
   </div>
@@ -443,7 +427,7 @@ IntroductionCATransaction（事物）是 CoreAnimation用来将多图层树的�
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5C5E_u6027_u548C_u65B9_u6CD5_u4ECB_u7ECD"><span class="nav-number">2.</span> <span class="nav-text">属性和方法介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#+__28void_29begin_3B"><span class="nav-number">2.1.</span> <span class="nav-text">+ (void)begin;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#+__28void_29commit_3B"><span class="nav-number">2.2.</span> <span class="nav-text">+ (void)commit;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#+__28void_29flush_3B"><span class="nav-number">2.3.</span> <span class="nav-text">+ (void)flush;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#+__28void_29lock_3B"><span class="nav-number">2.4.</span> <span class="nav-text">+ (void)lock;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#+__28void_29unlock_3B"><span class="nav-number">2.5.</span> <span class="nav-text">+ (void)unlock;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#+__28CFTimeInterval_29animationDuration_3B"><span class="nav-number">2.6.</span> <span class="nav-text">+ (CFTimeInterval)animationDuration;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#+__28void_29setAnimationDuration_3A_28CFTimeInterval_29dur_3B"><span class="nav-number">2.7.</span> <span class="nav-text">+ (void)setAnimationDuration:(CFTimeInterval)dur;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#+__28nullable_CAMediaTimingFunction_*_29animationTimingFunction_3B"><span class="nav-number">2.8.</span> <span class="nav-text">+ (nullable CAMediaTimingFunction *)animationTimingFunction;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#+_28void_29setAnimationTimingFunction_3A_28nullable_CAMediaTimingFunction_*_29function_3B"><span class="nav-number">2.9.</span> <span class="nav-text">+(void)setAnimationTimingFunction:(nullable CAMediaTimingFunction *)function;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#+__28BOOL_29disableActions_3B"><span class="nav-number">2.10.</span> <span class="nav-text">+ (BOOL)disableActions;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#+__28void_29setDisableActions_3A_28BOOL_29flag_3B"><span class="nav-number">2.11.</span> <span class="nav-text">+ (void)setDisableActions:(BOOL)flag;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#+__28nullable_void__28_5E_29_28void_29_29completionBlock_3B"><span class="nav-number">2.12.</span> <span class="nav-text">+ (nullable void (^)(void))completionBlock;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#+__28void_29setCompletionBlock_3A_28nullable_void__28_5E_29_28void_29_29block_3B"><span class="nav-number">2.13.</span> <span class="nav-text">+ (void)setCompletionBlock:(nullable void (^)(void))block;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#+__28nullable_id_29valueForKey_3A_28NSString_*_29key_3B"><span class="nav-number">2.14.</span> <span class="nav-text">+ (nullable id)valueForKey:(NSString *)key;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#+__28void_29setValue_3A_28nullable_id_29anObject_forKey_3A_28NSString_*_29key_3B"><span class="nav-number">2.15.</span> <span class="nav-text">+ (void)setValue:(nullable id)anObject forKey:(NSString *)key;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u4E8B_u7269_u7684_u5C5E_u6027_ids"><span class="nav-number">2.16.</span> <span class="nav-text">事物的属性 ids</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u76F8_u5173_u5C5E_u6027_u4ECB_u7ECD"><span class="nav-number">2.</span> <span class="nav-text">相关属性介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#@property_28copy_29_NSArray_*colors"><span class="nav-number">2.1.</span> <span class="nav-text">@property(copy) NSArray *colors</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#@property_28copy_29_NSArray_*locations"><span class="nav-number">2.2.</span> <span class="nav-text">@property(copy) NSArray  *locations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#@property_CGPoint_endPoint"><span class="nav-number">2.3.</span> <span class="nav-text">@property CGPoint endPoint</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#@property_CGPoint_startPoint"><span class="nav-number">2.4.</span> <span class="nav-text">@property CGPoint startPoint</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#@property_28copy_29_NSString_*type"><span class="nav-number">2.5.</span> <span class="nav-text">@property(copy) NSString *type</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
