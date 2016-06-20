@@ -51,26 +51,16 @@
 
 
 
-<meta name="description" content="项目中有很多这种情况：下划线成员变量和@property声明属性并存，那么这两者的区别是什么呢？什么时候该用下划线，什么时候该用@property？
-1.区别
-Xcode4.5版本后，@property声明的属性，会自动生成一个带下划线的成员变量，以及这个变量的setter和getter方法；而下划线变量仅仅是一个变量而已，没有所谓的setter和getter方法
-在访问数据的时候，@proper">
+<meta name="description" content="雨脆弱的淋下，痛却不说话">
 <meta property="og:type" content="article">
-<meta property="og:title" content="属性(property)与成员变量(ivar)区别">
-<meta property="og:url" content="http://yoursite.com/2016/05/03/属性-property-与成员变量-ivar-区别/index.html">
+<meta property="og:title" content="iOS深入了解frame和bounds的区别">
+<meta property="og:url" content="http://yoursite.com/2016/06/20/iOS深入了解frame和bounds的区别/index.html">
 <meta property="og:site_name" content="Grace’s Blog">
-<meta property="og:description" content="项目中有很多这种情况：下划线成员变量和@property声明属性并存，那么这两者的区别是什么呢？什么时候该用下划线，什么时候该用@property？
-1.区别
-Xcode4.5版本后，@property声明的属性，会自动生成一个带下划线的成员变量，以及这个变量的setter和getter方法；而下划线变量仅仅是一个变量而已，没有所谓的setter和getter方法
-在访问数据的时候，@proper">
-<meta property="og:image" content="https://img.alicdn.com/imgextra/i1/719068679/TB2k53GoXXXXXaFXXXXXXXXXXXX_!!719068679.jpg">
-<meta property="og:updated_time" content="2016-05-12T06:53:46.000Z">
+<meta property="og:description" content="雨脆弱的淋下，痛却不说话">
+<meta property="og:updated_time" content="2016-06-20T10:45:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="属性(property)与成员变量(ivar)区别">
-<meta name="twitter:description" content="项目中有很多这种情况：下划线成员变量和@property声明属性并存，那么这两者的区别是什么呢？什么时候该用下划线，什么时候该用@property？
-1.区别
-Xcode4.5版本后，@property声明的属性，会自动生成一个带下划线的成员变量，以及这个变量的setter和getter方法；而下划线变量仅仅是一个变量而已，没有所谓的setter和getter方法
-在访问数据的时候，@proper">
+<meta name="twitter:title" content="iOS深入了解frame和bounds的区别">
+<meta name="twitter:description" content="雨脆弱的淋下，痛却不说话">
 
 
 
@@ -82,7 +72,7 @@ Xcode4.5版本后，@property声明的属性，会自动生成一个带下划线
   };
 </script>
 
-  <title> 属性(property)与成员变量(ivar)区别 | Grace’s Blog </title>
+  <title> iOS深入了解frame和bounds的区别 | Grace’s Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-hans">
@@ -202,7 +192,7 @@ Xcode4.5版本后，@property声明的属性，会自动生成一个带下划线
             
             
               
-                属性(property)与成员变量(ivar)区别
+                iOS深入了解frame和bounds的区别
               
             
           </h1>
@@ -211,34 +201,19 @@ Xcode4.5版本后，@property声明的属性，会自动生成一个带下划线
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2016-05-03T15:51:25+08:00" content="2016-05-03">
-              2016-05-03
+            <time itemprop="dateCreated" datetime="2016-06-20T18:45:27+08:00" content="2016-06-20">
+              2016-06-20
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS技术/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS技术</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/03/属性-property-与成员变量-ivar-区别/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/03/属性-property-与成员变量-ivar-区别/" itemprop="commentsCount"></span>
+                <a href="/2016/06/20/iOS深入了解frame和bounds的区别/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/20/iOS深入了解frame和bounds的区别/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -257,16 +232,7 @@ Xcode4.5版本后，@property声明的属性，会自动生成一个带下划线
       
 
       
-        <span itemprop="articleBody"><p>项目中有很多这种情况：<br><img src="https://img.alicdn.com/imgextra/i1/719068679/TB2k53GoXXXXXaFXXXXXXXXXXXX_!!719068679.jpg" alt="Mou icon"><br>下划线成员变量和@property声明属性并存，那么这两者的区别是什么呢？什么时候该用下划线，什么时候该用@property？</p>
-<h2 id="1-_u533A_u522B"><a href="#1-_u533A_u522B" class="headerlink" title="1.区别"></a>1.区别</h2><ol>
-<li>Xcode4.5版本后，@property声明的属性，会自动生成一个带下划线的成员变量，以及这个变量的setter和getter方法；而下划线变量仅仅是一个变量而已，没有所谓的setter和getter方法</li>
-<li>在访问数据的时候，@property声明的属性可以使用点方法 self.xxx，根据具体情况调用setter和getter方法，如果使用下划线+变量名，不会调用setter，getter方法；而下划线声明的变量只能用变量名在访问数据。</li>
-</ol>
-<h2 id="2-_u7528_u6CD5"><a href="#2-_u7528_u6CD5" class="headerlink" title="2.用法"></a>2.用法</h2><ol>
-<li>如果你想使用一个属性的setter或者getter方法，就使用@property</li>
-<li>如果仅仅是一个变量，不需要setter getter方法，那么可以直接声明一个下划线变量就够了，不需要浪费资源。</li>
-</ol>
-</span>
+        <span itemprop="articleBody"></span>
       
     </div>
 
@@ -277,17 +243,13 @@ Xcode4.5版本后，@property声明的属性，会自动生成一个带下划线
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/28/nothing/" rel="next" title="nothing">
-                <i class="fa fa-chevron-left"></i> nothing
+              <a href="/2016/06/01/Layer渐变背景色-CAGradientLayer/" rel="next" title="Layer渐变背景色-CAGradientLayer">
+                <i class="fa fa-chevron-left"></i> Layer渐变背景色-CAGradientLayer
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/12/成长的路上/" rel="prev" title="成长的路上">
-                成长的路上 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -302,10 +264,10 @@ Xcode4.5版本后，@property声明的属性，会自动生成一个带下划线
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/05/03/属性-property-与成员变量-ivar-区别/"
-     data-title="属性(property)与成员变量(ivar)区别"
+        <div class="ds-share flat" data-thread-key="2016/06/20/iOS深入了解frame和bounds的区别/"
+     data-title="iOS深入了解frame和bounds的区别"
      data-content=""
-     data-url="http://yoursite.com/2016/05/03/属性-property-与成员变量-ivar-区别/">
+     data-url="http://yoursite.com/2016/06/20/iOS深入了解frame和bounds的区别/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -333,8 +295,8 @@ Xcode4.5版本后，@property声明的属性，会自动生成一个带下划线
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/05/03/属性-property-与成员变量-ivar-区别/"
-           data-title="属性(property)与成员变量(ivar)区别" data-url="http://yoursite.com/2016/05/03/属性-property-与成员变量-ivar-区别/">
+      <div class="ds-thread" data-thread-key="2016/06/20/iOS深入了解frame和bounds的区别/"
+           data-title="iOS深入了解frame和bounds的区别" data-url="http://yoursite.com/2016/06/20/iOS深入了解frame和bounds的区别/">
       </div>
     
   </div>
@@ -435,7 +397,7 @@ Xcode4.5版本后，@property声明的属性，会自动生成一个带下划线
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-_u533A_u522B"><span class="nav-number">1.</span> <span class="nav-text">1.区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-_u7528_u6CD5"><span class="nav-number">2.</span> <span class="nav-text">2.用法</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目錄</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
