@@ -51,25 +51,22 @@
 
 
 
-<meta name="description" content="IntroductionCAGradientLayer 类可以绘制背景的渐变色，填充整个layer。
-相关属性介绍@property(copy) NSArray *colors设置每个渐变色的颜色的数组，默认为nil。
-@property(copy) NSArray  *locations渐变色的区间分布，范围从0到1，必须是递增设置，如果设置为nil，会平均分布。
-@property CGPoi">
+<meta name="description" content="摘要iOS面试技术经常会被问道frame和bounds的区别，你能答出几点？我们经常使用frame，却很少使用bounds，bounds的原点永远都是（0，0）麽？如果一直是（0，0）那么bounds存在的意义是什么呢？
+正文相信大家都知道，frame的原点用于表示子view在父view的坐标系的位置。而bounds的原点则是表示自己的内容相对于自己的坐标系的位置，bounds是view用于控制自">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Layer渐变背景色-CAGradientLayer">
-<meta property="og:url" content="http://yoursite.com/2016/06/01/Layer渐变背景色-CAGradientLayer/index.html">
+<meta property="og:title" content="iOS-深入了解frame和bounds的区别">
+<meta property="og:url" content="http://yoursite.com/2016/06/21/iOS-深入了解frame和bounds的区别/index.html">
 <meta property="og:site_name" content="Grace’s Blog">
-<meta property="og:description" content="IntroductionCAGradientLayer 类可以绘制背景的渐变色，填充整个layer。
-相关属性介绍@property(copy) NSArray *colors设置每个渐变色的颜色的数组，默认为nil。
-@property(copy) NSArray  *locations渐变色的区间分布，范围从0到1，必须是递增设置，如果设置为nil，会平均分布。
-@property CGPoi">
-<meta property="og:updated_time" content="2016-06-01T06:27:41.000Z">
+<meta property="og:description" content="摘要iOS面试技术经常会被问道frame和bounds的区别，你能答出几点？我们经常使用frame，却很少使用bounds，bounds的原点永远都是（0，0）麽？如果一直是（0，0）那么bounds存在的意义是什么呢？
+正文相信大家都知道，frame的原点用于表示子view在父view的坐标系的位置。而bounds的原点则是表示自己的内容相对于自己的坐标系的位置，bounds是view用于控制自">
+<meta property="og:image" content="https://img.alicdn.com/imgextra/i1/719068679/TB2UeHFqVXXXXX.XXXXXXXXXXXX_!!719068679.png">
+<meta property="og:image" content="https://img.alicdn.com/imgextra/i2/719068679/TB2nkfGqVXXXXadXXXXXXXXXXXX_!!719068679.png">
+<meta property="og:image" content="https://img.alicdn.com/imgextra/i2/719068679/TB2K8SJqVXXXXXTXFXXXXXXXXXX_!!719068679.png">
+<meta property="og:updated_time" content="2016-06-21T03:51:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Layer渐变背景色-CAGradientLayer">
-<meta name="twitter:description" content="IntroductionCAGradientLayer 类可以绘制背景的渐变色，填充整个layer。
-相关属性介绍@property(copy) NSArray *colors设置每个渐变色的颜色的数组，默认为nil。
-@property(copy) NSArray  *locations渐变色的区间分布，范围从0到1，必须是递增设置，如果设置为nil，会平均分布。
-@property CGPoi">
+<meta name="twitter:title" content="iOS-深入了解frame和bounds的区别">
+<meta name="twitter:description" content="摘要iOS面试技术经常会被问道frame和bounds的区别，你能答出几点？我们经常使用frame，却很少使用bounds，bounds的原点永远都是（0，0）麽？如果一直是（0，0）那么bounds存在的意义是什么呢？
+正文相信大家都知道，frame的原点用于表示子view在父view的坐标系的位置。而bounds的原点则是表示自己的内容相对于自己的坐标系的位置，bounds是view用于控制自">
 
 
 
@@ -81,7 +78,7 @@
   };
 </script>
 
-  <title> Layer渐变背景色-CAGradientLayer | Grace’s Blog </title>
+  <title> iOS-深入了解frame和bounds的区别 | Grace’s Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-hans">
@@ -201,7 +198,7 @@
             
             
               
-                Layer渐变背景色-CAGradientLayer
+                iOS-深入了解frame和bounds的区别
               
             
           </h1>
@@ -210,34 +207,19 @@
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2016-06-01T14:23:10+08:00" content="2016-06-01">
-              2016-06-01
+            <time itemprop="dateCreated" datetime="2016-06-21T11:18:52+08:00" content="2016-06-21">
+              2016-06-21
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS技术/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS技术</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/06/01/Layer渐变背景色-CAGradientLayer/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/01/Layer渐变背景色-CAGradientLayer/" itemprop="commentsCount"></span>
+                <a href="/2016/06/21/iOS-深入了解frame和bounds的区别/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/21/iOS-深入了解frame和bounds的区别/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -256,12 +238,14 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>CAGradientLayer 类可以绘制背景的渐变色，填充整个layer。</p>
-<h2 id="u76F8_u5173_u5C5E_u6027_u4ECB_u7ECD"><a href="#u76F8_u5173_u5C5E_u6027_u4ECB_u7ECD" class="headerlink" title="相关属性介绍"></a>相关属性介绍</h2><h3 id="@property_28copy_29_NSArray_*colors"><a href="#@property_28copy_29_NSArray_*colors" class="headerlink" title="@property(copy) NSArray *colors"></a>@property(copy) NSArray *colors</h3><p>设置每个渐变色的颜色的数组，默认为nil。</p>
-<h3 id="@property_28copy_29_NSArray_*locations"><a href="#@property_28copy_29_NSArray_*locations" class="headerlink" title="@property(copy) NSArray  *locations"></a>@property(copy) NSArray <nsnumber *=""> *locations</nsnumber></h3><p>渐变色的区间分布，范围从0到1，必须是递增设置，如果设置为nil，会平均分布。</p>
-<h3 id="@property_CGPoint_endPoint"><a href="#@property_CGPoint_endPoint" class="headerlink" title="@property CGPoint endPoint"></a>@property CGPoint endPoint</h3><p>渐变色绘制的最后一个点，映射locations的最后一个位置。默认值是（0.5，1.0），（0，0）表示矩形的左下角，（1，1）表示矩形的右上角。</p>
-<h3 id="@property_CGPoint_startPoint"><a href="#@property_CGPoint_startPoint" class="headerlink" title="@property CGPoint startPoint"></a>@property CGPoint startPoint</h3><p>渐变色绘制的第一个点，映射locations的第一个位置，默认值是（0.5，0.0）。</p>
-<h3 id="@property_28copy_29_NSString_*type"><a href="#@property_28copy_29_NSString_*type" class="headerlink" title="@property(copy) NSString *type"></a>@property(copy) NSString *type</h3><p>layer绘制渐变色的样式，默认值是kCAGradientLayerAxial，表示按像素均匀变化。除了默认值也无其它选项。</p>
+        <span itemprop="articleBody"><h3 id="u6458_u8981"><a href="#u6458_u8981" class="headerlink" title="摘要"></a>摘要</h3><p>iOS面试技术经常会被问道frame和bounds的区别，你能答出几点？我们经常使用frame，却很少使用bounds，bounds的原点永远都是（0，0）麽？如果一直是（0，0）那么bounds存在的意义是什么呢？</p>
+<h3 id="u6B63_u6587"><a href="#u6B63_u6587" class="headerlink" title="正文"></a>正文</h3><p>相信大家都知道，frame的原点用于表示子view在父view的坐标系的位置。<br>而bounds的原点则是表示自己的内容相对于自己的坐标系的位置，bounds是view用于控制自己的内容的显示区域的属性。<br>如何理解上面的bounds是view用于控制自己的内容的显示区域的属性？<br>我们拿scrollview举例：<br>1) 不设置scrollview的bounds<br><img src="https://img.alicdn.com/imgextra/i1/719068679/TB2UeHFqVXXXXX.XXXXXXXXXXXX_!!719068679.png"></p>
+<p>在默认不设置scrollview的bounds的情况下，运行起来我们是看不到红色的按钮的，往下滚动scrollview，看到红色按钮，点击打印的结果如下：<br><img src="https://img.alicdn.com/imgextra/i2/719068679/TB2nkfGqVXXXXadXXXXXXXXXXXX_!!719068679.png" alt="打印结果"><br>注意此时，scrollview的contentOffset: {0, 100}，而bounds的原点也是是（0，100），scrollview的内容是从（0，100）这个点开始展示的。也就是说如果我不想滚动scrollview就能看到红色按钮，那么我只需要把scrollview的bounds的原点设置为（0，100）即可。</p>
+<p>2) 修改scrollview的bounds为（0，100）如下图:<br><img src="https://img.alicdn.com/imgextra/i2/719068679/TB2K8SJqVXXXXXTXFXXXXXXXXXX_!!719068679.png" alt="修改scrollview的bounds为（0，100）"><br>直接运行代码，红色按钮就显示出来了，点击按钮，scrollview的bounds的原点和contentOffset保持一致。<br>上图很明显的验证了我们的推断：bounds就是view用于控制自己的内容的显示区域的属性，scrollview是通过控制自己的bounds来实现滚动的。</p>
+<h3 id="u603B_u7ED3frame_u548Cbounds_u7684_u533A_u522B"><a href="#u603B_u7ED3frame_u548Cbounds_u7684_u533A_u522B" class="headerlink" title="总结frame和bounds的区别"></a>总结frame和bounds的区别</h3><ol>
+<li>frame的原点用于表示自己的位置在父控件的坐标系中的位置；<br>bounds的原点则是表示自己的内容相对于自己的坐标系的位置，默认为（0，0），即自己的内容从（0，0）开始展示。</li>
+<li>frame的size表示自己的大小，bounds的size表示自己的内容的展示区域。一般的这两个size是同步改变的，但是也有特例（比如设置view的transform进行放大缩小，我们操作的都是frame的size，它的bounds的不变）。</li>
+</ol>
 </span>
       
     </div>
@@ -273,17 +257,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/05/12/成长的路上/" rel="next" title="成长的路上">
-                <i class="fa fa-chevron-left"></i> 成长的路上
+              <a href="/2016/06/21/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/21/123/" rel="prev" title="123">
-                123 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -298,10 +278,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/06/01/Layer渐变背景色-CAGradientLayer/"
-     data-title="Layer渐变背景色-CAGradientLayer"
+        <div class="ds-share flat" data-thread-key="2016/06/21/iOS-深入了解frame和bounds的区别/"
+     data-title="iOS-深入了解frame和bounds的区别"
      data-content=""
-     data-url="http://yoursite.com/2016/06/01/Layer渐变背景色-CAGradientLayer/">
+     data-url="http://yoursite.com/2016/06/21/iOS-深入了解frame和bounds的区别/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -329,8 +309,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/06/01/Layer渐变背景色-CAGradientLayer/"
-           data-title="Layer渐变背景色-CAGradientLayer" data-url="http://yoursite.com/2016/06/01/Layer渐变背景色-CAGradientLayer/">
+      <div class="ds-thread" data-thread-key="2016/06/21/iOS-深入了解frame和bounds的区别/"
+           data-title="iOS-深入了解frame和bounds的区别" data-url="http://yoursite.com/2016/06/21/iOS-深入了解frame和bounds的区别/">
       </div>
     
   </div>
@@ -431,7 +411,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u76F8_u5173_u5C5E_u6027_u4ECB_u7ECD"><span class="nav-number">2.</span> <span class="nav-text">相关属性介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#@property_28copy_29_NSArray_*colors"><span class="nav-number">2.1.</span> <span class="nav-text">@property(copy) NSArray *colors</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#@property_28copy_29_NSArray_*locations"><span class="nav-number">2.2.</span> <span class="nav-text">@property(copy) NSArray  *locations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#@property_CGPoint_endPoint"><span class="nav-number">2.3.</span> <span class="nav-text">@property CGPoint endPoint</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#@property_CGPoint_startPoint"><span class="nav-number">2.4.</span> <span class="nav-text">@property CGPoint startPoint</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#@property_28copy_29_NSString_*type"><span class="nav-number">2.5.</span> <span class="nav-text">@property(copy) NSString *type</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#u6458_u8981"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6B63_u6587"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u603B_u7ED3frame_u548Cbounds_u7684_u533A_u522B"><span class="nav-number">3.</span> <span class="nav-text">总结frame和bounds的区别</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
