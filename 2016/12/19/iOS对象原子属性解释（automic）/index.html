@@ -51,30 +51,22 @@
 
 
 
-<meta name="description" content="倒叉树视图层次结构定义了一个window中所有视图之间的关系。你可以把它想象成倒叉树，window作为树的最高节点，接着按照父控件-子控件的关系连接起来。从视觉的角度看，视图层级结构的本质是密围式的：一个视图包含一个或者多个子视图，最终window包含所有的视图。如下图所示：
-作用
-视图层次结构是响应者链条的主要组成部分。
-用来决定，应用的框架在绘制过程中渲染窗口内容时如何排列视图顺序。
-视图层级">
+<meta name="description" content="###同步锁iOS中一般我们声明一个属性
+
+@property (nonatomic, strong) NSArray *students那么括号中的nonatomic, strong就是这一个属性的特性。nonatomic：非原子属性，即不使用同步锁，保证性能更好。atomic：原子属性：是指在并发编程中，如果某些操作具有整体性，系统无法获取到这些操作的中间步骤生成的临时结果，只能看见操作前和操">
 <meta property="og:type" content="article">
-<meta property="og:title" content="View Hierachy">
-<meta property="og:url" content="http://yoursite.com/2016/04/19/View-Hierachy/index.html">
+<meta property="og:title" content="iOS对象原子属性解释（automic）">
+<meta property="og:url" content="http://yoursite.com/2016/12/19/iOS对象原子属性解释（automic）/index.html">
 <meta property="og:site_name" content="Grace’s Blog">
-<meta property="og:description" content="倒叉树视图层次结构定义了一个window中所有视图之间的关系。你可以把它想象成倒叉树，window作为树的最高节点，接着按照父控件-子控件的关系连接起来。从视觉的角度看，视图层级结构的本质是密围式的：一个视图包含一个或者多个子视图，最终window包含所有的视图。如下图所示：
-作用
-视图层次结构是响应者链条的主要组成部分。
-用来决定，应用的框架在绘制过程中渲染窗口内容时如何排列视图顺序。
-视图层级">
-<meta property="og:image" content="https://img.alicdn.com/imgextra/i2/719068679/TB2rTvvnpXXXXbEXXXXXXXXXXXX_!!719068679.jpg">
-<meta property="og:image" content="https://img.alicdn.com/imgextra/i4/719068679/TB2LhG4npXXXXc.XpXXXXXXXXXX_!!719068679.jpg">
-<meta property="og:updated_time" content="2016-04-19T04:00:37.000Z">
+<meta property="og:description" content="###同步锁iOS中一般我们声明一个属性
+
+@property (nonatomic, strong) NSArray *students那么括号中的nonatomic, strong就是这一个属性的特性。nonatomic：非原子属性，即不使用同步锁，保证性能更好。atomic：原子属性：是指在并发编程中，如果某些操作具有整体性，系统无法获取到这些操作的中间步骤生成的临时结果，只能看见操作前和操">
+<meta property="og:updated_time" content="2016-12-19T09:52:35.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="View Hierachy">
-<meta name="twitter:description" content="倒叉树视图层次结构定义了一个window中所有视图之间的关系。你可以把它想象成倒叉树，window作为树的最高节点，接着按照父控件-子控件的关系连接起来。从视觉的角度看，视图层级结构的本质是密围式的：一个视图包含一个或者多个子视图，最终window包含所有的视图。如下图所示：
-作用
-视图层次结构是响应者链条的主要组成部分。
-用来决定，应用的框架在绘制过程中渲染窗口内容时如何排列视图顺序。
-视图层级">
+<meta name="twitter:title" content="iOS对象原子属性解释（automic）">
+<meta name="twitter:description" content="###同步锁iOS中一般我们声明一个属性
+
+@property (nonatomic, strong) NSArray *students那么括号中的nonatomic, strong就是这一个属性的特性。nonatomic：非原子属性，即不使用同步锁，保证性能更好。atomic：原子属性：是指在并发编程中，如果某些操作具有整体性，系统无法获取到这些操作的中间步骤生成的临时结果，只能看见操作前和操">
 
 
 
@@ -86,7 +78,7 @@
   };
 </script>
 
-  <title> View Hierachy | Grace’s Blog </title>
+  <title> iOS对象原子属性解释（automic） | Grace’s Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-hans">
@@ -206,7 +198,7 @@
             
             
               
-                View Hierachy
+                iOS对象原子属性解释（automic）
               
             
           </h1>
@@ -215,34 +207,19 @@
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2016-04-19T11:43:41+08:00" content="2016-04-19">
-              2016-04-19
+            <time itemprop="dateCreated" datetime="2016-12-19T17:25:19+08:00" content="2016-12-19">
+              2016-12-19
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS技术/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS技术</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/19/View-Hierachy/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/19/View-Hierachy/" itemprop="commentsCount"></span>
+                <a href="/2016/12/19/iOS对象原子属性解释（automic）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/19/iOS对象原子属性解释（automic）/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -261,21 +238,13 @@
       
 
       
-        <span itemprop="articleBody"><h2 id="u5012_u53C9_u6811"><a href="#u5012_u53C9_u6811" class="headerlink" title="倒叉树"></a>倒叉树</h2><p>视图层次结构定义了一个window中所有视图之间的关系。你可以把它想象成倒叉树，window作为树的最高节点，接着按照父控件-子控件的关系连接起来。从视觉的角度看，视图层级结构的本质是密围式的：一个视图包含一个或者多个子视图，最终window包含所有的视图。如下图所示：<br><img src="https://img.alicdn.com/imgextra/i2/719068679/TB2rTvvnpXXXXbEXXXXXXXXXXXX_!!719068679.jpg" alt="Mou icon"></p>
-<h2 id="u4F5C_u7528"><a href="#u4F5C_u7528" class="headerlink" title="作用"></a>作用</h2><ol>
-<li>视图层次结构是响应者链条的主要组成部分。</li>
-<li>用来决定，应用的框架在绘制过程中渲染窗口内容时如何排列视图顺序。</li>
-<li>视图层级结构控制着视图构图理念。</li>
-<li>你可以通过添加子控件的形式来创建复合式view。最终，视图层级成为窗口中多个系统互相协调的决定性因素</li>
-</ol>
-<h2 id="u5C5E_u6027"><a href="#u5C5E_u6027" class="headerlink" title="属性"></a>属性</h2><p>3个层级结构中视图的属性来决定视图之间的关系：</p>
-<ol>
-<li>superview父控件 — 比当前view的层要高的控件；父控件包围着这个view。除了最高节点的view，所有的view都会有自己父控件;</li>
-<li>subviews子控件 — 比当前view的层要低的控件; 当前控件包含着的所有控件。一个view可能有多个子控件，也可能没有。</li>
-<li>一个view有一个标识他们的window的属性。</li>
-</ol>
-<p>如图：<br><img src="https://img.alicdn.com/imgextra/i4/719068679/TB2LhG4npXXXXc.XpXXXXXXXXXX_!!719068679.jpg" alt="Mou icon"></p>
-<h2 id="u6CE8"><a href="#u6CE8" class="headerlink" title="注"></a>注</h2><p>在OS X 中，窗口也有一个独立的“content view”，所有的其他控件都起源于这个背景控件。然而，在iOS应用中，一个窗口就是一个view，所以它是它自己的“content view”。</p>
+        <span itemprop="articleBody"><p>###同步锁<br>iOS中一般我们声明一个属性</p>
+<ul>
+<li>@property (nonatomic, strong) NSArray *students<br>那么括号中的nonatomic, strong就是这一个属性的特性。<br>nonatomic：非原子属性，即不使用同步锁，保证性能更好。<br>atomic：原子属性：是指在并发编程中，如果某些操作具有整体性，系统无法获取到这些操作的中间步骤生成的临时结果，只能看见操作前和操作后的结果，那么该操作就是原子的。atomic表示在多线程操作中会通过加锁来保证这个属性在被操作的时候别的线程无法获取到它。在iOS中使用同步锁开销大，会带来性能问题，并且就算属性设置为atomic，也无法保证线程安全，需要更深层的锁定机制才可以，所以一般是nonatomic。<br>###为什么说atomic并不能保证线程安全<br>atomic原理是在属性的setter方法中加锁</li>
+<li>1.当线程A给对象O赋值时，线程B也想要给对象O赋值，这个时候O被线程A锁住，所以B只能等待，这个时候是线程安全的；</li>
+<li>2.getter方法不安全，当线程A给对象O赋值时，此时只执行到加锁的那一步，还没有赋值，线程B去读取对象O的值，因为setter和getter方法没有任何联系，当真正赋值的时候，线程B已经把旧值读取走了，本来想读取设置后的新值，所以不是线程安全；</li>
+<li>3.当线程A给对象O赋值时，线程B在A之前把对象O释放release掉了，此时会产生崩溃，所以不是线程安全。</li>
+</ul>
 </span>
       
     </div>
@@ -287,17 +256,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/06/UIKit-UIResponder/" rel="next" title="UIKit-UIResponder">
-                <i class="fa fa-chevron-left"></i> UIKit-UIResponder
+              <a href="/2016/12/19/iOS对象原子属性解释（atomic）/" rel="next" title="iOS对象原子属性解释（automic）">
+                <i class="fa fa-chevron-left"></i> iOS对象原子属性解释（automic）
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/19/Events-iOS/" rel="prev" title="Events(iOS)">
-                Events(iOS) <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -312,10 +277,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/04/19/View-Hierachy/"
-     data-title="View Hierachy"
+        <div class="ds-share flat" data-thread-key="2016/12/19/iOS对象原子属性解释（automic）/"
+     data-title="iOS对象原子属性解释（automic）"
      data-content=""
-     data-url="http://yoursite.com/2016/04/19/View-Hierachy/">
+     data-url="http://yoursite.com/2016/12/19/iOS对象原子属性解释（automic）/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -343,8 +308,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/19/View-Hierachy/"
-           data-title="View Hierachy" data-url="http://yoursite.com/2016/04/19/View-Hierachy/">
+      <div class="ds-thread" data-thread-key="2016/12/19/iOS对象原子属性解释（automic）/"
+           data-title="iOS对象原子属性解释（automic）" data-url="http://yoursite.com/2016/12/19/iOS对象原子属性解释（automic）/">
       </div>
     
   </div>
@@ -445,7 +410,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#u5012_u53C9_u6811"><span class="nav-number">1.</span> <span class="nav-text">倒叉树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u4F5C_u7528"><span class="nav-number">2.</span> <span class="nav-text">作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u5C5E_u6027"><span class="nav-number">3.</span> <span class="nav-text">属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u6CE8"><span class="nav-number">4.</span> <span class="nav-text">注</span></a></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目錄</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
