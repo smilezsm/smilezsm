@@ -51,19 +51,22 @@
 
 
 
-<meta name="description" content="IntroductionNSRunLoop 类定义了在程序界面用来管理输入源的对象。一个runloop对象处理从屏幕系统中产生的事件：例如鼠标点击和键盘输入事件，NSPort线程通讯对象和NSConnection 网络链接对象等产生的事件。还有NSTimer定时器产生的事件。
-注意1：你的应用是不能创建或者明确的管理NSRunLoop 对象的。每条线程对象，包含主线程都会在需要的时候自动创建一个r">
+<meta name="description" content="###同步锁iOS中一般我们声明一个属性
+
+@property (nonatomic, strong) NSArray *students那么括号中的nonatomic, strong就是这一个属性的特性。nonatomic：非原子属性，即不使用同步锁，保证性能更好。atomic：原子属性：是指在并发编程中，如果某些操作具有整体性，系统无法获取到这些操作的中间步骤生成的临时结果，只能看见操作前和操">
 <meta property="og:type" content="article">
-<meta property="og:title" content="RunLoop-API翻译">
-<meta property="og:url" content="http://yoursite.com/2016/01/21/RunLoop-API翻译/index.html">
+<meta property="og:title" content="iOS对象原子属性解释（automic）">
+<meta property="og:url" content="http://yoursite.com/2016/12/19/iOS对象原子属性解释（automic）/index.html">
 <meta property="og:site_name" content="Grace’s Blog">
-<meta property="og:description" content="IntroductionNSRunLoop 类定义了在程序界面用来管理输入源的对象。一个runloop对象处理从屏幕系统中产生的事件：例如鼠标点击和键盘输入事件，NSPort线程通讯对象和NSConnection 网络链接对象等产生的事件。还有NSTimer定时器产生的事件。
-注意1：你的应用是不能创建或者明确的管理NSRunLoop 对象的。每条线程对象，包含主线程都会在需要的时候自动创建一个r">
-<meta property="og:updated_time" content="2016-01-21T08:57:06.000Z">
+<meta property="og:description" content="###同步锁iOS中一般我们声明一个属性
+
+@property (nonatomic, strong) NSArray *students那么括号中的nonatomic, strong就是这一个属性的特性。nonatomic：非原子属性，即不使用同步锁，保证性能更好。atomic：原子属性：是指在并发编程中，如果某些操作具有整体性，系统无法获取到这些操作的中间步骤生成的临时结果，只能看见操作前和操">
+<meta property="og:updated_time" content="2016-12-19T09:35:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="RunLoop-API翻译">
-<meta name="twitter:description" content="IntroductionNSRunLoop 类定义了在程序界面用来管理输入源的对象。一个runloop对象处理从屏幕系统中产生的事件：例如鼠标点击和键盘输入事件，NSPort线程通讯对象和NSConnection 网络链接对象等产生的事件。还有NSTimer定时器产生的事件。
-注意1：你的应用是不能创建或者明确的管理NSRunLoop 对象的。每条线程对象，包含主线程都会在需要的时候自动创建一个r">
+<meta name="twitter:title" content="iOS对象原子属性解释（automic）">
+<meta name="twitter:description" content="###同步锁iOS中一般我们声明一个属性
+
+@property (nonatomic, strong) NSArray *students那么括号中的nonatomic, strong就是这一个属性的特性。nonatomic：非原子属性，即不使用同步锁，保证性能更好。atomic：原子属性：是指在并发编程中，如果某些操作具有整体性，系统无法获取到这些操作的中间步骤生成的临时结果，只能看见操作前和操">
 
 
 
@@ -75,7 +78,7 @@
   };
 </script>
 
-  <title> RunLoop-API翻译 | Grace’s Blog </title>
+  <title> iOS对象原子属性解释（automic） | Grace’s Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-hans">
@@ -195,7 +198,7 @@
             
             
               
-                RunLoop-API翻译
+                iOS对象原子属性解释（automic）
               
             
           </h1>
@@ -204,34 +207,19 @@
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2016-01-21T15:45:17+08:00" content="2016-01-21">
-              2016-01-21
+            <time itemprop="dateCreated" datetime="2016-12-19T17:25:19+08:00" content="2016-12-19">
+              2016-12-19
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/iOS技术/" itemprop="url" rel="index">
-                    <span itemprop="name">iOS技术</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/21/RunLoop-API翻译/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/21/RunLoop-API翻译/" itemprop="commentsCount"></span>
+                <a href="/2016/12/19/iOS对象原子属性解释（automic）/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/19/iOS对象原子属性解释（automic）/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -250,25 +238,12 @@
       
 
       
-        <span itemprop="articleBody"><h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>NSRunLoop 类定义了在程序界面用来管理输入源的对象。一个runloop对象处理从屏幕系统中产生的事件：例如鼠标点击和键盘输入事件，NSPort线程通讯对象和NSConnection 网络链接对象等产生的事件。还有NSTimer定时器产生的事件。</p>
-<h3 id="u6CE8_u610F1_uFF1A"><a href="#u6CE8_u610F1_uFF1A" class="headerlink" title="注意1："></a>注意1：</h3><p><strong>你的应用是不能创建或者明确的管理NSRunLoop 对象的。</strong><br>每条线程对象，包含主线程都<strong>会在需要的时候自动创建</strong>一个runloop进行对应。如果你需要获取到当前线程的运行循环，你需要使用NSRunLoop的类方法：<strong> currentRunLoop</strong>.</p>
-<h3 id="u6CE8_u610F2_uFF1A"><a href="#u6CE8_u610F2_uFF1A" class="headerlink" title="注意2："></a>注意2：</h3><p>1）从运行循环的角度看，定时器NSTimer 对象比较特殊，不属于输入事件，所以这就意味着当开启定时器的时候不会激活运行循环（需要将定时器手动添加到runloop中）。<br>2）运行循环不是线程安全的类，它的方法也只能在当前的线程内调用。你不能在其他线程调用另外线程的runloop方法，否则将会出错。</p>
-<h3 id="u83B7_u53D6_u8FD0_u884C_u5FAA_u73AF_u548C_u5FAA_u73AF_u6A21_u5F0F"><a href="#u83B7_u53D6_u8FD0_u884C_u5FAA_u73AF_u548C_u5FAA_u73AF_u6A21_u5F0F" class="headerlink" title="获取运行循环和循环模式"></a>获取运行循环和循环模式</h3><h4 id="+_currentRunLoop"><a href="#+_currentRunLoop" class="headerlink" title="+ currentRunLoop"></a>+ currentRunLoop</h4><p>返回当前线程的runloop对象。如果当前没有runloop存在将会创建一个新的返回。</p>
-<h4 id="@property_28readonly_2C_copy_29_NSString_*currentMode"><a href="#@property_28readonly_2C_copy_29_NSString_*currentMode" class="headerlink" title="@property(readonly, copy) NSString *currentMode"></a>@property(readonly, copy) NSString *currentMode</h4><p>runloop的当前输入模式（只读）。<br>只有当前的运行循环正在运行的时候才会返回当前的输入模式否则返回nil。模式通过运行这个runloop的时候方法设置的：<strong>acceptInputForMode:beforeDate:</strong> 和 <strong>runMode:beforeDate:</strong>.</p>
-<h4 id="28NSDate__29limitDateForMode_3A_28NSString__29mode"><a href="#28NSDate__29limitDateForMode_3A_28NSString__29mode" class="headerlink" title="- (NSDate )limitDateForMode:(NSString )mode"></a>- (NSDate <em>)limitDateForMode:(NSString </em>)mode</h4><p>在特定的runloop循环模式下处理事件并且返回下一次runloop的触发的时间。</p>
-<h4 id="+_mainRunLoop"><a href="#+_mainRunLoop" class="headerlink" title="+ mainRunLoop"></a>+ mainRunLoop</h4><p>返回主线程的runloop</p>
-<h4 id="getCFRunLoop"><a href="#getCFRunLoop" class="headerlink" title="- getCFRunLoop"></a>- getCFRunLoop</h4><p>返回在Core Foundation中与之对应的 CFRunLoop Reference 对象。</p>
-<h3 id="u5904_u7406_u5B9A_u65F6_u5668"><a href="#u5904_u7406_u5B9A_u65F6_u5668" class="headerlink" title="处理定时器"></a>处理定时器</h3><h4 id="addTimer_3AforMode_3A"><a href="#addTimer_3AforMode_3A" class="headerlink" title="- addTimer:forMode:"></a>- addTimer:forMode:</h4><p>将定时器加入到一个模式的runloop中。runloop将持有这个定时器，会在要移除定时器的时候发送 invalidate 消息给定时器。</p>
-<h3 id="u8FD0_u884C_u4E00_u4E2A_u5FAA_u73AF"><a href="#u8FD0_u884C_u4E00_u4E2A_u5FAA_u73AF" class="headerlink" title="运行一个循环"></a>运行一个循环</h3><h4 id="run"><a href="#run" class="headerlink" title="- run"></a>- run</h4><p><strong>将运行循环加入到一个永久循环中处理所有的输入源事件。</strong>如果没有任何输入源事件或者定时器加入到该运行循环，那么会立即退出这个方法;否则就会在NSDefaultRunLoopMode 这个模式下重复调用runMode:beforeDate:这个方法。<strong>换句话说，这个方法实际上开启了一个无限循环的loop来处理所有输入源和定时器事件。</strong></p>
-<h4 id="runMode_3AbeforeDate_3A"><a href="#runMode_3AbeforeDate_3A" class="headerlink" title="- runMode:beforeDate:"></a>- runMode:beforeDate:</h4><p>一旦运行了该loop，就会<strong>阻塞</strong>设置的mode下的循环直到设置的日期到达。如果这个loop运行了并且处理了输入源事件或者到了指定的时间将返回yes，如果这个loop没有运行将返回no。如果没有输入源事件或者定时器事件，将会立即退出这个方法并且返回NO，否则一旦第一个输入源事件被处理或者到了限制日期都会返回YES。<strong>注意：</strong>定时器不属于输入源事件在等待这个方法的返回值时也许会被激活多次。</p>
-<h4 id="runUntilDate_3A"><a href="#runUntilDate_3A" class="headerlink" title="- runUntilDate:"></a>- runUntilDate:</h4><p>如果没有输入源事件或者定时器事件，将会立即退出这个方法；否则在指定的日期到达之前会在NSDefaultRunLoopMode 这个模式下重复调用runMode:beforeDate:这个方法。类似于“run”方法。</p>
-<h4 id="acceptInputForMode_3AbeforeDate_3A"><a href="#acceptInputForMode_3AbeforeDate_3A" class="headerlink" title="- acceptInputForMode:beforeDate:"></a>- acceptInputForMode:beforeDate:</h4><p>在指定的日期到达之前，只接受指定的模式下的事件。<br>如果没有输入源事件或者定时器事件，将会立即退出这个方法，否则会这个runloop将被激活一次，只要有输入源事件被处理或者到了指定的时间，就会返回。<br><strong>注意：</strong>定时器不属于输入源事件在等待这个方法的返回值时也许会被激活多次。</p>
-<h3 id="u9884_u8BBE_u6216_u8005_u53D6_u6D88_u6D88_u606F"><a href="#u9884_u8BBE_u6216_u8005_u53D6_u6D88_u6D88_u606F" class="headerlink" title="预设或者取消消息"></a>预设或者取消消息</h3><h4 id="performSelector_3Atarget_3Aargument_3Aorder_3Amodes_3A"><a href="#performSelector_3Atarget_3Aargument_3Aorder_3Amodes_3A" class="headerlink" title="-performSelector:target:argument:order:modes:"></a>-performSelector:target:argument:order:modes:</h4><p>这个方法为定时器设置了<strong>在当前线程的下一个运行循环中将要调用的方法</strong>。定时器会根据设置的模式运行该方法。当定时器激活时，当前线程会尝试从当前运行循环中派发出一个消息，并执行该方法。如果当前的runloop还是运行并且符合设置的模式，就会成功调用该方法，否则定时器会等到runloop符合条件时再调用该方法。</p>
-<h4 id="cancelPerformSelector_3Atarget_3Aargument_3A"><a href="#cancelPerformSelector_3Atarget_3Aargument_3A" class="headerlink" title="- cancelPerformSelector:target:argument:"></a>- cancelPerformSelector:target:argument:</h4><p>取消之前通过performSelector:target:argument:order:modes:方法设置的发送消息方法调用。</p>
-<h4 id="cancelPerformSelectorsWithTarget_3A"><a href="#cancelPerformSelectorsWithTarget_3A" class="headerlink" title="- cancelPerformSelectorsWithTarget:"></a>- cancelPerformSelectorsWithTarget:</h4><p>取消该target下所有之前设置要执行的方法。</p>
-<h3 id="u5E38_u91CF"><a href="#u5E38_u91CF" class="headerlink" title="常量"></a>常量</h3><ul>
-<li><strong>NSDefaultRunLoopMode 这种模式下将处理所有输入事件除了NSConnection 对象发送的。</strong></li>
-<li><strong>NSRunLoopCommonModes 这种模式包含所有被监控的模式。更多请查看CFRunLoopAddCommonMode 。</strong></li>
+        <span itemprop="articleBody"><p>###同步锁<br>iOS中一般我们声明一个属性</p>
+<ul>
+<li>@property (nonatomic, strong) NSArray *students<br>那么括号中的nonatomic, strong就是这一个属性的特性。<br>nonatomic：非原子属性，即不使用同步锁，保证性能更好。<br>atomic：原子属性：是指在并发编程中，如果某些操作具有整体性，系统无法获取到这些操作的中间步骤生成的临时结果，只能看见操作前和操作后的结果，那么该操作就是原子的。atomic表示在多线程操作中会通过加锁来保证这个属性在被操作的时候别的线程无法获取到它。在iOS中使用同步锁开销大，会带来性能问题，并且就算属性设置为atomic，也无法保证线程安全，需要更深层的锁定机制才可以，所以一般是nonatomic。<br>###为什么说atomic并不能保证线程安全<br>atomic原理是在属性的setter方法中加锁</li>
+<li>1.当线程A给对象O赋值时，线程B也想要给对象O赋值，这个时候O被线程A锁住，所以B只能等待，这个时候是线程安全的；</li>
+<li>2.getter方法不安全，当线程A给对象O赋值时，此时只执行到加锁的那一步，还没有赋值，线程B去读取对象O的值，因为setter和getter方法没有任何联系，当真正赋值的时候，线程B已经把旧值读取走了，本来想读取设置后的新值，所以不是线程安全；</li>
+<li>3.当线程A给对象O赋值时，线程B在A之前把对象O释放release掉了，此时会产生崩溃，所以不是线程安全。</li>
 </ul>
 </span>
       
@@ -281,17 +256,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/31/CATransaction-API翻译/" rel="next" title="CATransaction-API翻译">
-                <i class="fa fa-chevron-left"></i> CATransaction-API翻译
+              <a href="/2016/11/16/关于最近生活工作的一点思考/" rel="next" title="关于最近生活工作的一点思考">
+                <i class="fa fa-chevron-left"></i> 关于最近生活工作的一点思考
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/02/18/iOS的那些坑/" rel="prev" title="iOS的那些坑">
-                iOS的那些坑 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -306,10 +277,10 @@
 
     <div class="post-spread">
       
-        <div class="ds-share flat" data-thread-key="2016/01/21/RunLoop-API翻译/"
-     data-title="RunLoop-API翻译"
+        <div class="ds-share flat" data-thread-key="2016/12/19/iOS对象原子属性解释（automic）/"
+     data-title="iOS对象原子属性解释（automic）"
      data-content=""
-     data-url="http://yoursite.com/2016/01/21/RunLoop-API翻译/">
+     data-url="http://yoursite.com/2016/12/19/iOS对象原子属性解释（automic）/">
   <div class="ds-share-inline">
     <ul  class="ds-share-icons-16">
 
@@ -337,8 +308,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/21/RunLoop-API翻译/"
-           data-title="RunLoop-API翻译" data-url="http://yoursite.com/2016/01/21/RunLoop-API翻译/">
+      <div class="ds-thread" data-thread-key="2016/12/19/iOS对象原子属性解释（automic）/"
+           data-title="iOS对象原子属性解释（automic）" data-url="http://yoursite.com/2016/12/19/iOS对象原子属性解释（automic）/">
       </div>
     
   </div>
@@ -439,7 +410,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">1.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u6CE8_u610F1_uFF1A"><span class="nav-number">1.0.1.</span> <span class="nav-text">注意1：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u6CE8_u610F2_uFF1A"><span class="nav-number">1.0.2.</span> <span class="nav-text">注意2：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u83B7_u53D6_u8FD0_u884C_u5FAA_u73AF_u548C_u5FAA_u73AF_u6A21_u5F0F"><span class="nav-number">1.0.3.</span> <span class="nav-text">获取运行循环和循环模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#+_currentRunLoop"><span class="nav-number">1.0.3.1.</span> <span class="nav-text">+ currentRunLoop</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#@property_28readonly_2C_copy_29_NSString_*currentMode"><span class="nav-number">1.0.3.2.</span> <span class="nav-text">@property(readonly, copy) NSString *currentMode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#28NSDate__29limitDateForMode_3A_28NSString__29mode"><span class="nav-number">1.0.3.3.</span> <span class="nav-text">- (NSDate )limitDateForMode:(NSString )mode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#+_mainRunLoop"><span class="nav-number">1.0.3.4.</span> <span class="nav-text">+ mainRunLoop</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#getCFRunLoop"><span class="nav-number">1.0.3.5.</span> <span class="nav-text">- getCFRunLoop</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5904_u7406_u5B9A_u65F6_u5668"><span class="nav-number">1.0.4.</span> <span class="nav-text">处理定时器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#addTimer_3AforMode_3A"><span class="nav-number">1.0.4.1.</span> <span class="nav-text">- addTimer:forMode:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u8FD0_u884C_u4E00_u4E2A_u5FAA_u73AF"><span class="nav-number">1.0.5.</span> <span class="nav-text">运行一个循环</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#run"><span class="nav-number">1.0.5.1.</span> <span class="nav-text">- run</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#runMode_3AbeforeDate_3A"><span class="nav-number">1.0.5.2.</span> <span class="nav-text">- runMode:beforeDate:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#runUntilDate_3A"><span class="nav-number">1.0.5.3.</span> <span class="nav-text">- runUntilDate:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#acceptInputForMode_3AbeforeDate_3A"><span class="nav-number">1.0.5.4.</span> <span class="nav-text">- acceptInputForMode:beforeDate:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u9884_u8BBE_u6216_u8005_u53D6_u6D88_u6D88_u606F"><span class="nav-number">1.0.6.</span> <span class="nav-text">预设或者取消消息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#performSelector_3Atarget_3Aargument_3Aorder_3Amodes_3A"><span class="nav-number">1.0.6.1.</span> <span class="nav-text">-performSelector:target:argument:order:modes:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cancelPerformSelector_3Atarget_3Aargument_3A"><span class="nav-number">1.0.6.2.</span> <span class="nav-text">- cancelPerformSelector:target:argument:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cancelPerformSelectorsWithTarget_3A"><span class="nav-number">1.0.6.3.</span> <span class="nav-text">- cancelPerformSelectorsWithTarget:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5E38_u91CF"><span class="nav-number">1.0.7.</span> <span class="nav-text">常量</span></a></li></ol></li></ol></li></ol></div>
+              <p class="post-toc-empty">此文章未包含目錄</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
