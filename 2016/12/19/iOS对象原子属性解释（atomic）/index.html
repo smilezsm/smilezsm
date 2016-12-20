@@ -63,7 +63,7 @@ atomic：原子属性：是指在并发编程中，如果某些操作具有整�
 
 nonatomic：非原子属性，即不使用同步锁，保证性能更好。
 atomic：原子属性：是指在并发编程中，如果某些操作具有整体性，系统无法获取到这些操作的中间步骤生成的临时结果，只能看见操作前和操作后">
-<meta property="og:updated_time" content="2016-12-20T03:00:14.000Z">
+<meta property="og:updated_time" content="2016-12-20T03:01:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iOS对象原子属性解释（automic）">
 <meta name="twitter:description" content="同步锁iOS中一般我们声明一个属性@property (nonatomic, strong) NSArray *students那么括号中的nonatomic, strong就是这一个属性的特性。
@@ -244,7 +244,9 @@ atomic：原子属性：是指在并发编程中，如果某些操作具有整�
         <span itemprop="articleBody"><h3 id="u540C_u6B65_u9501"><a href="#u540C_u6B65_u9501" class="headerlink" title="同步锁"></a>同步锁</h3><p>iOS中一般我们声明一个属性<br>@property (nonatomic, strong) NSArray *students<br>那么括号中的nonatomic, strong就是这一个属性的特性。</p>
 <ul>
 <li><strong>nonatomic</strong>：非原子属性，即不使用同步锁，保证性能更好。</li>
-<li><strong>atomic</strong>：原子属性：是指在并发编程中，如果某些操作具有整体性，系统无法获取到这些操作的中间步骤生成的临时结果，只能看见操作前和操作后的结果，那么该操作就是原子的。atomic表示在多线程操作中会通过加锁来保证这个属性在被操作的时候别的线程无法获取到它。在iOS中使用同步锁开销大，会带来性能问题，并且就算属性设置为atomic，也无法保证线程安全，需要更深层的锁定机制才可以，所以一般是nonatomic。<h3 id="u4E3A_u4EC0_u4E48_u8BF4atomic_u5E76_u4E0D_u80FD_u4FDD_u8BC1_u7EBF_u7A0B_u5B89_u5168"><a href="#u4E3A_u4EC0_u4E48_u8BF4atomic_u5E76_u4E0D_u80FD_u4FDD_u8BC1_u7EBF_u7A0B_u5B89_u5168" class="headerlink" title="为什么说atomic并不能保证线程安全"></a>为什么说atomic并不能保证线程安全</h3></li>
+<li><strong>atomic</strong>：原子属性：是指在并发编程中，如果某些操作具有整体性，系统无法获取到这些操作的中间步骤生成的临时结果，只能看见操作前和操作后的结果，那么该操作就是原子的。atomic表示在多线程操作中会通过加锁来保证这个属性在被操作的时候别的线程无法获取到它。在iOS中使用同步锁开销大，会带来性能问题，并且就算属性设置为atomic，也无法保证线程安全，需要更深层的锁定机制才可以，所以一般是nonatomic。</li>
+</ul>
+<h3 id="u4E3A_u4EC0_u4E48_u8BF4atomic_u5E76_u4E0D_u80FD_u4FDD_u8BC1_u7EBF_u7A0B_u5B89_u5168"><a href="#u4E3A_u4EC0_u4E48_u8BF4atomic_u5E76_u4E0D_u80FD_u4FDD_u8BC1_u7EBF_u7A0B_u5B89_u5168" class="headerlink" title="为什么说atomic并不能保证线程安全"></a>为什么说atomic并不能保证线程安全</h3><ul>
 <li><strong>atomic原理</strong>：在属性的setter方法中加锁</li>
 </ul>
 <ul>
